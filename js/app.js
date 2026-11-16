@@ -5,6 +5,7 @@ import { RenderPass } from '../lib/addons/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from '../lib/addons/postprocessing/UnrealBloomPass.js';
 import { OutputPass } from '../lib/addons/postprocessing/OutputPass.js';
 import { RoundedBoxGeometry } from '../lib/addons/geometries/RoundedBoxGeometry.js';
+import { RoomEnvironment } from '../lib/addons/environments/RoomEnvironment.js';
 import { CONFIG, STATIONS, UI, JOURNEY, CATEGORIES, WORKS, LANGS, pick } from './data.js';
 import { lookupOrder, prettyCode, normCode } from './orders.js';
 import { renderClassic } from './classic.js';
@@ -58,20 +59,28 @@ controls.mouseButtons = { LEFT: THREE.MOUSE.ROTATE, MIDDLE: THREE.MOUSE.DOLLY, R
 controls.touches = { ONE: THREE.TOUCH.PAN, TWO: THREE.TOUCH.DOLLY_ROTATE };
 
 /* lights */
-scene.add(new THREE.HemisphereLight(0xE6FFF8, 0x10272B, 1.25));
-const sun = new THREE.DirectionalLight(0xFFF6EA, 2.3);
+/* image-based lighting: soft studio reflections on every material */
+{
+  const pmrem = new THREE.PMREMGenerator(renderer);
+  const env = new RoomEnvironment();
+  scene.environment = pmrem.fromScene(env, .04).texture;
+  scene.environmentIntensity = .12;
+  env.dispose?.(); pmrem.dispose();
+}
+scene.add(new THREE.HemisphereLight(0xE6FFF8, 0x10272B, 1.05));
+const sun = new THREE.DirectionalLight(0xFFF6EA, 2.1);
 sun.position.set(-14, 30, 20);
 sun.castShadow = true;
 sun.shadow.mapSize.set(isTouch ? 1024 : 2048, isTouch ? 1024 : 2048);
 Object.assign(sun.shadow.camera, { left: -26, right: 26, top: 26, bottom: -26, near: 1, far: 90 });
 sun.shadow.bias = -.0005; sun.shadow.normalBias = .03;
 scene.add(sun);
-const rim = new THREE.DirectionalLight(0x4FE3C1, .55); rim.position.set(20, 8, -18); scene.add(rim);
+const rim = new THREE.DirectionalLight(0x3CC4A4, .55); rim.position.set(20, 8, -18); scene.add(rim);
 
 /* post */
 const composer = new EffectComposer(renderer);
 composer.addPass(new RenderPass(scene, cam));
-const bloom = new UnrealBloomPass(new THREE.Vector2(innerWidth / 2, innerHeight / 2), .7, .55, .92);
+const bloom = new UnrealBloomPass(new THREE.Vector2(innerWidth / 2, innerHeight / 2), .7, .55, 1.0);
 composer.addPass(bloom);
 composer.addPass(new OutputPass());
 
@@ -762,6 +771,8 @@ function openPanel(id) {
     const msg = encodeURIComponent(({ ar: 'مرحباً، أودّ الاستفسار عن خدمة: ', en: 'Hello, I would like to inquire about: ', ku: 'سڵاو، دەمەوێت پرسیار بکەم دەربارەی: ' }[lang]) + s.title);
     cta += `<a class="btn btn-wa" href="https://wa.me/${CONFIG.whatsapp}?text=${msg}" target="_blank" rel="noopener">${ICONS.whatsapp}<span>${u.whatsapp}</span></a>`;
   }
+  const OS = { office: 'logo', print: 'flex,uv', workshop: 'letters,cnc', install: 'letters,box' }[id] || '';
+  cta = `<a class="btn btn-gold" href="order/${OS ? '?s=' + OS : ''}">${u.orderFull}</a>` + cta;
   cta += `<button class="btn" data-act="contact">${u.contactBtn}</button>`;
   $('#panelCta').innerHTML = cta;
   panel.classList.add('open'); panel.setAttribute('aria-hidden', 'false');
@@ -952,7 +963,7 @@ async function runJourney(order = null) {
   $('#jStep').textContent = '';
   $('#jTitle').textContent = u.doneTitle; $('#jText').textContent = u.doneText;
   $('#jDots').innerHTML = JOURNEY.map(() => '<i class="done"></i>').join('');
-  let end = `<button class="btn btn-gold" data-act="gallery">${u.seeWork}</button><button class="btn" data-act="replay">${u.replay}</button>`;
+  let end = `<a class="btn btn-gold" href="order/">${u.orderFull}</a><button class="btn" data-act="gallery">${u.seeWork}</button><button class="btn" data-act="replay">${u.replay}</button>`;
   if (CONFIG.whatsapp) end = `<a class="btn btn-wa" href="https://wa.me/${CONFIG.whatsapp}" target="_blank" rel="noopener">${ICONS.whatsapp}<span>${u.contact}</span></a>` + end;
   $('#jEnd').innerHTML = end; $('#jEnd').classList.add('show');
   $('#jSkip').textContent = u.close;

@@ -143,9 +143,9 @@ export class Gallery {
 
   placeholder(o, cat, j) {
     const [c, x] = canvas(800, 600);
-    const g = x.createLinearGradient(0, 0, 800, 600); g.addColorStop(0, '#2D5856'); g.addColorStop(1, '#0F2427');
+    const g = x.createLinearGradient(0, 0, 800, 600); g.addColorStop(0, '#22967F'); g.addColorStop(1, '#0B2A25');
     x.fillStyle = g; x.fillRect(0, 0, 800, 600);
-    x.strokeStyle = 'rgba(79,227,193,.12)'; x.lineWidth = 1;
+    x.strokeStyle = 'rgba(60,196,164,.12)'; x.lineWidth = 1;
     for (let i = 0; i <= 16; i++) { x.beginPath(); x.moveTo(i * 50, 0); x.lineTo(i * 50, 600); x.stroke(); }
     for (let i = 0; i <= 12; i++) { x.beginPath(); x.moveTo(0, i * 50); x.lineTo(800, i * 50); x.stroke(); }
     if (this.markImg) { x.globalAlpha = .14; const h = 380, w = h * this.markImg.width / this.markImg.height; x.drawImage(this.markImg, 400 - w / 2, 300 - h / 2, w, h); x.globalAlpha = 1; }

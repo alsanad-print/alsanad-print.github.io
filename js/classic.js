@@ -36,6 +36,7 @@ export function classicHTML(lang, data, hasGL = true) {
     <h1>${esc(u.heroTitle)}</h1>
     <p>${esc(u.heroSub)}</p>
     <div class="cl-cta">
+      <a class="btn btn-gold" href="order/">${esc(u.orderFull)}</a>
       ${CONFIG.whatsapp ? `<a class="btn btn-wa" href="https://wa.me/${CONFIG.whatsapp}" target="_blank" rel="noopener"><span>${esc(u.whatsapp)}</span></a>` : ''}
       <a class="btn" href="#c-track">${esc(u.trackTitle)}</a>
     </div>

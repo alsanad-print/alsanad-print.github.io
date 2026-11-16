@@ -326,6 +326,8 @@ export const WORKS = [];
 export const UI = {
   ar: {
     brand: 'السند للدعاية والإعلان',
+    orderBtn: 'تقديم طلب',
+    orderFull: 'تقديم طلب خدمة',
     journey: 'تتبّع طلبك',
     journeyShort: 'تتبّع طلبك',
     gallery: 'معرض الأعمال',
@@ -399,6 +401,8 @@ export const UI = {
   },
   en: {
     brand: 'Al-Sanad Advertising',
+    orderBtn: 'Place an order',
+    orderFull: 'Place a service order',
     journey: 'Track your order',
     journeyShort: 'Track order',
     gallery: 'Portfolio',
@@ -469,6 +473,8 @@ export const UI = {
   },
   ku: {
     brand: 'سەنەد بۆ ڕیکلام و ڕاگەیاندن',
+    orderBtn: 'داواکاری نوێ',
+    orderFull: 'پێشکەشکردنی داواکاری',
     journey: 'بەدواداچوونی داواکاری',
     journeyShort: 'بەدواداچوون',
     gallery: 'پێشانگای کارەکان',

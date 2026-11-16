@@ -3,17 +3,17 @@ import * as THREE from 'three';
 /* ---------- colors ---------- */
 export const COL = {
   bg: 0x0B1B1F,
-  petrol: 0x2D5856,
-  petrolDark: 0x1E3D3C,
+  petrol: 0x22967F,
+  petrolDark: 0x146B5A,
   deep: 0x0D1F24,
   white: 0xEDF2F1,
   gray: 0x9AA6A5,
   gold: 0xF5C64F,
-  glow: 0x4FE3C1,
+  glow: 0x3CC4A4,
 };
 export const HEX = {
-  petrol: '#2D5856', petrolDark: '#1E3D3C', deep: '#0D1F24', gold: '#F5C64F',
-  glow: '#4FE3C1', white: '#F2F6F5', gray: '#9AA6A5', bg: '#0B1B1F',
+  petrol: '#22967F', petrolDark: '#146B5A', deep: '#0D1F24', gold: '#F5C64F',
+  glow: '#3CC4A4', white: '#F2F6F5', gray: '#9AA6A5', bg: '#0B1B1F',
 };
 
 /* ---------- icons (stroke svg) ---------- */
@@ -97,9 +97,9 @@ export function drawDesign(ctx, x, y, w, h, v, img) {
       ctx.strokeStyle = HEX.gold; ctx.lineWidth = s * .05; ctx.beginPath(); ctx.arc(x + w * .3, y + h * .3, s * .17, 0, 7); ctx.stroke();
       break; }
     case 2: { // dark + arabic type
-      const g = ctx.createLinearGradient(x, y, x, y + h); g.addColorStop(0, '#16383A'); g.addColorStop(1, '#0B1B1F');
+      const g = ctx.createLinearGradient(x, y, x, y + h); g.addColorStop(0, '#0F3A33'); g.addColorStop(1, '#0B1B1F');
       ctx.fillStyle = g; ctx.fillRect(x, y, w, h);
-      ctx.strokeStyle = 'rgba(79,227,193,.18)'; ctx.lineWidth = 1;
+      ctx.strokeStyle = 'rgba(60,196,164,.18)'; ctx.lineWidth = 1;
       for (let i = 1; i < 8; i++) { ctx.beginPath(); ctx.moveTo(x + w * i / 8, y); ctx.lineTo(x + w * i / 8, y + h); ctx.stroke(); }
       ctx.fillStyle = '#fff'; ctx.font = AR; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.direction = 'rtl';
       ctx.fillText('السند', x + w / 2, y + h * .46);
