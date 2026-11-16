@@ -14,6 +14,9 @@ export const CONFIG = {
   whatsapp: '9647742522111',
   phone: '+9647742522111',
   phoneDisplay: '0774 252 2111',
+  // رقم إضافي للاستفسارات (الطلبات تصل دائماً على الرقم الأساسي أعلاه)
+  phone2: '+9647704992688',
+  phone2Display: '0770 499 2688',
   instagram: 'alsanad_print',
   tiktok: 'alsanad_print',
   address: {
@@ -27,7 +30,9 @@ export const CONFIG = {
     ku: 'شەممە – پێنجشەممە، لە 9:00ی بەیانی تا 6:00ی ئێوارە · هەینی پشووە',
   },
   // رابط موقع المطبعة على خرائط Google (Share ← Copy link). إذا فارغ يُستخدم البحث بالعنوان.
-  mapLink: 'https://maps.app.goo.gl/SKjtRWGQHhewyLRJ8',
+  mapLink: 'https://maps.app.goo.gl/BwCGg1EzQn7Desu36',
+  // موقع المعمل على خرائط Google
+  workshopMap: 'https://maps.app.goo.gl/wxozGYMZJs7YvLGY8',
   mapQuery: '36.366264,43.196077',
   // إحصائيات الزيارات (GoatCounter): اكتب اسم الحساب فقط، مثال: 'alsanad'
   goatcounter: '',
@@ -391,6 +396,10 @@ export const UI = {
     cFollow: 'تابعونا',
     cCall: 'اتصال',
     cMap: 'فتح في الخرائط',
+    cOffice: 'المكتب الرئيسي',
+    cWorkshop: 'المعمل',
+    cPhone2: 'هاتف الاستفسارات',
+    viewMap: 'الموقع على الخريطة',
     // classic
     liteView: 'عرض مبسّط',
     fullView: 'العرض التفاعلي',
@@ -464,6 +473,10 @@ export const UI = {
     cFollow: 'Follow us',
     cCall: 'Call',
     cMap: 'Open in Maps',
+    cOffice: 'Head office',
+    cWorkshop: 'Workshop',
+    cPhone2: 'Inquiries phone',
+    viewMap: 'View on map',
     liteView: 'Simple view',
     fullView: 'Interactive view',
     services: 'Our services',
@@ -536,6 +549,10 @@ export const UI = {
     cFollow: 'فۆڵۆمان بکەن',
     cCall: 'پەیوەندی',
     cMap: 'کردنەوە لە نەخشە',
+    cOffice: 'نووسینگەی سەرەکی',
+    cWorkshop: 'کارگە',
+    cPhone2: 'تەلەفۆنی پرسیارەکان',
+    viewMap: 'شوێن لەسەر نەخشە',
     liteView: 'پیشاندانی سادە',
     fullView: 'پیشاندانی کارلێک',
     services: 'خزمەتگوزارییەکانمان',

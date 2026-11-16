@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>إدارة الطلبات | السند</title>
+<meta name="theme-color" content="#0B1B1F">
+<link rel="icon" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+<link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%22%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9%20%D8%B7%D9%84%D8%A8%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B3%D9%86%D8%AF%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%230B1B1F%22%2C%22theme_color%22%3A%22%230B1B1F%22%7D">
+<link rel="stylesheet" href="css/fonts.css">
+<style>
+:root{--bg:#0B1B1F;--card:#12272C;--card2:#0E2125;--brand:#22967F;--brand-2:#146B5A;--hi:#3CC4A4;--gold:#F5C64F;--ink:#F2F6F5;--mut:#A9B6B5;--dim:#7F8E8D;--line:rgba(242,246,245,.10);--line2:rgba(60,196,164,.3);--red:#E07A5F;--ease:cubic-bezier(.2,.8,.2,1)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Baloo Bhaijaan 2','Montserrat',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh;padding-bottom:env(safe-area-inset-bottom,0px)}
+button,input,textarea,select{font:inherit;color:inherit}
+button{cursor:pointer}
+svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.en{font-family:'Montserrat',sans-serif;direction:ltr;unicode-bidi:isolate}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+header{position:sticky;top:0;z-index:10;background:rgba(11,27,31,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+header .in{max-width:920px;margin:auto;padding:12px 16px;display:flex;align-items:center;gap:12px}
+header img{height:30px}
+header h1{font-size:16px;margin:0;color:var(--mut);font-weight:700}
+header .sp{margin-inline-start:auto;display:flex;gap:8px}
+main{max-width:920px;margin:auto;padding:18px 16px 60px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 18px;border-radius:13px;border:1px solid var(--line2);background:var(--card);font-weight:800;font-size:15px;text-decoration:none;color:var(--ink);transition:transform .15s,opacity .2s}
+.btn:active{transform:scale(.97)}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.btn-gold{background:linear-gradient(135deg,#F5C64F,#E2A93A);color:#1B2A22;border-color:transparent}
+.btn-brand{background:var(--brand);border-color:transparent;color:#fff}
+.btn-wa{background:#1F8F5F;border-color:transparent;color:#fff}
+.btn-ghost{background:none}
+.btn-red{background:none;border-color:rgba(224,122,95,.45);color:#FFB4A2}
+.btn-sm{min-height:38px;padding:0 12px;font-size:14px;border-radius:11px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px}
+.f{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.f label,.f .lb{font-size:14px;font-weight:700;color:var(--mut)}
+.f .opt{font-weight:500;color:var(--dim);font-size:12.5px}
+.in{width:100%;min-height:48px;padding:11px 14px;border-radius:13px;border:1px solid var(--line);background:var(--card2);font-size:16px}
+.in:focus{outline:none;border-color:var(--hi);box-shadow:0 0 0 4px rgba(60,196,164,.14)}
+textarea.in{min-height:80px;resize:vertical}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
+.hint{font-size:13px;color:var(--dim);margin:0}
+.hint a{color:var(--hi)}
+.err{color:#FFB4A2;font-size:14px;min-height:20px;margin:6px 0 0}
+.login{max-width:440px;margin:6vh auto 0}
+.login h2{margin:0 0 4px;font-size:26px}
+.login p.lead{color:var(--mut);margin:0 0 18px}
+details{margin:6px 0 14px;border:1px dashed var(--line2);border-radius:14px;padding:10px 14px}
+details summary{cursor:pointer;font-weight:700;color:var(--mut);font-size:14px}
+details ol{margin:8px 0 0;padding-inline-start:20px;font-size:13.5px;color:var(--mut)}
+.bar{display:flex;gap:10px;align-items:center;margin-bottom:14px;flex-wrap:wrap}
+.bar .in{flex:1;min-width:180px}
+.tabs{display:flex;gap:4px;padding:4px;border-radius:13px;background:var(--card2);border:1px solid var(--line)}
+.tabs button{border:0;background:none;min-height:38px;padding:0 14px;border-radius:10px;font-weight:700;font-size:14px;color:var(--mut)}
+.tabs button[aria-pressed=true]{background:var(--card);color:var(--ink);box-shadow:0 0 0 1px var(--line2)}
+.list{display:grid;gap:10px}
+.oc{display:grid;grid-template-columns:1fr auto;gap:6px 12px;align-items:center;text-align:start;width:100%;padding:14px 16px;border-radius:18px;border:1px solid var(--line);background:var(--card);transition:border-color .2s}
+.oc:hover{border-color:var(--line2)}
+.oc .code{font:800 13px 'Montserrat',sans-serif;color:var(--gold);letter-spacing:.06em;direction:ltr}
+.oc b{font-size:17px;line-height:1.3}
+.oc small{color:var(--dim);font-size:13px}
+.pips{grid-column:1/-1;display:flex;gap:4px;margin-top:4px}
+.pips i{flex:1;height:5px;border-radius:4px;background:var(--line)}
+.pips i.d{background:var(--hi)}.pips i.n{background:var(--gold)}.pips i.s{background:repeating-linear-gradient(90deg,var(--line) 0 4px,transparent 4px 8px)}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;padding:3px 10px;border-radius:999px;background:rgba(34,150,127,.16);color:var(--hi)}
+.chip.done{background:rgba(245,198,79,.14);color:var(--gold)}
+.empty{text-align:center;color:var(--mut);padding:40px 10px}
+.stages{display:grid;gap:8px}
+.stg{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;width:100%;padding:12px 14px;border-radius:15px;border:1px solid var(--line);background:var(--card2);text-align:start;transition:all .2s var(--ease)}
+.stg .n{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font:800 13px 'Montserrat',sans-serif;background:var(--card);border:1px solid var(--line)}
+.stg b{font-size:16px}
+.stg small{display:block;color:var(--dim);font-size:12.5px}
+.stg.done .n{background:var(--brand);border-color:var(--brand);color:#fff}
+.stg.now{border-color:var(--gold);background:linear-gradient(160deg,rgba(245,198,79,.12),var(--card2))}
+.stg.now .n{background:var(--gold);color:#1B2A22;border-color:var(--gold)}
+.stg.skip{opacity:.45}
+.stg.skip b{text-decoration:line-through}
+.tg{white-space:nowrap;display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;color:var(--mut);padding:6px 10px;border-radius:10px;border:1px solid var(--line);background:none}
+.tg[aria-pressed=true]{color:#FFB4A2;border-color:rgba(224,122,95,.45)}
+.sec{font-size:13px;font-weight:800;color:var(--gold);letter-spacing:.04em;margin:22px 0 10px}
+.codebox{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 16px;border-radius:16px;background:linear-gradient(160deg,rgba(34,150,127,.22),var(--card2));border:1px solid var(--line2);margin-bottom:14px}
+.codebox b{white-space:nowrap;font:800 20px 'Montserrat',sans-serif;letter-spacing:.08em;direction:ltr}
+.codebox small{display:block;color:var(--mut);font-size:12.5px}
+.acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.acts .grow{flex:1}
+.sticky{position:sticky;bottom:0;padding:12px 0 calc(12px + env(safe-area-inset-bottom,0px));background:linear-gradient(transparent,var(--bg) 30%);display:flex;gap:8px;margin-top:10px}
+.sticky .btn{flex:1}
+.toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);opacity:0;background:#0F2A2E;border:1px solid var(--line2);padding:10px 18px;border-radius:12px;font-size:14px;font-weight:700;z-index:60;transition:all .3s var(--ease);pointer-events:none;max-width:90vw;text-align:center}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.busy{position:fixed;inset:0;background:rgba(11,27,31,.6);display:none;place-items:center;z-index:50;font-weight:800}
+.busy.on{display:grid}
+@media (max-width:560px){.grid2{grid-template-columns:1fr}header h1{display:none}}
+</style>
+</head>
+<body>
+<header><div class="in"><a href="./"><img src="assets/logo-secondary-white.png" alt="السند"></a><h1>إدارة الطلبات</h1><div class="sp" id="hdr"></div></div></header>
+<main id="app"></main>
+<div class="toast" id="toast" role="status"></div>
+<div class="busy" id="busy">جارٍ النشر…</div>
+
+<script type="module">
+import { newCode, normCode, prettyCode, randomSalt, passKey, seal, unseal, buildPublic } from './js/orders.js';
+
+const REPO = 'alsanad-print/alsanad-print.github.io', BRANCH = 'main';
+const ADMIN_PATH = 'data/orders-admin.enc', PUBLIC_PATH = 'data/orders.json';
+const SITE = 'https://alsanad-print.github.io/';
+const STAGES = [
+  { id: 'office', t: 'استلام الطلب والتصميم' }, { id: 'print', t: 'الطباعة' }, { id: 'workshop', t: 'التصنيع في المعمل' },
+  { id: 'delivery', t: 'التوصيل' }, { id: 'install', t: 'التركيب' }, { id: 'done', t: 'تم التسليم' },
+];
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const today = () => new Date().toISOString().slice(0, 10);
+const fmt = d => { try { return new Date(d).toLocaleDateString('ar-IQ-u-nu-latn', { day: 'numeric', month: 'short', year: 'numeric' }); } catch (e) { return d || ''; } };
+const ls = { get: k => { try { return localStorage.getItem(k); } catch (e) { return null; } }, set: (k, v) => { try { v == null ? localStorage.removeItem(k) : localStorage.setItem(k, v); } catch (e) {} } };
+let tt; const toast = m => { const t = $('#toast'); t.textContent = m; t.classList.add('on'); clearTimeout(tt); tt = setTimeout(() => t.classList.remove('on'), 2800); };
+const busy = (on, m = 'جارٍ النشر…') => { const b = $('#busy'); b.textContent = m; b.classList.toggle('on', on); };
+
+/* ------------------------------------------------------------ GitHub */
+const enc64 = s => { const u = new TextEncoder().encode(s); let b = ''; for (let i = 0; i < u.length; i += 0x8000) b += String.fromCharCode(...u.subarray(i, i + 0x8000)); return btoa(b); };
+const dec64 = s => new TextDecoder().decode(Uint8Array.from(atob(s.replace(/\s/g, '')), c => c.charCodeAt(0)));
+async function gh(path, opts = {}) {
+  const r = await fetch(`https://api.github.com/repos/${REPO}/contents/${path}${opts.method ? '' : `?ref=${BRANCH}&t=${Date.now()}`}`, {
+    ...opts, headers: { Authorization: `Bearer ${S.token}`, Accept: 'application/vnd.github+json', ...(opts.body ? { 'Content-Type': 'application/json' } : {}) },
+  });
+  if (r.status === 404 && !opts.method) return null;
+  if (!r.ok) { const e = new Error('gh ' + r.status); e.status = r.status; throw e; }
+  return r.json();
+}
+async function getFile(path) { const j = await gh(path); return j ? { text: dec64(j.content), sha: j.sha } : { text: null, sha: null }; }
+async function putFile(path, text, sha, msg) {
+  const j = await gh(path, { method: 'PUT', body: JSON.stringify({ message: msg, content: enc64(text), branch: BRANCH, ...(sha ? { sha } : {}) }) });
+  return j.content.sha;
+}
+
+/* ------------------------------------------------------------ state */
+const S = { token: ls.get('alsanad-gh') || '', pass: '', key: null, salt: null, pubSalt: null, orders: [], shaA: null, shaP: null, view: 'list', cur: null, filter: 'active', q: '' };
+
+async function load() {
+  const [a, p] = await Promise.all([getFile(ADMIN_PATH), getFile(PUBLIC_PATH)]);
+  S.shaA = a.sha; S.shaP = p.sha;
+  if (!a.text) return false; // first run
+  const box = JSON.parse(a.text);
+  S.salt = box.salt;
+  S.key = await passKey(S.pass, S.salt);
+  const data = await unseal(S.key, box); // throws on wrong password
+  S.orders = data.orders || []; S.pubSalt = data.pubSalt || (p.text ? JSON.parse(p.text).salt : randomSalt());
+  return true;
+}
+async function publish(msg) {
+  busy(true);
+  try {
+    const box = { v: 1, salt: S.salt, ...(await seal(S.key, { orders: S.orders, pubSalt: S.pubSalt })) };
+    const pub = await buildPublic(S.orders.filter(o => !o.archived), S.pubSalt);
+    S.shaA = await putFile(ADMIN_PATH, JSON.stringify(box), S.shaA, msg + ' (admin)');
+    S.shaP = await putFile(PUBLIC_PATH, JSON.stringify(pub), S.shaP, msg);
+    toast('تم النشر. يظهر التحديث للزبون خلال دقائق.');
+    return true;
+  } catch (e) {
+    if (e.status === 409 || e.status === 422) { toast('تم تعديل الطلبات من جهاز آخر. أعد تحميل الصفحة ثم كرّر التعديل.'); }
+    else if (e.status === 401 || e.status === 403) { toast('مفتاح GitHub غير صالح أو منتهي. أدخله من جديد.'); }
+    else toast('تعذّر النشر. تحقّق من الاتصال وحاول مرة أخرى.');
+    return false;
+  } finally { busy(false); }
+}
+
+/* ------------------------------------------------------------ views */
+function hdr() {
+  $('#hdr').innerHTML = S.key ? `<button class="btn btn-sm btn-ghost" data-a="lock">قفل</button>` : '';
+}
+function viewLogin(first = false, err = '') {
+  hdr();
+  $('#app').innerHTML = `<div class="card login">
+    <h2>${first ? 'إعداد نظام التتبّع' : 'تسجيل الدخول'}</h2>
+    <p class="lead">${first ? 'هذه أول مرة. اختر كلمة سر لحماية بيانات الطلبات، واحفظها جيداً: لا يمكن استرجاعها.' : 'أدخل كلمة سر الطلبات لعرضها وتحديثها.'}</p>
+    <form id="lf">
+      ${S.token && !first ? '' : `<div class="f"><label for="tk">مفتاح GitHub</label><input class="in en" id="tk" autocomplete="off" spellcheck="false" placeholder="github_pat_…" value="${esc(S.token)}">
+        <details><summary>كيف أحصل على المفتاح؟</summary><ol>
+          <li>من حساب <b class="en">alsanad-print</b> على GitHub افتح: <a class="en" href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">Settings › Developer settings › Fine-grained tokens</a></li>
+          <li>الاسم: «إدارة الطلبات»، ومدة الصلاحية: سنة.</li>
+          <li>Repository access: <b>Only select repositories</b> واختر <b class="en">alsanad-print.github.io</b></li>
+          <li>Permissions › Repository › <b>Contents: Read and write</b></li>
+          <li>اضغط Generate token وانسخه هنا. يُحفظ على هذا الجهاز فقط.</li></ol></details></div>`}
+      <div class="f"><label for="pw">كلمة سر الطلبات</label><input class="in" id="pw" type="password" autocomplete="current-password" required minlength="6"></div>
+      ${first ? `<div class="f"><label for="pw2">تأكيد كلمة السر</label><input class="in" id="pw2" type="password" autocomplete="new-password" required minlength="6"></div>` : ''}
+      <button class="btn btn-gold" style="width:100%">${first ? 'إنشاء النظام' : 'دخول'}</button>
+      <p class="err" id="err">${esc(err)}</p>
+      ${S.token && !first ? `<p class="hint"><a href="#" data-a="retoken">تغيير مفتاح GitHub</a></p>` : ''}
+    </form></div>`;
+  $('#lf').onsubmit = async e => {
+    e.preventDefault();
+    const tk = $('#tk')?.value.trim(); if (tk) { S.token = tk; }
+    if (!S.token) { $('#err').textContent = 'أدخل مفتاح GitHub.'; return; }
+    S.pass = $('#pw').value;
+    if (first) {
+      if (S.pass !== $('#pw2').value) { $('#err').textContent = 'كلمتا السر غير متطابقتين.'; return; }
+      S.salt = randomSalt(); S.pubSalt = randomSalt(); S.key = await passKey(S.pass, S.salt); S.orders = [];
+      ls.set('alsanad-gh', S.token);
+      if (await publish('إعداد نظام تتبّع الطلبات')) { ls.set('alsanad-admin', '1'); viewList(); }
+      return;
+    }
+    busy(true, 'جارٍ التحميل…');
+    try {
+      const ok = await load();
+      ls.set('alsanad-gh', S.token);
+      if (!ok) { busy(false); viewLogin(true); return; }
+      ls.set('alsanad-admin', '1'); busy(false); viewList();
+    } catch (x) {
+      busy(false); S.key = null;
+      if (x.status === 401 || x.status === 403) viewLogin(false, 'مفتاح GitHub غير صالح أو لا يملك صلاحية على المستودع.');
+      else if (x.status) viewLogin(false, 'تعذّر الاتصال بـ GitHub. حاول مرة أخرى.');
+      else viewLogin(false, 'كلمة السر غير صحيحة.');
+    }
+  };
+}
+
+const stageOf = o => Math.max(1, Math.min(6, +o.stage || 1));
+const stageName = o => STAGES[stageOf(o) - 1].t;
+function pips(o) {
+  const s = stageOf(o), skip = new Set(o.skip || []);
+  return `<div class="pips">${STAGES.map((g, i) => `<i class="${skip.has(g.id) ? 's' : i + 1 < s || s === 6 ? 'd' : i + 1 === s ? 'n' : ''}"></i>`).join('')}</div>`;
+}
+function viewList() {
+  S.view = 'list'; S.cur = null; hdr();
+  const q = S.q.trim(), nq = normCode(q);
+  const items = S.orders.filter(o => !o.archived)
+    .filter(o => S.filter === 'all' || (S.filter === 'active' ? stageOf(o) < 6 : stageOf(o) === 6))
+    .filter(o => !q || [o.title_ar, o.client, o.phone].some(v => (v || '').includes(q)) || (nq.length >= 3 && normCode(o.code).includes(nq)))
+    .sort((a, b) => (b.updated || '').localeCompare(a.updated || ''));
+  const cnt = k => S.orders.filter(o => !o.archived && (k === 'all' || (k === 'active' ? stageOf(o) < 6 : stageOf(o) === 6))).length;
+  $('#app').innerHTML = `
+    <div class="bar"><button class="btn btn-gold" data-a="new"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>طلب جديد</button>
+      <input class="in" id="q" placeholder="بحث بالاسم أو الكود أو الهاتف" value="${esc(S.q)}"></div>
+    <div class="bar"><div class="tabs">${[['active', 'قيد التنفيذ'], ['done', 'المُسلَّمة'], ['all', 'الكل']].map(([k, l]) => `<button data-f="${k}" aria-pressed="${S.filter === k}">${l} (${cnt(k)})</button>`).join('')}</div></div>
+    <div class="list">${items.map(o => `<button class="oc" data-open="${o.code}">
+        <span><span class="code">${prettyCode(o.code)}</span><br><b>${esc(o.title_ar || '—')}</b><br><small>${esc(o.client || '')}${o.updated ? ' · آخر تحديث ' + fmt(o.updated) : ''}</small></span>
+        <span class="chip ${stageOf(o) === 6 ? 'done' : ''}">${stageName(o)}</span>${pips(o)}</button>`).join('') || `<div class="empty">${S.orders.length ? 'لا توجد طلبات مطابقة.' : 'لا توجد طلبات بعد. ابدأ بإضافة أول طلب.'}</div>`}</div>`;
+  const qi = $('#q'); qi.oninput = () => { S.q = qi.value; const p = qi.selectionStart; viewList(); const n = $('#q'); n.focus(); n.setSelectionRange(p, p); };
+}
+
+function blankOrder() {
+  let code; do { code = newCode(); } while (S.orders.some(o => normCode(o.code) === normCode(code)));
+  return { code, title_ar: '', title_en: '', title_ku: '', client: '', phone: '', stage: 1, skip: [], dates: { 1: today() }, note_ar: '', note_en: '', note_ku: '', private: '', created: new Date().toISOString(), updated: new Date().toISOString(), _new: true };
+}
+function viewEdit(o) {
+  S.view = 'edit'; S.cur = JSON.parse(JSON.stringify(o)); hdr();
+  const c = S.cur, s = stageOf(c), skip = new Set(c.skip || []);
+  $('#app').innerHTML = `
+    <div class="bar"><button class="btn btn-sm btn-ghost" data-a="back"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>كل الطلبات</button></div>
+    <div class="codebox"><div><small>رقم الطلب (يُرسَل للزبون)</small><b>${prettyCode(c.code)}</b></div>
+      <div class="acts"><button class="btn btn-sm" data-a="copy">نسخ</button>${c.phone ? `<a class="btn btn-sm btn-wa" href="${clientWa(c)}" target="_blank" rel="noopener">إرسال للزبون</a>` : ''}</div></div>
+    <div class="card">
+      <div class="f"><label for="t_ar">عنوان الطلب (يراه الزبون)</label><input class="in" id="t_ar" data-k="title_ar" value="${esc(c.title_ar)}" placeholder="مثال: واجهة مطعم الضيافة"></div>
+      <div class="grid2"><div class="f"><label for="cl">اسم الزبون <span class="opt">(خاص)</span></label><input class="in" id="cl" data-k="client" value="${esc(c.client)}"></div>
+        <div class="f"><label for="ph">هاتف الزبون <span class="opt">(خاص)</span></label><input class="in en" id="ph" data-k="phone" inputmode="tel" value="${esc(c.phone)}" placeholder="07xx xxx xxxx"></div></div>
+      <details><summary>العنوان بالكوردية والإنكليزية (اختياري)</summary>
+        <div class="f" style="margin-top:10px"><label>English</label><input class="in en" data-k="title_en" value="${esc(c.title_en)}"></div>
+        <div class="f"><label>کوردی</label><input class="in" data-k="title_ku" value="${esc(c.title_ku)}"></div></details>
+    </div>
+
+    <div class="sec">مرحلة الطلب الحالية</div>
+    <div class="stages">${STAGES.map((g, i) => { const n = i + 1, sk = skip.has(g.id) && n < 6;
+      const cls = sk ? 'skip' : n < s ? 'done' : n === s ? 'now' : '';
+      return `<div style="display:flex;gap:8px;align-items:center"><button class="stg ${cls}" data-stage="${n}" ${sk ? 'disabled' : ''}><span class="n">${n === 6 ? '✓' : n}</span><span><b>${g.t}</b><small>${sk ? 'لا تنطبق على هذا الطلب' : c.dates?.[n] ? fmt(c.dates[n]) : n === s ? 'المرحلة الحالية' : n < s ? 'مكتملة' : 'لاحقاً'}</small></span><span>${n === s ? '●' : ''}</span></button>
+        ${n > 1 && n < 6 ? `<button class="tg" data-skip="${g.id}" aria-pressed="${sk}" title="هذه المرحلة لا تنطبق">${sk ? 'تفعيل' : 'لا تنطبق'}</button>` : ''}</div>`; }).join('')}</div>
+
+    <div class="sec">ملاحظة للزبون</div>
+    <div class="card">
+      <div class="f"><label for="n_ar">تظهر للزبون عند البحث بالكود <span class="opt">(اختياري)</span></label><textarea class="in" id="n_ar" data-k="note_ar" placeholder="مثال: التصميم جاهز للاعتماد، نرجو مراجعته على واتساب">${esc(c.note_ar)}</textarea></div>
+      <div class="f"><label for="pv">ملاحظة داخلية <span class="opt">(لا يراها الزبون)</span></label><textarea class="in" id="pv" data-k="private">${esc(c.private)}</textarea></div>
+    </div>
+
+    <div class="sticky"><button class="btn btn-gold" data-a="save">${c._new ? 'إنشاء الطلب ونشره' : 'حفظ ونشر'}</button>${c._new ? '' : `<button class="btn btn-red" data-a="del" style="flex:0 0 auto">حذف</button>`}</div>`;
+}
+const trackUrl = o => `${SITE}#track-${prettyCode(o.code)}`;
+function clientWa(o) {
+  let d = String(o.phone || '').replace(/[٠-٩]/g, c => '٠١٢٣٤٥٦٧٨٩'.indexOf(c)).replace(/\D/g, '').replace(/^0/, '');
+  if (!d.startsWith('964')) d = '964' + d;
+  const msg = `مرحباً${o.client ? ' ' + o.client : ''}،\nشكراً لاختياركم السند للدعاية والإعلان.\nرقم طلبكم: ${prettyCode(o.code)}\nيمكنكم متابعة مراحل تنفيذه في أي وقت من الرابط:\n${trackUrl(o)}`;
+  return `https://wa.me/${d}?text=${encodeURIComponent(msg)}`;
+}
+
+/* ------------------------------------------------------------ events */
+document.addEventListener('click', async e => {
+  const el = e.target.closest('[data-a],[data-open],[data-f],[data-stage],[data-skip]'); if (!el) return;
+  const d = el.dataset;
+  if (d.open) { const o = S.orders.find(x => x.code === d.open); if (o) viewEdit(o); scrollTo(0, 0); return; }
+  if (d.f) { S.filter = d.f; viewList(); return; }
+  if (d.stage) {
+    const n = +d.stage, c = S.cur; c.stage = n; c.dates = c.dates || {};
+    for (let i = 1; i <= n; i++) if (!c.dates[i] && !(c.skip || []).includes(STAGES[i - 1].id)) c.dates[i] = today();
+    for (let i = n + 1; i <= 6; i++) delete c.dates[i];
+    keep(); viewEdit(c); return;
+  }
+  if (d.skip) {
+    const c = S.cur, sk = new Set(c.skip || []); sk.has(d.skip) ? sk.delete(d.skip) : sk.add(d.skip); c.skip = [...sk];
+    keep(); viewEdit(c); return;
+  }
+  e.preventDefault?.();
+  const a = d.a;
+  if (a === 'new') { viewEdit(blankOrder()); scrollTo(0, 0); }
+  else if (a === 'back') viewList();
+  else if (a === 'lock') { S.key = null; S.pass = ''; S.orders = []; viewLogin(); }
+  else if (a === 'retoken') { S.token = ''; ls.set('alsanad-gh', null); viewLogin(); }
+  else if (a === 'copy') { try { await navigator.clipboard.writeText(prettyCode(S.cur.code)); toast('تم نسخ رقم الطلب'); } catch (x) { toast(prettyCode(S.cur.code)); } }
+  else if (a === 'save') {
+    keep(); const c = S.cur;
+    if (!c.title_ar.trim()) { toast('أدخل عنوان الطلب'); $('#t_ar')?.focus(); return; }
+    const isNew = c._new; delete c._new; c.updated = new Date().toISOString();
+    const i = S.orders.findIndex(o => o.code === c.code);
+    const prev = i >= 0 ? S.orders[i] : null;
+    if (i >= 0) S.orders[i] = c; else S.orders.push(c);
+    const ok = await publish(`${isNew ? 'طلب جديد' : 'تحديث طلب'}: ${prettyCode(c.code)} – ${STAGES[stageOf(c) - 1].t}`);
+    if (!ok) { if (prev) S.orders[i] = prev; else S.orders.pop(); c._new = isNew; return; }
+    viewEdit(c);
+  }
+  else if (a === 'del') {
+    if (!confirm('حذف هذا الطلب نهائياً؟ لن يتمكن الزبون من تتبّعه بعد ذلك.')) return;
+    const i = S.orders.findIndex(o => o.code === S.cur.code); if (i < 0) return;
+    const [rm] = S.orders.splice(i, 1);
+    if (await publish(`حذف طلب: ${prettyCode(rm.code)}`)) viewList(); else S.orders.splice(i, 0, rm);
+  }
+});
+function keep() { document.querySelectorAll('[data-k]').forEach(el => { if (S.cur) S.cur[el.dataset.k] = el.value; }); }
+document.addEventListener('input', e => { if (e.target.dataset.k && S.cur) S.cur[e.target.dataset.k] = e.target.value; });
+addEventListener('beforeunload', e => { if (S.view === 'edit' && S.cur?._new && S.cur.title_ar) { e.preventDefault(); e.returnValue = ''; } });
+
+viewLogin();
+</script>
+</body>
+</html>

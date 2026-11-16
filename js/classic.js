@@ -87,9 +87,11 @@ export function classicHTML(lang, data, hasGL = true) {
   <section class="cl-sec" id="c-contact">
     <div class="cl-head"><em>${clients.length ? '05' : '04'}</em><h2>${esc(u.contact)}</h2></div>
     <div class="cl-contact">
-      <div><small>${esc(u.cAddress)}</small><b>${esc(pick(CONFIG.address, lang))}</b><a href="${map}" target="_blank" rel="noopener">${esc(u.cMap)} ↗</a></div>
+      <div><small>${esc(u.cOffice)}</small><b>${esc(pick(CONFIG.address, lang))}</b><a href="${map}" target="_blank" rel="noopener">${esc(u.cMap)} ↗</a></div>
+      ${CONFIG.workshopMap ? `<div><small>${esc(u.cWorkshop)}</small><a href="${CONFIG.workshopMap}" target="_blank" rel="noopener">${esc(u.viewMap)} ↗</a></div>` : ''}
       <div><small>${esc(u.cHours)}</small><b>${esc(pick(CONFIG.hours, lang))}</b></div>
       <div><small>${esc(u.cPhone)}</small><b><bdi dir="ltr">${esc(CONFIG.phoneDisplay)}</bdi></b>${CONFIG.whatsapp ? `<a href="https://wa.me/${CONFIG.whatsapp}" target="_blank" rel="noopener">${esc(u.whatsapp)} ↗</a>` : ''}</div>
+      ${CONFIG.phone2 ? `<div><small>${esc(u.cPhone2)}</small><b><a href="tel:${CONFIG.phone2}"><bdi dir="ltr">${esc(CONFIG.phone2Display)}</bdi></a></b></div>` : ''}
       <div><small>${esc(u.cFollow)}</small>
         ${CONFIG.instagram ? `<a href="https://www.instagram.com/${CONFIG.instagram}/" target="_blank" rel="noopener">Instagram · <bdi dir="ltr">@${esc(CONFIG.instagram)}</bdi></a>` : ''}
         ${CONFIG.tiktok ? `<a href="https://www.tiktok.com/@${CONFIG.tiktok}" target="_blank" rel="noopener">TikTok · <bdi dir="ltr">@${esc(CONFIG.tiktok)}</bdi></a>` : ''}

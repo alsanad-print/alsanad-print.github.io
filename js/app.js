@@ -772,6 +772,8 @@ function openPanel(id) {
     cta += `<a class="btn btn-wa" href="https://wa.me/${CONFIG.whatsapp}?text=${msg}" target="_blank" rel="noopener">${ICONS.whatsapp}<span>${u.whatsapp}</span></a>`;
   }
   const OS = { office: 'logo', print: 'flex,uv', workshop: 'letters,cnc', install: 'letters,box' }[id] || '';
+  const MAP = { office: CONFIG.mapLink, workshop: CONFIG.workshopMap }[id];
+  if (MAP) cta += `<a class="btn" href="${MAP}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.3 7-11.5A7 7 0 0 0 5 9.5C5 14.7 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>${u.viewMap}</span></a>`;
   cta = `<a class="btn btn-gold" href="order/${OS ? '?s=' + OS : ''}">${u.orderFull}</a>` + cta;
   cta += `<button class="btn" data-act="contact">${u.contactBtn}</button>`;
   $('#panelCta').innerHTML = cta;
@@ -1037,9 +1039,11 @@ function renderContact() {
     tt: '<svg viewBox="0 0 24 24"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.5 2.6 2.3 4.4 5 4.8"/></svg>',
   };
   $('#contactBody').innerHTML = `
-    ${row(I.pin, u.cAddress, pick(CONFIG.address, lang), `<a class="ct-link" href="${map}" target="_blank" rel="noopener">${u.cMap} ↗</a>`)}
+    ${row(I.pin, u.cOffice, pick(CONFIG.address, lang), `<a class="ct-link" href="${map}" target="_blank" rel="noopener">${u.cMap} ↗</a>`)}
+    ${CONFIG.workshopMap ? row(I.pin, u.cWorkshop, `<a class="ct-link" href="${CONFIG.workshopMap}" target="_blank" rel="noopener">${u.viewMap} ↗</a>`) : ''}
     ${row(I.clock, u.cHours, pick(CONFIG.hours, lang))}
     ${row(I.phone, u.cPhone, `<bdi dir="ltr">${CONFIG.phoneDisplay}</bdi>`)}
+    ${CONFIG.phone2 ? row(I.phone, u.cPhone2, `<a class="ct-link" href="tel:${CONFIG.phone2}"><bdi dir="ltr">${CONFIG.phone2Display}</bdi></a>`) : ''}
     <div class="ct-actions">
       ${CONFIG.whatsapp ? `<a class="btn btn-wa" href="https://wa.me/${CONFIG.whatsapp}" target="_blank" rel="noopener">${ICONS.whatsapp}<span>${u.whatsapp}</span></a>` : ''}
       ${CONFIG.phone ? `<a class="btn" href="tel:${CONFIG.phone}">${I.phone}<span>${u.cCall}</span></a>` : ''}

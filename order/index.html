@@ -13,6 +13,7 @@
 <meta property="og:description" content="خطوات واضحة، ومعاينة فورية لمشروعك، وإرسال مباشر عبر واتساب.">
 <meta property="og:url" content="https://alsanad-print.github.io/order/">
 <meta property="og:image" content="https://alsanad-print.github.io/assets/og.jpg">
+<link rel="alternate" hreflang="ar" href="https://alsanad-print.github.io/order/">
 <link rel="canonical" href="https://alsanad-print.github.io/order/">
 <link rel="icon" href="../assets/favicon.png">
 <link rel="apple-touch-icon" href="../assets/favicon.png">
@@ -238,14 +239,37 @@ footer a{color:var(--mut);text-decoration:none}
   .wrap{padding-bottom:110px}
 }
 </style>
+<style>
+/* language switch + LTR */
+.lng{display:flex;gap:2px;padding:3px;border-radius:12px;border:1px solid var(--line2);background:rgba(15,34,39,.6)}
+.lng button{border:0;background:none;min-width:38px;height:34px;border-radius:9px;font-weight:800;font-size:13px;color:var(--mut)}
+.lng button[aria-pressed="true"]{background:var(--brand);color:#fff}
+html[dir=ltr] body{font-family:var(--en)}
+html[dir=ltr] .tile .ck{left:auto;right:12px}
+html[dir=ltr] .unit .in-x{padding-left:14px;padding-right:48px;text-align:left}
+html[dir=ltr] .unit em{left:auto;right:14px}
+html[dir=ltr] select.in-x{background-position:calc(100% - 24px) 22px,calc(100% - 18px) 22px;padding-left:14px;padding-right:40px}
+html[dir=ltr] .scene .cap{right:auto;left:12px}
+html[dir=ltr] .steps i::after{transform-origin:left}
+html[dir=ltr] .step{animation-name:inb}
+html[dir=ltr] .step.back{animation-name:in}
+html[lang=ckb] body{font-family:'Noto Kufi Arabic',var(--ar)}
+html[lang=ckb] .hero h1{line-height:1.25}
+.locs{display:flex;flex-wrap:wrap;gap:8px 18px}
+.locs a{display:inline-flex;align-items:center;gap:6px;color:var(--mut);text-decoration:none;font-weight:700}
+.locs a:hover{color:var(--ink)}
+.locs svg{width:16px;height:16px;color:var(--brand-hi)}
+@media (max-width:640px){.lng button{min-width:32px;height:32px}}
+</style>
 </head>
 <body>
 <header class="top">
   <div class="in">
-    <a href="../" aria-label="السند للدعاية والإعلان: الصفحة الرئيسية"><img src="../assets/logo-secondary-white.png" alt="السند للدعاية والإعلان"></a>
+    <a href="../" data-i-aria="homeAria"><img src="../assets/logo-secondary-white.png" alt="السند للدعاية والإعلان"></a>
     <nav>
-      <a class="lnk" href="../"><svg viewBox="0 0 24 24"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg><span>المنظومة التفاعلية</span></a>
-      <a class="lnk" href="https://wa.me/9647742522111" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M3 21l1.7-5A8.5 8.5 0 1 1 8 19.3z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 1c-1-.5-2-1.5-2.5-2.5l1-1-1-2z"/></svg><span>استفسار سريع</span></a>
+      <div class="lng" role="group" aria-label="Language"><button type="button" data-lang="ar">ع</button><button type="button" data-lang="ku">کو</button><button type="button" data-lang="en">EN</button></div>
+      <a class="lnk" href="../"><svg viewBox="0 0 24 24"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg><span data-i="navSys"></span></a>
+      <a class="lnk" href="https://wa.me/9647704992688" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M3 21l1.7-5A8.5 8.5 0 1 1 8 19.3z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 1c-1-.5-2-1.5-2.5-2.5l1-1-1-2z"/></svg><span data-i="navAsk"></span></a>
     </nav>
   </div>
 </header>
@@ -253,50 +277,50 @@ footer a{color:var(--mut);text-decoration:none}
 <section class="hero">
   <div>
     <div class="kick">START YOUR ORDER</div>
-    <h1>قدّم طلبك <em>بخطوات واضحة</em></h1>
-    <p>حدّد الخدمة والمقاس وتفاصيل التنفيذ، وتابع معاينة مشروعك وهي تتشكّل أمامك، ثم أرسل الطلب مكتملاً إلى فريقنا عبر واتساب.</p>
+    <h1><span data-i="h1a"></span><em data-i="h1b"></em></h1>
+    <p data-i="heroP"></p>
   </div>
-  <div class="facts" aria-label="مزايا">
-    <div class="fact"><b>6</b><span>خطوات قصيرة</span></div>
-    <div class="fact"><b>2<small style="font-size:13px"> min</small></b><span>مدة التعبئة تقريباً</span></div>
+  <div class="facts">
+    <div class="fact"><b>6</b><span data-i="fact1"></span></div>
+    <div class="fact"><b>2<small style="font-size:13px"> min</small></b><span data-i="fact2"></span></div>
   </div>
 </section>
 
 <main class="wrap">
-  <section class="panel" aria-label="نموذج الطلب">
+  <section class="panel" data-i-aria="formAria">
     <ol class="steps" id="steps"></ol>
     <div class="stage" id="stage" aria-live="polite"></div>
     <div class="nav">
       <span class="meta" id="meta"></span>
-      <button class="btn" id="back" type="button"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>السابق</button>
-      <button class="btn btn-gold" id="next" type="button">التالي<svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+      <button class="btn" id="back" type="button"><svg viewBox="0 0 24 24" class="fl"><path d="M9 6l6 6-6 6"/></svg><span data-i="back"></span></button>
+      <button class="btn btn-gold" id="next" type="button"><span data-i="next"></span><svg viewBox="0 0 24 24" class="fl"><path d="M15 6l-6 6 6 6"/></svg></button>
     </div>
   </section>
 
   <aside class="side">
-    <div class="panel pv" aria-label="معاينة المشروع">
-      <div class="pv-h"><b>معاينة مشروعك</b><div class="ring" aria-label="جاهزية الطلب"><span id="pct">0%</span><svg viewBox="0 0 44 44" aria-hidden="true"><circle class="t" cx="22" cy="22" r="18"/><circle class="v" id="ringv" cx="22" cy="22" r="18" stroke-dashoffset="113.1"/></svg></div></div>
+    <div class="panel pv">
+      <div class="pv-h"><b data-i="pvTitle"></b><div class="ring"><span id="pct">0%</span><svg viewBox="0 0 44 44" aria-hidden="true"><circle class="t" cx="22" cy="22" r="18"/><circle class="v" id="ringv" cx="22" cy="22" r="18" stroke-dashoffset="113.1"/></svg></div></div>
       <div class="scene" aria-hidden="true">
         <div class="wall"></div><div class="floor"></div>
         <div class="sign" id="sign">
           <svg class="deco v" viewBox="0 0 100 40" preserveAspectRatio="none" style="width:100%;height:100%"><path d="M0 40 L22 0 L34 0 L12 40Z" fill="rgba(255,255,255,.10)" stroke="none"/><path d="M82 0 L100 0 L100 40 L60 40Z" fill="rgba(0,0,0,.12)" stroke="none"/></svg>
           <svg class="deco s" viewBox="0 0 100 40" preserveAspectRatio="none" style="width:100%;height:100%"><circle cx="86" cy="8" r="22" fill="rgba(255,255,255,.08)" stroke="none"/><circle cx="10" cy="38" r="14" fill="rgba(0,0,0,.14)" stroke="none"/></svg>
-          <span class="tx" id="signTx">اسم مشروعك</span>
+          <span class="tx" id="signTx"></span>
         </div>
         <span class="dim w" id="dimW"></span>
         <span class="dim h" id="dimH"></span>
         <span class="person" id="person"><i></i><b style="height:26px"></b></span>
-        <span class="cap" id="cap">معاينة تقريبية للتوضيح</span>
+        <span class="cap" id="cap"></span>
       </div>
       <div class="pv-b">
-        <h3 id="pvName">اسم مشروعك</h3>
-        <p class="sv" id="pvSvc">الخدمات المختارة تظهر هنا</p>
+        <h3 id="pvName"></h3>
+        <p class="sv" id="pvSvc"></p>
         <div class="rows" id="pvRows"></div>
       </div>
     </div>
     <div class="panel help">
       <span class="ic"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span>
-      <p>تحتاج مساعدة في تعبئة الطلب؟<br>تواصل معنا مباشرةً: <a href="tel:+9647704992688">0770 499 2688</a></p>
+      <p><span data-i="helpQ"></span><br><span data-i="helpA"></span> <a href="tel:+9647704992688">0770 499 2688</a></p>
     </div>
   </aside>
 </main>
@@ -304,8 +328,11 @@ footer a{color:var(--mut);text-decoration:none}
 <footer>
   <div class="in">
     <img src="../assets/logo-secondary-white.png" alt="السند للدعاية والإعلان">
-    <span>الموصل – دورة البكر، قرب شركة كيا للسيارات</span>
-    <span>السبت – الخميس، من 9:00 صباحاً إلى 6:00 مساءً</span>
+    <div class="locs">
+      <a href="https://maps.app.goo.gl/BwCGg1EzQn7Desu36" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.3 7-11.5A7 7 0 0 0 5 9.5C5 14.7 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span data-i="locOffice"></span></a>
+      <a href="https://maps.app.goo.gl/wxozGYMZJs7YvLGY8" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.3 7-11.5A7 7 0 0 0 5 9.5C5 14.7 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span data-i="locWorkshop"></span></a>
+    </div>
+    <span data-i="hours"></span>
     <span class="en"><a href="tel:+9647742522111">0774 252 2111</a> · <a href="tel:+9647704992688">0770 499 2688</a></span>
     <a class="en" href="https://www.instagram.com/alsanad_print/" target="_blank" rel="noopener">@alsanad_print</a>
   </div>
@@ -316,9 +343,127 @@ footer a{color:var(--mut);text-decoration:none}
 <script>
 (() => {
 'use strict';
-const WA = '9647742522111';
+const WA = '9647742522111'; // all orders go to the main number
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+/* ---------------------------------------------------------------- i18n */
+const LANGS = { ar: { dir: 'rtl', html: 'ar' }, ku: { dir: 'rtl', html: 'ckb' }, en: { dir: 'ltr', html: 'en' } };
+const T = {
+  ar: {
+    title: 'تقديم طلب خدمة | السند للدعاية والإعلان', homeAria: 'السند للدعاية والإعلان: الصفحة الرئيسية', formAria: 'نموذج الطلب',
+    navSys: 'المنظومة التفاعلية', navAsk: 'استفسار سريع',
+    h1a: 'قدّم طلبك ', h1b: 'بخطوات واضحة',
+    heroP: 'حدّد الخدمة والمقاس وتفاصيل التنفيذ، وتابع معاينة مشروعك وهي تتشكّل أمامك، ثم أرسل الطلب مكتملاً إلى فريقنا عبر واتساب.',
+    fact1: 'خطوات قصيرة', fact2: 'مدة التعبئة تقريباً', back: 'السابق', next: 'التالي',
+    steps: ['الخدمة', 'المشروع', 'المقاس والتنفيذ', 'الطابع البصري', 'الموعد', 'التواصل والإرسال'],
+    stepAria: (i, t) => `الخطوة ${i}: ${t}`,
+    s0h: 'ما الخدمة التي تحتاجها؟', s0p: 'اختر خدمة واحدة أو أكثر، ويمكنك تعديل اختيارك لاحقاً.',
+    s1h: 'عرّفنا بمشروعك', s1p: 'هذه المعلومات تساعد المصمم على فهم طبيعة العمل منذ البداية.',
+    name: 'اسم المشروع أو الشركة', namePh: 'مثال: مطعم الضيافة', field: 'مجال النشاط', fieldPh: 'مثال: مطاعم، أزياء، صيدلية',
+    kind: 'نوع الطلب', txt: 'النص النهائي كما تريده أن يظهر', txtPh: 'اكتب النص بدقة لتجنّب أي خطأ إملائي في التنفيذ',
+    s2h: 'المقاس وتفاصيل التنفيذ', s2p: 'المقاس الفعلي أساس دقة التنفيذ. إن لم يكن متوفراً، نتواصل معك لتأكيده.',
+    size: 'المقاس الفعلي (العرض × الارتفاع)', w: 'العرض', h: 'الارتفاع', cm: 'سم', unknown: 'لا أعرف المقاس حالياً',
+    img: 'صورة الموقع', inst: 'التركيب', gov: 'المحافظة', area: 'المنطقة', areaPh: 'مثال: الدواسة',
+    s3h: 'الطابع البصري', s3p: 'اختر الأسلوب واللون، وتابع المعاينة وهي تتغيّر مع اختيارك.',
+    style: 'الأسلوب', colsrc: 'مصدر الألوان', color: 'اللون المفضّل', otherColor: 'لون آخر', ref: 'أمثلة أو مراجع تعجبك', refPh: 'رابط حساب، أو وصف مختصر',
+    s4h: 'موعد الاستلام', s4p: 'يساعدنا الموعد على جدولة الإنتاج وإعلامك مسبقاً بإمكانية الالتزام به.',
+    date: 'التاريخ المطلوب', urg: 'درجة الاستعجال', urgNote: 'الطلبات المستعجلة والطارئة تخضع لتأكيد الفريق حسب جدول الإنتاج ونوع العمل.',
+    s5h: 'بيانات التواصل والإرسال', s5p: 'راجع طلبك، ثم أرسله. هذه البيانات لا تُحفظ لدى أي جهة، وتظهر فقط في الرسالة التي ترسلها أنت.',
+    who: 'الاسم', whoPh: 'الاسم الكامل', phone: 'رقم الهاتف', via: 'وسيلة التواصل المفضّلة', when: 'الوقت المناسب للتواصل', whenPh: 'مثال: بعد الساعة 4 عصراً',
+    send: 'إرسال الطلب عبر واتساب', copy: 'نسخ الطلب', reset: 'بدء طلب جديد',
+    sendHint: 'يفتح الزر محادثة واتساب والرسالة مكتوبة مسبقاً، ولا يتطلب منك سوى الضغط على «إرسال». يمكنك بعدها إرفاق صور الموقع في المحادثة نفسها.',
+    opt: 'اختياري', edit: 'تعديل', empty: 'لم تُضف تفاصيل بعد.',
+    needSvc: 'اختر خدمة واحدة على الأقل', needName: 'أدخل اسم المشروع', needKind: 'حدّد نوع الطلب', needWho: 'أدخل الاسم', needPhone: 'أدخل رقم هاتف صحيحاً',
+    enterHint: '<kbd>Enter</kbd> للانتقال إلى الخطوة التالية', copied: 'تم نسخ الطلب', copyFail: 'تعذّر النسخ', confirmReset: 'هل تريد بدء طلب جديد؟ ستُمسح البيانات الحالية.',
+    pvTitle: 'معاينة مشروعك', pvName: 'اسم مشروعك', pvSvc: 'الخدمات المختارة تظهر هنا', cap: 'معاينة تقريبية للتوضيح', human: 'المقياس البشري: 170 سم',
+    rSize: 'المقاس', rInst: 'التركيب', rStyle: 'الأسلوب', rDate: 'الموعد', sizeUnknown: 'غير معروف، يُؤكَّد لاحقاً',
+    helpQ: 'تحتاج مساعدة في تعبئة الطلب؟', helpA: 'تواصل معنا مباشرةً:',
+    locOffice: 'موقع المكتب الرئيسي', locWorkshop: 'موقع المعمل', hours: 'السبت – الخميس، من 9:00 صباحاً إلى 6:00 مساءً',
+  },
+  en: {
+    title: 'Place a service order | Al-Sanad Advertising', homeAria: 'Al-Sanad Advertising: home', formAria: 'Order form',
+    navSys: 'Interactive view', navAsk: 'Quick question',
+    h1a: 'Place your order ', h1b: 'in clear steps',
+    heroP: 'Choose the service, size and execution details, watch a live preview of your project take shape, then send the complete order to our team on WhatsApp.',
+    fact1: 'short steps', fact2: 'to complete', back: 'Back', next: 'Next',
+    steps: ['Service', 'Project', 'Size & execution', 'Visual style', 'Timing', 'Contact & send'],
+    stepAria: (i, t) => `Step ${i}: ${t}`,
+    s0h: 'Which service do you need?', s0p: 'Choose one or more services. You can change your selection later.',
+    s1h: 'Tell us about your project', s1p: 'This helps our designer understand the nature of the work from the start.',
+    name: 'Project or company name', namePh: 'e.g. Al-Diyafa Restaurant', field: 'Business sector', fieldPh: 'e.g. restaurants, fashion, pharmacy',
+    kind: 'Request type', txt: 'Final text exactly as it should appear', txtPh: 'Type the text precisely to avoid any spelling errors in production',
+    s2h: 'Size & execution details', s2p: 'The actual size is the basis of accurate production. If you don\'t have it, we will contact you to confirm it.',
+    size: 'Actual size (width × height)', w: 'Width', h: 'Height', cm: 'cm', unknown: 'I don\'t know the size yet',
+    img: 'Site photo', inst: 'Installation', gov: 'Governorate', area: 'Area', areaPh: 'e.g. Al-Dawasa',
+    s3h: 'Visual style', s3p: 'Choose a style and color, and watch the preview change with your choices.',
+    style: 'Style', colsrc: 'Color source', color: 'Preferred color', otherColor: 'Other color', ref: 'Examples or references you like', refPh: 'An account link or a short description',
+    s4h: 'Delivery date', s4p: 'The date helps us schedule production and tell you in advance whether it can be met.',
+    date: 'Requested date', urg: 'Urgency', urgNote: 'Urgent and emergency orders are subject to team confirmation based on the production schedule and type of work.',
+    s5h: 'Contact details & sending', s5p: 'Review your order, then send it. These details are not stored anywhere; they only appear in the message you send.',
+    who: 'Name', whoPh: 'Full name', phone: 'Phone number', via: 'Preferred contact method', when: 'Best time to contact you', whenPh: 'e.g. after 4 PM',
+    send: 'Send order via WhatsApp', copy: 'Copy order', reset: 'Start a new order',
+    sendHint: 'The button opens a WhatsApp chat with the message already written. Just press "Send". You can then attach site photos in the same chat.',
+    opt: 'optional', edit: 'Edit', empty: 'No details added yet.',
+    needSvc: 'Choose at least one service', needName: 'Enter the project name', needKind: 'Select the request type', needWho: 'Enter your name', needPhone: 'Enter a valid phone number',
+    enterHint: '<kbd>Enter</kbd> to go to the next step', copied: 'Order copied', copyFail: 'Could not copy', confirmReset: 'Start a new order? Current details will be cleared.',
+    pvTitle: 'Project preview', pvName: 'Your project', pvSvc: 'Selected services appear here', cap: 'Approximate preview', human: 'Human scale: 170 cm',
+    rSize: 'Size', rInst: 'Installation', rStyle: 'Style', rDate: 'Timing', sizeUnknown: 'Unknown, to be confirmed',
+    helpQ: 'Need help filling in the order?', helpA: 'Contact us directly:',
+    locOffice: 'Head office location', locWorkshop: 'Workshop location', hours: 'Saturday – Thursday, 9:00 AM – 6:00 PM',
+  },
+  ku: {
+    title: 'پێشکەشکردنی داواکاری | سەنەد بۆ ڕیکلام و ڕاگەیاندن', homeAria: 'سەنەد بۆ ڕیکلام و ڕاگەیاندن: پەڕەی سەرەکی', formAria: 'فۆرمی داواکاری',
+    navSys: 'پیشاندانی کارلێک', navAsk: 'پرسیاری خێرا',
+    h1a: 'داواکارییەکەت پێشکەش بکە ', h1b: 'بە هەنگاوی ڕوون',
+    heroP: 'خزمەتگوزاری و قەبارە و وردەکارییەکانی جێبەجێکردن دیاری بکە، پێشبینینی ڕاستەوخۆی پڕۆژەکەت ببینە، پاشان داواکارییە تەواوەکە لە ڕێگەی واتسئاپەوە بۆ تیمەکەمان بنێرە.',
+    fact1: 'هەنگاوی کورت', fact2: 'بۆ پڕکردنەوە', back: 'پێشوو', next: 'دواتر',
+    steps: ['خزمەتگوزاری', 'پڕۆژە', 'قەبارە و جێبەجێکردن', 'شێوازی بینراو', 'کات', 'پەیوەندی و ناردن'],
+    stepAria: (i, t) => `هەنگاوی ${i}: ${t}`,
+    s0h: 'پێویستت بە چ خزمەتگوزارییەکە؟', s0p: 'یەک یان چەند خزمەتگوزارییەک هەڵبژێرە، دواتر دەتوانیت هەڵبژاردنەکەت بگۆڕیت.',
+    s1h: 'پڕۆژەکەتمان پێ بناسێنە', s1p: 'ئەم زانیارییانە یارمەتی دیزاینەر دەدەن لە سەرەتاوە سروشتی کارەکە تێبگات.',
+    name: 'ناوی پڕۆژە یان کۆمپانیا', namePh: 'نموونە: چێشتخانەی میوانداری', field: 'بواری کار', fieldPh: 'نموونە: چێشتخانە، جلوبەرگ، دەرمانخانە',
+    kind: 'جۆری داواکاری', txt: 'دەقی کۆتایی وەک دەتەوێت دەربکەوێت', txtPh: 'دەقەکە بە وردی بنووسە بۆ دوورکەوتنەوە لە هەڵەی ڕێنووس',
+    s2h: 'قەبارە و وردەکارییەکانی جێبەجێکردن', s2p: 'قەبارەی ڕاستەقینە بنەمای وردیی جێبەجێکردنە. ئەگەر لەبەردەستت نییە، پەیوەندیت پێوە دەکەین بۆ دڵنیابوونەوە.',
+    size: 'قەبارەی ڕاستەقینە (پانی × بەرزی)', w: 'پانی', h: 'بەرزی', cm: 'سم', unknown: 'ئێستا قەبارەکە نازانم',
+    img: 'وێنەی شوێن', inst: 'دامەزراندن', gov: 'پارێزگا', area: 'ناوچە', areaPh: 'نموونە: دەواسە',
+    s3h: 'شێوازی بینراو', s3p: 'شێواز و ڕەنگ هەڵبژێرە و سەیری گۆڕانی پێشبینینەکە بکە.',
+    style: 'شێواز', colsrc: 'سەرچاوەی ڕەنگەکان', color: 'ڕەنگی دڵخواز', otherColor: 'ڕەنگێکی تر', ref: 'نموونە یان سەرچاوەی دڵخواز', refPh: 'بەستەری هەژمار، یان وەسفێکی کورت',
+    s4h: 'کاتی وەرگرتن', s4p: 'کاتەکە یارمەتیمان دەدات بەرهەمهێنان ڕێک بخەین و پێشوەخت ئاگادارت بکەینەوە.',
+    date: 'بەرواری داواکراو', urg: 'ئاستی پەلەکردن', urgNote: 'داواکارییە بەپەلەکان بە پێی خشتەی بەرهەمهێنان و جۆری کار پێویستیان بە پشتڕاستکردنەوەی تیم هەیە.',
+    s5h: 'زانیاریی پەیوەندی و ناردن', s5p: 'داواکارییەکەت پێدابچۆرەوە و بینێرە. ئەم زانیارییانە لە هیچ شوێنێک هەڵناگیرێن و تەنها لە نامەکەتدا دەردەکەون.',
+    who: 'ناو', whoPh: 'ناوی تەواو', phone: 'ژمارەی تەلەفۆن', via: 'ڕێگای پەیوەندیی دڵخواز', when: 'کاتی گونجاو بۆ پەیوەندی', whenPh: 'نموونە: دوای کاتژمێر 4ی ئێوارە',
+    send: 'ناردنی داواکاری بە واتسئاپ', copy: 'کۆپیکردنی داواکاری', reset: 'داواکارییەکی نوێ',
+    sendHint: 'دوگمەکە گفتوگۆی واتسئاپ دەکاتەوە و نامەکە ئامادەیە، تەنها «ناردن» دابگرە. دواتر دەتوانیت وێنەی شوێنەکە لە هەمان گفتوگۆدا بنێریت.',
+    opt: 'ئارەزوومەندانە', edit: 'دەستکاری', empty: 'هێشتا هیچ وردەکارییەک زیاد نەکراوە.',
+    needSvc: 'لانیکەم یەک خزمەتگوزاری هەڵبژێرە', needName: 'ناوی پڕۆژە بنووسە', needKind: 'جۆری داواکاری دیاری بکە', needWho: 'ناوەکەت بنووسە', needPhone: 'ژمارەی تەلەفۆنێکی دروست بنووسە',
+    enterHint: '<kbd>Enter</kbd> بۆ چوونە هەنگاوی دواتر', copied: 'داواکارییەکە کۆپی کرا', copyFail: 'کۆپیکردن سەرکەوتوو نەبوو', confirmReset: 'داواکارییەکی نوێ دەست پێ بکەیت؟ زانیارییەکانی ئێستا دەسڕدرێنەوە.',
+    pvTitle: 'پێشبینینی پڕۆژەکەت', pvName: 'ناوی پڕۆژەکەت', pvSvc: 'خزمەتگوزارییە هەڵبژێردراوەکان لێرە دەردەکەون', cap: 'پێشبینینی نزیکەیی', human: 'پێوەری مرۆڤ: 170 سم',
+    rSize: 'قەبارە', rInst: 'دامەزراندن', rStyle: 'شێواز', rDate: 'کات', sizeUnknown: 'نەزانراوە، دواتر پشتڕاست دەکرێتەوە',
+    helpQ: 'یارمەتیت دەوێت بۆ پڕکردنەوەی داواکاری؟', helpA: 'ڕاستەوخۆ پەیوەندیمان پێوە بکە:',
+    locOffice: 'شوێنی نووسینگەی سەرەکی', locWorkshop: 'شوێنی کارگە', hours: 'شەممە – پێنجشەممە، 9:00ی بەیانی تا 6:00ی ئێوارە',
+  },
+};
+/* canonical option values stay Arabic (for the message the team reads); OPT translates labels only */
+const OPT = {
+  'تصميم جديد': ['New design', 'دیزاینی نوێ'], 'ملف جاهز من الشركة الأم': ['Ready file from the parent company', 'فایلی ئامادە لە کۆمپانیای دایک'], 'تعديل على تصميم قائم': ['Edit an existing design', 'دەستکاریی دیزاینێکی هەبوو'],
+  'متوفرة، سأرسلها': ['Available, I\'ll send it', 'هەیە، دەینێرم'], 'غير متوفرة': ['Not available', 'نییە'],
+  'مع التركيب': ['With installation', 'لەگەڵ دامەزراندن'], 'بدون تركيب': ['Without installation', 'بێ دامەزراندن'], 'غير محدد': ['Not decided', 'دیاری نەکراوە'],
+  'سريالي مختلف': ['Surreal & distinctive', 'سوریالی و جیاواز'], 'تايبوغرافي حديث': ['Modern typographic', 'تایپۆگرافیی نوێ'], 'فيكتور نظيف': ['Clean vector', 'ڤێکتەری پاک'],
+  'دمج بين الأساليب': ['A mix of styles', 'تێکەڵەیەک لە شێوازەکان'], 'أترك الاقتراح لفريق السند': ['Let the Al-Sanad team suggest', 'با تیمی سەنەد پێشنیار بکات'],
+  'دليل هوية شركتنا (CMYK أو Pantone)': ['Our brand guide (CMYK or Pantone)', 'ڕێبەری ناسنامەی کۆمپانیاکەمان (CMYK یان Pantone)'], 'ألوان أحددها بنفسي': ['Colors I choose myself', 'ڕەنگەکان خۆم دیاری دەکەم'],
+  'اعتيادي': ['Standard', 'ئاسایی'], 'مستعجل': ['Urgent', 'بەپەلە'], 'طارئ': ['Emergency', 'زۆر بەپەلە'],
+  'واتساب': ['WhatsApp', 'واتسئاپ'], 'اتصال هاتفي': ['Phone call', 'پەیوەندیی تەلەفۆنی'],
+  'أخضر السند': ['Al-Sanad green', 'سەوزی سەنەد'], 'ذهبي': ['Gold', 'زێڕین'], 'داكن': ['Dark', 'تۆخ'], 'أحمر': ['Red', 'سوور'], 'أزرق': ['Blue', 'شین'], 'أبيض': ['White', 'سپی'],
+  'نينوى': ['Nineveh', 'نەینەوا'], 'بغداد': ['Baghdad', 'بەغدا'], 'أربيل': ['Erbil', 'هەولێر'], 'دهوك': ['Duhok', 'دهۆک'], 'السليمانية': ['Sulaymaniyah', 'سلێمانی'], 'حلبجة': ['Halabja', 'هەڵەبجە'],
+  'كركوك': ['Kirkuk', 'کەرکووک'], 'صلاح الدين': ['Salah al-Din', 'سەلاحەدین'], 'الأنبار': ['Anbar', 'ئەنبار'], 'ديالى': ['Diyala', 'دیالە'], 'واسط': ['Wasit', 'واسیت'], 'بابل': ['Babil', 'بابل'],
+  'كربلاء': ['Karbala', 'کەربەلا'], 'النجف': ['Najaf', 'نەجەف'], 'القادسية': ['Al-Qadisiyyah', 'قادسیە'], 'المثنى': ['Al-Muthanna', 'موسەننا'], 'ذي قار': ['Dhi Qar', 'زیقار'], 'ميسان': ['Maysan', 'میسان'], 'البصرة': ['Basra', 'بەسرە'],
+};
+let lang = 'ar';
+try { const l = new URLSearchParams(location.search).get('lang') || localStorage.getItem('alsanad-lang'); if (T[l]) lang = l; } catch (e) {}
+const t = k => T[lang][k] ?? T.ar[k];
+const L = v => lang === 'ar' || !OPT[v] ? v : OPT[v][lang === 'en' ? 0 : 1];
+
 const I = {
   flex: '<path d="M3 5h18v11H3z"/><path d="M7 20h10M12 16v4"/>',
   uv: '<path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M6 14h12v7H6z"/>',
@@ -338,15 +483,15 @@ const I = {
 const ico = k => `<svg viewBox="0 0 24 24" aria-hidden="true">${I[k]}</svg>`;
 
 const SERVICES = [
-  { id: 'flex', t: 'الطباعة الرقمية', d: 'فلكس، ستيكر، شفاف، ميش' },
-  { id: 'uv', t: 'طباعة UV', d: 'رول ومسطّحة على الألواح' },
-  { id: 'letters', t: 'الحروف البارزة والضوئية', d: 'تصنيع وتركيب' },
-  { id: 'box', t: 'الصناديق الضوئية', d: 'بوكسات إعلانية بإنارة' },
-  { id: 'stand', t: 'منصّات العرض', d: 'ستاندات للمنتجات' },
-  { id: 'cnc', t: 'قصّ CNC', d: 'أكريليك، خشب، فوم' },
-  { id: 'logo', t: 'الشعار والهوية البصرية', d: 'تصميم متكامل' },
-  { id: 'prints', t: 'المطبوعات التجارية', d: 'بطاقات، إيصالات، بروشورات' },
-  { id: 'other', t: 'خدمة أخرى', d: 'نوضّحها في التفاصيل' },
+  { id: 'flex', ar: ['الطباعة الرقمية', 'فلكس، ستيكر، شفاف، ميش'], en: ['Digital printing', 'Flex, sticker, clear, mesh'], ku: ['چاپی دیجیتاڵ', 'فلێکس، ستیکەر، شەفاف، مێش'] },
+  { id: 'uv', ar: ['طباعة UV', 'رول ومسطّحة على الألواح'], en: ['UV printing', 'Roll and flatbed on boards'], ku: ['چاپی UV', 'ڕۆڵ و تەخت لەسەر تەختە'] },
+  { id: 'letters', ar: ['الحروف البارزة والضوئية', 'تصنيع وتركيب'], en: ['3D & illuminated letters', 'Fabrication and installation'], ku: ['پیتی بەرجەستە و ڕووناک', 'دروستکردن و دامەزراندن'] },
+  { id: 'box', ar: ['الصناديق الضوئية', 'بوكسات إعلانية بإنارة'], en: ['Light boxes', 'Illuminated sign boxes'], ku: ['بۆکسی ڕووناک', 'بۆکسی ڕیکلامی بە ڕووناکی'] },
+  { id: 'stand', ar: ['منصّات العرض', 'ستاندات للمنتجات'], en: ['Display stands', 'Product stands'], ku: ['ستاندی پیشاندان', 'ستاند بۆ بەرهەمەکان'] },
+  { id: 'cnc', ar: ['قصّ CNC', 'أكريليك، خشب، فوم'], en: ['CNC cutting', 'Acrylic, wood, foam'], ku: ['بڕینی CNC', 'ئەکرێلیک، دار، فۆم'] },
+  { id: 'logo', ar: ['الشعار والهوية البصرية', 'تصميم متكامل'], en: ['Logo & visual identity', 'Complete design'], ku: ['لۆگۆ و ناسنامەی بینراو', 'دیزاینی تەواو'] },
+  { id: 'prints', ar: ['المطبوعات التجارية', 'بطاقات، إيصالات، بروشورات'], en: ['Commercial print', 'Cards, receipts, brochures'], ku: ['چاپەمەنی بازرگانی', 'کارت، پسوولە، بڕۆشوور'] },
+  { id: 'other', ar: ['خدمة أخرى', 'نوضّحها في التفاصيل'], en: ['Other service', 'We\'ll clarify it in the details'], ku: ['خزمەتگوزاریی تر', 'لە وردەکارییەکاندا ڕوونی دەکەینەوە'] },
 ];
 const SVC = Object.fromEntries(SERVICES.map(s => [s.id, s]));
 const KINDS = ['تصميم جديد', 'ملف جاهز من الشركة الأم', 'تعديل على تصميم قائم'];
@@ -357,107 +502,114 @@ const STYLES = [
 const COLSRC = ['دليل هوية شركتنا (CMYK أو Pantone)', 'ألوان أحددها بنفسي', 'أترك الاقتراح لفريق السند'];
 const SWATCH = [['أخضر السند', '#22967F'], ['ذهبي', '#F5C64F'], ['داكن', '#0D1F2A'], ['أحمر', '#C0392B'], ['أزرق', '#1F5FAF'], ['أبيض', '#F2F6F5']];
 const GOV = ['نينوى', 'بغداد', 'أربيل', 'دهوك', 'السليمانية', 'حلبجة', 'كركوك', 'صلاح الدين', 'الأنبار', 'ديالى', 'واسط', 'بابل', 'كربلاء', 'النجف', 'القادسية', 'المثنى', 'ذي قار', 'ميسان', 'البصرة'];
-const STEPS = ['الخدمة', 'المشروع', 'المقاس والتنفيذ', 'الطابع البصري', 'الموعد', 'التواصل والإرسال'];
+const EXTRA = {
+  stand: ['المنتج المعروض وعدد الرفوف', 'Product displayed and number of shelves', 'بەرهەمی پیشاندراو و ژمارەی ڕەفەکان'],
+  light: ['لون الإنارة المطلوب وعدد القطع', 'Lighting color and number of pieces', 'ڕەنگی ڕووناکی و ژمارەی پارچەکان'],
+  file: ['صيغة الملف (CDR أو PDF) وهل يُسمح بالتعديل عليه؟', 'File format (CDR or PDF) and may it be edited?', 'جۆری فایل (CDR یان PDF) و ئایا دەستکاریکردنی ڕێگەپێدراوە؟'],
+  prints: ['الكمية ونوع الورق والطباعة على وجه أو وجهين', 'Quantity, paper type, single or double sided', 'ژمارە، جۆری کاغەز، چاپی یەک ڕوو یان دوو ڕوو'],
+};
+const NSTEPS = 6;
 
 const blank = () => ({ svc: [], name: '', field: '', kind: '', txt: '', w: '', h: '', unknown: false, extra: '', img: '', inst: '', gov: 'نينوى', area: '', style: '', colsrc: '', color: '', ref: '', date: '', urg: '', who: '', phone: '', via: '', when: '' });
 let A = blank(), st = 0, dir = 1;
 const KEY = 'alsanad-order-draft';
-try { const d = JSON.parse(localStorage.getItem(KEY) || 'null'); if (d && d.A) { A = Object.assign(blank(), d.A); st = Math.min(d.st | 0, STEPS.length - 1); } } catch (e) {}
-// preselect from main site: /order/?s=uv,letters
-try {
-  const q = new URLSearchParams(location.search).get('s');
-  if (q) { q.split(',').filter(id => SVC[id]).forEach(id => { if (!A.svc.includes(id)) A.svc.push(id); }); }
-} catch (e) {}
+try { const d = JSON.parse(localStorage.getItem(KEY) || 'null'); if (d && d.A) { A = Object.assign(blank(), d.A); st = Math.min(d.st | 0, NSTEPS - 1); } } catch (e) {}
+try { const q = new URLSearchParams(location.search).get('s'); if (q) q.split(',').filter(id => SVC[id]).forEach(id => { if (!A.svc.includes(id)) A.svc.push(id); }); } catch (e) {}
 let saveT;
 const save = () => { clearTimeout(saveT); saveT = setTimeout(() => { try { localStorage.setItem(KEY, JSON.stringify({ A, st })); } catch (e) {} }, 250); };
 
 const has = (...ids) => ids.some(id => A.svc.includes(id));
 const pressed = b => `aria-pressed="${b ? 'true' : 'false'}"`;
-const chips = (k, list) => `<div class="chips" role="group">${list.map(v => `<button type="button" class="chip" data-k="${k}" data-v="${esc(v)}" ${pressed(A[k] === v)}>${esc(v)}</button>`).join('')}</div>`;
-const seg = (k, list) => `<div class="seg" role="group">${list.map(v => `<button type="button" data-k="${k}" data-v="${esc(v)}" ${pressed(A[k] === v)}>${esc(v)}</button>`).join('')}</div>`;
-const field = (k, label, { ph = '', type = 'text', opt = false, attrs = '' } = {}) =>
-  `<div class="f"><label for="f-${k}">${label}${opt ? ' <span class="opt">(اختياري)</span>' : ''}</label><input class="in-x" id="f-${k}" data-f="${k}" type="${type}" value="${esc(A[k])}" placeholder="${esc(ph)}" ${attrs}></div>`;
-
-function extraLabel() {
-  if (has('stand')) return 'المنتج المعروض وعدد الرفوف';
-  if (has('letters', 'box')) return 'لون الإنارة المطلوب وعدد القطع';
-  if (A.kind === KINDS[1]) return 'صيغة الملف (CDR أو PDF) وهل يُسمح بالتعديل عليه؟';
-  if (has('prints')) return 'الكمية ونوع الورق والطباعة على وجه أو وجهين';
+const opt = () => ` <span class="opt">(${t('opt')})</span>`;
+const chips = (k, list) => `<div class="chips" role="group">${list.map(v => `<button type="button" class="chip" data-k="${k}" data-v="${esc(v)}" ${pressed(A[k] === v)}>${esc(L(v))}</button>`).join('')}</div>`;
+const seg = (k, list) => `<div class="seg" role="group">${list.map(v => `<button type="button" data-k="${k}" data-v="${esc(v)}" ${pressed(A[k] === v)}>${esc(L(v))}</button>`).join('')}</div>`;
+const field = (k, label, { ph = '', type = 'text', optional = false, attrs = '' } = {}) =>
+  `<div class="f"><label for="f-${k}">${label}${optional ? opt() : ''}</label><input class="in-x" id="f-${k}" data-f="${k}" type="${type}" value="${esc(A[k])}" placeholder="${esc(ph)}" ${attrs}></div>`;
+const li = lang === 'ar' ? 0 : lang === 'en' ? 1 : 2;
+function extraKey() {
+  if (has('stand')) return 'stand';
+  if (has('letters', 'box')) return 'light';
+  if (A.kind === KINDS[1]) return 'file';
+  if (has('prints')) return 'prints';
   return '';
 }
 
 function stepHtml() {
-  const n = `<div class="no">0${st + 1} / 0${STEPS.length}</div>`;
+  const n = `<div class="no">0${st + 1} / 0${NSTEPS}</div>`;
   switch (st) {
-    case 0: return `${n}<h2>ما الخدمة التي تحتاجها؟</h2><p class="lead">اختر خدمة واحدة أو أكثر، ويمكنك تعديل اختيارك لاحقاً.</p>
-      <div class="tiles">${SERVICES.map(s => `<button type="button" class="tile" data-svc="${s.id}" ${pressed(A.svc.includes(s.id))}><span class="ck">${ico('check')}</span><span class="ic">${ico(s.id)}</span><b>${s.t}</b><small>${s.d}</small></button>`).join('')}</div>`;
-    case 1: return `${n}<h2>عرّفنا بمشروعك</h2><p class="lead">هذه المعلومات تساعد المصمم على فهم طبيعة العمل منذ البداية.</p>
-      <div class="grid2">${field('name', 'اسم المشروع أو الشركة', { ph: 'مثال: مطعم الضيافة' })}${field('field', 'مجال النشاط', { ph: 'مثال: مطاعم، أزياء، صيدلية', opt: true })}</div>
-      <div class="f"><span class="lb">نوع الطلب</span>${chips('kind', KINDS)}</div>
-      <div class="f"><label for="f-txt">النص النهائي كما تريده أن يظهر <span class="opt">(اختياري)</span></label><textarea class="in-x" id="f-txt" data-f="txt" rows="3" placeholder="اكتب النص بدقة لتجنّب أي خطأ إملائي في التنفيذ">${esc(A.txt)}</textarea></div>`;
+    case 0: return `${n}<h2>${t('s0h')}</h2><p class="lead">${t('s0p')}</p>
+      <div class="tiles">${SERVICES.map(s => `<button type="button" class="tile" data-svc="${s.id}" ${pressed(A.svc.includes(s.id))}><span class="ck">${ico('check')}</span><span class="ic">${ico(s.id)}</span><b>${s[lang][0]}</b><small>${s[lang][1]}</small></button>`).join('')}</div>`;
+    case 1: return `${n}<h2>${t('s1h')}</h2><p class="lead">${t('s1p')}</p>
+      <div class="grid2">${field('name', t('name'), { ph: t('namePh') })}${field('field', t('field'), { ph: t('fieldPh'), optional: true })}</div>
+      <div class="f"><span class="lb">${t('kind')}</span>${chips('kind', KINDS)}</div>
+      <div class="f"><label for="f-txt">${t('txt')}${opt()}</label><textarea class="in-x" id="f-txt" data-f="txt" rows="3" placeholder="${esc(t('txtPh'))}">${esc(A.txt)}</textarea></div>`;
     case 2: {
-      const ex = extraLabel();
-      return `${n}<h2>المقاس وتفاصيل التنفيذ</h2><p class="lead">المقاس الفعلي أساس دقة التنفيذ. إن لم يكن متوفراً، نتواصل معك لتأكيده.</p>
-      <div class="f"><span class="lb">المقاس الفعلي (العرض × الارتفاع)</span>
-        <div class="size"><div class="unit"><input class="in-x" data-f="w" inputmode="decimal" aria-label="العرض بالسنتيمتر" placeholder="العرض" value="${esc(A.w)}" ${A.unknown ? 'disabled' : ''}><em>سم</em></div><span class="x">×</span><div class="unit"><input class="in-x" data-f="h" inputmode="decimal" aria-label="الارتفاع بالسنتيمتر" placeholder="الارتفاع" value="${esc(A.h)}" ${A.unknown ? 'disabled' : ''}><em>سم</em></div></div>
-        <div class="chips" style="margin-top:4px"><button type="button" class="chip" data-toggle="unknown" ${pressed(A.unknown)}>لا أعرف المقاس حالياً</button></div>
+      const ek = extraKey();
+      const li2 = lang === 'ar' ? 0 : lang === 'en' ? 1 : 2;
+      return `${n}<h2>${t('s2h')}</h2><p class="lead">${t('s2p')}</p>
+      <div class="f"><span class="lb">${t('size')}</span>
+        <div class="size"><div class="unit"><input class="in-x" data-f="w" inputmode="decimal" aria-label="${t('w')}" placeholder="${t('w')}" value="${esc(A.w)}" ${A.unknown ? 'disabled' : ''}><em>${t('cm')}</em></div><span class="x">×</span><div class="unit"><input class="in-x" data-f="h" inputmode="decimal" aria-label="${t('h')}" placeholder="${t('h')}" value="${esc(A.h)}" ${A.unknown ? 'disabled' : ''}><em>${t('cm')}</em></div></div>
+        <div class="chips" style="margin-top:4px"><button type="button" class="chip" data-toggle="unknown" ${pressed(A.unknown)}>${t('unknown')}</button></div>
       </div>
-      ${ex ? field('extra', ex, { opt: true }) : ''}
+      ${ek ? field('extra', EXTRA[ek][li2], { optional: true }) : ''}
       <div class="grid2">
-        <div class="f"><span class="lb">صورة الموقع</span>${seg('img', ['متوفرة، سأرسلها', 'غير متوفرة'])}</div>
-        <div class="f"><span class="lb">التركيب</span>${seg('inst', ['مع التركيب', 'بدون تركيب', 'غير محدد'])}</div>
+        <div class="f"><span class="lb">${t('img')}</span>${seg('img', ['متوفرة، سأرسلها', 'غير متوفرة'])}</div>
+        <div class="f"><span class="lb">${t('inst')}</span>${seg('inst', ['مع التركيب', 'بدون تركيب', 'غير محدد'])}</div>
       </div>
       <div class="grid2">
-        <div class="f"><label for="f-gov">المحافظة</label><select class="in-x" id="f-gov" data-f="gov">${GOV.map(g => `<option ${A.gov === g ? 'selected' : ''}>${g}</option>`).join('')}</select></div>
-        ${field('area', 'المنطقة', { ph: 'مثال: الدواسة', opt: true })}
+        <div class="f"><label for="f-gov">${t('gov')}</label><select class="in-x" id="f-gov" data-f="gov">${GOV.map(g => `<option value="${g}" ${A.gov === g ? 'selected' : ''}>${L(g)}</option>`).join('')}</select></div>
+        ${field('area', t('area'), { ph: t('areaPh'), optional: true })}
       </div>`;
     }
-    case 3: return `${n}<h2>الطابع البصري</h2><p class="lead">اختر الأسلوب واللون، وتابع المعاينة وهي تتغيّر مع اختيارك.</p>
-      <div class="f"><span class="lb">الأسلوب</span>${chips('style', STYLES.map(s => s.v))}</div>
-      <div class="f"><span class="lb">مصدر الألوان</span>${chips('colsrc', COLSRC)}</div>
-      <div class="f"><span class="lb">اللون المفضّل <span class="opt">(اختياري)</span></span>
-        <div class="chips">${SWATCH.map(([l, c]) => `<button type="button" class="chip" data-k="color" data-v="${c}" ${pressed(A.color === c)}><span class="sw" style="background:${c}"></span>${l}</button>`).join('')}
-        <label class="pick"><span class="sw" style="width:16px;height:16px;border-radius:50%;background:${SWATCH.some(s => s[1] === A.color) || !A.color ? 'conic-gradient(#C0392B,#F5C64F,#22967F,#1F5FAF,#C0392B)' : esc(A.color)}"></span>لون آخر<input type="color" data-color value="${/^#[0-9a-f]{6}$/i.test(A.color) ? A.color : '#22967F'}" aria-label="اختيار لون آخر"></label></div>
+    case 3: return `${n}<h2>${t('s3h')}</h2><p class="lead">${t('s3p')}</p>
+      <div class="f"><span class="lb">${t('style')}</span>${chips('style', STYLES.map(s => s.v))}</div>
+      <div class="f"><span class="lb">${t('colsrc')}</span>${chips('colsrc', COLSRC)}</div>
+      <div class="f"><span class="lb">${t('color')}${opt()}</span>
+        <div class="chips">${SWATCH.map(([l, c]) => `<button type="button" class="chip" data-k="color" data-v="${c}" ${pressed(A.color === c)}><span class="sw" style="background:${c}"></span>${L(l)}</button>`).join('')}
+        <label class="pick"><span class="sw" style="width:16px;height:16px;border-radius:50%;background:${SWATCH.some(s => s[1] === A.color) || !A.color ? 'conic-gradient(#C0392B,#F5C64F,#22967F,#1F5FAF,#C0392B)' : esc(A.color)}"></span>${t('otherColor')}<input type="color" data-color value="${/^#[0-9a-f]{6}$/i.test(A.color) ? A.color : '#22967F'}" aria-label="${t('otherColor')}"></label></div>
       </div>
-      ${field('ref', 'أمثلة أو مراجع تعجبك', { ph: 'رابط حساب، أو وصف مختصر', opt: true })}`;
-    case 4: return `${n}<h2>موعد الاستلام</h2><p class="lead">يساعدنا الموعد على جدولة الإنتاج وإعلامك مسبقاً بإمكانية الالتزام به.</p>
-      <div class="grid2">${field('date', 'التاريخ المطلوب', { type: 'date', opt: true, attrs: `min="${new Date().toISOString().slice(0, 10)}"` })}
-        <div class="f"><span class="lb">درجة الاستعجال</span>${seg('urg', ['اعتيادي', 'مستعجل', 'طارئ'])}</div></div>
-      <div class="note">${ico('info')}<span>الطلبات المستعجلة والطارئة تخضع لتأكيد الفريق حسب جدول الإنتاج ونوع العمل.</span></div>`;
-    case 5: return `${n}<h2>بيانات التواصل والإرسال</h2><p class="lead">راجع طلبك، ثم أرسله. هذه البيانات لا تُحفظ لدى أي جهة، وتظهر فقط في الرسالة التي ترسلها أنت.</p>
-      <div class="grid2">${field('who', 'الاسم', { ph: 'الاسم الكامل', attrs: 'autocomplete="name"' })}${field('phone', 'رقم الهاتف', { type: 'tel', ph: '07xx xxx xxxx', attrs: 'autocomplete="tel" inputmode="tel" dir="ltr"' })}</div>
-      <div class="grid2"><div class="f"><span class="lb">وسيلة التواصل المفضّلة</span>${seg('via', ['واتساب', 'اتصال هاتفي'])}</div>${field('when', 'الوقت المناسب للتواصل', { ph: 'مثال: بعد الساعة 4 عصراً', opt: true })}</div>
+      ${field('ref', t('ref'), { ph: t('refPh'), optional: true })}`;
+    case 4: return `${n}<h2>${t('s4h')}</h2><p class="lead">${t('s4p')}</p>
+      <div class="grid2">${field('date', t('date'), { type: 'date', optional: true, attrs: `min="${new Date().toISOString().slice(0, 10)}"` })}
+        <div class="f"><span class="lb">${t('urg')}</span>${seg('urg', ['اعتيادي', 'مستعجل', 'طارئ'])}</div></div>
+      <div class="note">${ico('info')}<span>${t('urgNote')}</span></div>`;
+    case 5: return `${n}<h2>${t('s5h')}</h2><p class="lead">${t('s5p')}</p>
+      <div class="grid2">${field('who', t('who'), { ph: t('whoPh'), attrs: 'autocomplete="name"' })}${field('phone', t('phone'), { type: 'tel', ph: '07xx xxx xxxx', attrs: 'autocomplete="tel" inputmode="tel" dir="ltr"' })}</div>
+      <div class="grid2"><div class="f"><span class="lb">${t('via')}</span>${seg('via', ['واتساب', 'اتصال هاتفي'])}</div>${field('when', t('when'), { ph: t('whenPh'), optional: true })}</div>
       <div class="rev" id="rev">${review()}</div>
       <div class="send">
-        <a class="btn btn-wa grow" id="sendWa" target="_blank" rel="noopener" href="${waLink()}">${ico('wa')}إرسال الطلب عبر واتساب</a>
-        <button type="button" class="btn" data-act="copy">${ico('copy')}نسخ الطلب</button>
-        <button type="button" class="btn" data-act="reset" title="بدء طلب جديد">${ico('reset')}<span class="sr">بدء طلب جديد</span></button>
+        <a class="btn btn-wa grow" id="sendWa" target="_blank" rel="noopener" href="${waLink()}">${ico('wa')}${t('send')}</a>
+        <button type="button" class="btn" data-act="copy">${ico('copy')}${t('copy')}</button>
+        <button type="button" class="btn" data-act="reset" title="${t('reset')}">${ico('reset')}<span class="sr">${t('reset')}</span></button>
       </div>
-      <p class="hint" style="margin-top:10px">يفتح الزر محادثة واتساب والرسالة مكتوبة مسبقاً، ولا يتطلب منك سوى الضغط على «إرسال». يمكنك بعدها إرفاق صور الموقع في المحادثة نفسها.</p>`;
+      <p class="hint" style="margin-top:10px">${t('sendHint')}</p>`;
   }
 }
 
-const sizeTxt = () => A.unknown ? 'غير معروف، يُؤكَّد لاحقاً' : (A.w && A.h ? `${A.w} × ${A.h} سم` : '');
-const styleOf = () => A.style;
-const colorName = () => (SWATCH.find(s => s[1] === A.color) || [])[0] || (A.color ? A.color.toUpperCase() : '');
-const svcNames = () => A.svc.map(id => SVC[id].t);
-function rows() {
+/* display rows (in the visitor's language) and message rows (always Arabic, for the team) */
+const sizeTxt = (ar = false) => A.unknown ? (ar ? T.ar.sizeUnknown : t('sizeUnknown')) : (A.w && A.h ? `${A.w} × ${A.h} ${ar ? 'سم' : t('cm')}` : '');
+const colorName = (ar = false) => { const s = SWATCH.find(x => x[1] === A.color); return s ? (ar ? s[0] : L(s[0])) : (A.color ? A.color.toUpperCase() : ''); };
+const svcNames = (ar = false) => A.svc.map(id => SVC[id][ar ? 'ar' : lang][0]);
+function rows(ar = false) {
+  const tr = v => ar ? v : L(v), lab = k => (ar ? T.ar : T[lang])[k];
+  const s = lab('steps');
   return [
-    ['الخدمات المطلوبة', svcNames().join('، '), 0], ['اسم المشروع', A.name, 1], ['مجال النشاط', A.field, 1], ['نوع الطلب', A.kind, 1], ['النص النهائي', A.txt, 1],
-    ['المقاس', sizeTxt(), 2], ['تفاصيل إضافية', A.extra, 2], ['صورة الموقع', A.img, 2], ['التركيب', A.inst, 2], ['الموقع', [A.gov, A.area].filter(Boolean).join(' – '), 2],
-    ['الأسلوب', styleOf(), 3], ['مصدر الألوان', A.colsrc, 3], ['اللون المفضّل', colorName(), 3], ['المراجع', A.ref, 3],
-    ['التاريخ المطلوب', A.date, 4], ['درجة الاستعجال', A.urg, 4],
-    ['الاسم', A.who, 5], ['رقم الهاتف', A.phone, 5], ['وسيلة التواصل', A.via, 5], ['الوقت المناسب', A.when, 5],
+    [ar ? 'الخدمات المطلوبة' : s[0], svcNames(ar).join(ar || lang !== 'en' ? '، ' : ', '), 0], [lab('name'), A.name, 1], [lab('field'), A.field, 1], [lab('kind'), tr(A.kind), 1], [lab('txt'), A.txt, 1],
+    [lab('rSize'), sizeTxt(ar), 2], [ar ? 'تفاصيل إضافية' : (extraKey() ? EXTRA[extraKey()][li] : ''), A.extra, 2], [lab('img'), tr(A.img), 2], [lab('inst'), tr(A.inst), 2], [lab('gov'), [tr(A.gov), A.area].filter(Boolean).join(' – '), 2],
+    [lab('style'), tr(A.style), 3], [lab('colsrc'), tr(A.colsrc), 3], [lab('color'), colorName(ar), 3], [lab('ref'), A.ref, 3],
+    [lab('date'), A.date, 4], [lab('urg'), tr(A.urg), 4],
+    [lab('who'), A.who, 5], [lab('phone'), A.phone, 5], [lab('via'), tr(A.via), 5], [lab('when'), A.when, 5],
   ];
 }
 function review() {
-  const wide = new Set(['الخدمات المطلوبة', 'النص النهائي', 'تفاصيل إضافية', 'المراجع']);
-  return rows().filter(r => r[1] && r[2] < 5).map(([k, v, s]) =>
-    `<div class="rv ${wide.has(k) ? 'w' : ''}"><small>${k}<button type="button" data-go="${s}">تعديل</button></small><b>${esc(v)}</b></div>`).join('') || '<div class="rv w"><b>لم تُضف تفاصيل بعد.</b></div>';
+  const wide = new Set([0, 4]);
+  return rows().filter(r => r[1] && r[2] < 5).map(([k, v, s], i) =>
+    `<div class="rv ${(i === 0 || k === t('txt') || k === t('ref') || s === 2 && i === 6) ? 'w' : ''}"><small>${k}<button type="button" data-go="${s}">${t('edit')}</button></small><b>${esc(v)}</b></div>`).join('') || `<div class="rv w"><b>${t('empty')}</b></div>`;
 }
 function message() {
-  const r = rows().filter(x => x[1]);
-  return 'السلام عليكم،\nأودّ تقديم طلب خدمة جديد لدى السند للدعاية والإعلان:\n\n' + r.map(x => `▪️ ${x[0]}: ${x[1]}`).join('\n') + '\n\n(أُرسل من صفحة تقديم الطلب)';
+  const r = rows(true).filter(x => x[1]);
+  const lg = { en: 'English', ku: 'کوردی' }[lang];
+  return 'السلام عليكم،\nأودّ تقديم طلب خدمة جديد لدى السند للدعاية والإعلان:\n\n' + r.map(x => `▪️ ${x[0]}: ${x[1]}`).join('\n') + (lg ? `\n▪️ لغة الزبون: ${lg}` : '') + '\n\n(أُرسل من صفحة تقديم الطلب)';
 }
 const waLink = () => `https://wa.me/${WA}?text=${encodeURIComponent(message())}`;
 
@@ -468,18 +620,17 @@ function valid(i = st) {
   return true;
 }
 function need() {
-  if (st === 0) return 'اختر خدمة واحدة على الأقل';
-  if (st === 1) return !A.name.trim() ? 'أدخل اسم المشروع' : 'حدّد نوع الطلب';
-  if (st === 5) return !A.who.trim() ? 'أدخل الاسم' : 'أدخل رقم هاتف صحيحاً';
+  if (st === 0) return t('needSvc');
+  if (st === 1) return !A.name.trim() ? t('needName') : t('needKind');
+  if (st === 5) return !A.who.trim() ? t('needWho') : t('needPhone');
   return '';
 }
-
 function readiness() {
-  const checks = [A.svc.length, A.name, A.kind, A.unknown || (A.w && A.h), A.inst, A.style || A.colsrc, A.date || A.urg, A.who, A.phone.replace(/\D/g, '').length >= 10];
-  return Math.round(checks.filter(Boolean).length / checks.length * 100);
+  const c = [A.svc.length, A.name, A.kind, A.unknown || (A.w && A.h), A.inst, A.style || A.colsrc, A.date || A.urg, A.who, A.phone.replace(/\D/g, '').length >= 10];
+  return Math.round(c.filter(Boolean).length / c.length * 100);
 }
 
-/* ---------- live preview ---------- */
+/* ---------------------------------------------------------------- preview */
 const lum = hex => { const n = parseInt(hex.slice(1), 16); const c = [(n >> 16) & 255, (n >> 8) & 255, n & 255].map(v => { v /= 255; return v <= .03928 ? v / 12.92 : Math.pow((v + .055) / 1.055, 2.4); }); return .2126 * c[0] + .7152 * c[1] + .0722 * c[2]; };
 function preview() {
   const sign = $('#sign'), scene = sign.parentElement;
@@ -488,7 +639,6 @@ function preview() {
   const known = !A.unknown && w > 0 && h > 0;
   if (!known) { w = 400; h = 100; }
   const ratio = Math.min(Math.max(w / h, .3), 9);
-  // scale: fit sign into 78% x 70% of the wall
   let pw = SW * .78, ph = pw / ratio;
   if (ph > SH * .72) { ph = SH * .72; pw = ph * ratio; }
   sign.style.width = pw + 'px'; sign.style.height = ph + 'px';
@@ -496,55 +646,49 @@ function preview() {
   const light = lum(bg) > .45;
   sign.style.background = `linear-gradient(160deg, ${bg}, color-mix(in srgb, ${bg} 72%, #000))`;
   sign.style.setProperty('--glowc', bg + '99');
-  const tx = $('#signTx');
-  const name = A.name.trim() || 'اسم مشروعك';
+  const tx = $('#signTx'), name = A.name.trim() || t('pvName');
   tx.textContent = name;
   tx.style.color = light ? '#0D1F24' : (has('letters') ? '#F5C64F' : '#FFFFFF');
-  const fs = Math.max(11, Math.min(ph * .46, pw * 1.5 / Math.max(name.length, 3)));
-  tx.style.fontSize = fs + 'px';
+  tx.style.fontSize = Math.max(11, Math.min(ph * .46, pw * 1.5 / Math.max(name.length, 3))) + 'px';
   const sk = (STYLES.find(s => s.v === A.style) || {}).k || '';
   sign.className = 'sign' + (has('letters', 'box') ? ' lit' : '') + (has('letters') ? ' raised' : '') + (sk ? ' st-' + sk : '');
-  // dimensions
   const cx = SW / 2, cy = scene.clientHeight * .48;
   const dw = $('#dimW'), dh = $('#dimH');
   dw.style.width = pw + 'px'; dw.style.left = (cx - pw / 2) + 'px'; dw.style.top = (cy + ph / 2 + 6) + 'px';
   dw.textContent = known ? `${w} cm` : '— cm';
   dh.style.height = ph + 'px'; dh.style.left = (cx + pw / 2 + 8) + 'px'; dh.style.top = (cy - ph / 2) + 'px';
   dh.innerHTML = `<span style="writing-mode:vertical-rl">${known ? h + ' cm' : '— cm'}</span>`;
-  // human scale: 170 cm person
   const p = $('#person');
   if (known) {
-    const cmPerPx = h / ph; let hp = 170 / cmPerPx;
+    let hp = 170 / (h / ph);
     const vis = hp >= 14 && hp <= SH * 1.1;
     p.style.opacity = vis ? .8 : 0;
     hp = Math.min(Math.max(hp, 14), SH); p.querySelector('b').style.height = Math.max(hp - 14, 4) + 'px';
     p.style.left = (cx - pw / 2 - 26) + 'px';
-    $('#cap').textContent = vis ? 'المقياس البشري: 170 سم' : 'معاينة تقريبية للتوضيح';
-  } else { p.style.opacity = 0; $('#cap').textContent = 'معاينة تقريبية للتوضيح'; }
-  // card text
-  $('#pvName').textContent = A.name.trim() || 'اسم مشروعك';
-  $('#pvSvc').textContent = A.svc.length ? svcNames().join(' · ') : 'الخدمات المختارة تظهر هنا';
-  const pr = [['المقاس', sizeTxt()], ['التركيب', A.inst], ['الأسلوب', A.style], ['الموعد', A.date || A.urg]];
+    $('#cap').textContent = vis ? t('human') : t('cap');
+  } else { p.style.opacity = 0; $('#cap').textContent = t('cap'); }
+  $('#pvName').textContent = A.name.trim() || t('pvName');
+  $('#pvSvc').textContent = A.svc.length ? svcNames().join(' · ') : t('pvSvc');
+  const pr = [[t('rSize'), sizeTxt()], [t('rInst'), L(A.inst)], [t('rStyle'), L(A.style)], [t('rDate'), A.date || L(A.urg)]];
   $('#pvRows').innerHTML = pr.map(([k, v]) => `<div class="row"><small>${k}</small><b class="${v ? '' : 'e'}">${esc(v || '—')}</b></div>`).join('');
   const r = readiness();
   $('#pct').textContent = r + '%';
   $('#ringv').style.strokeDashoffset = 113.1 * (1 - r / 100);
 }
 
-/* ---------- render ---------- */
+/* ---------------------------------------------------------------- render */
 function stepper() {
-  $('#steps').innerHTML = STEPS.map((t, i) => {
+  $('#steps').innerHTML = t('steps').map((s, i) => {
     const reach = i <= st || [...Array(i).keys()].every(j => valid(j));
-    return `<li class="${i < st ? 'done' : i === st ? 'cur' : ''}"><button type="button" data-go="${i}" ${reach ? '' : 'disabled'} aria-current="${i === st ? 'step' : 'false'}" aria-label="الخطوة ${i + 1}: ${t}"><i></i><span>${t}</span></button></li>`;
+    return `<li class="${i < st ? 'done' : i === st ? 'cur' : ''}"><button type="button" data-go="${i}" ${reach ? '' : 'disabled'} aria-current="${i === st ? 'step' : 'false'}" aria-label="${esc(t('stepAria')(i + 1, s))}"><i></i><span>${s}</span></button></li>`;
   }).join('');
 }
 function navState() {
   $('#back').disabled = st === 0;
   const nx = $('#next');
-  nx.style.display = st === STEPS.length - 1 ? 'none' : '';
+  nx.style.display = st === NSTEPS - 1 ? 'none' : '';
   nx.disabled = !valid();
-  const m = need();
-  $('#meta').innerHTML = !valid() && m ? m : `<kbd>Enter</kbd> للانتقال إلى الخطوة التالية`;
+  $('#meta').innerHTML = !valid() && need() ? need() : t('enterHint');
   const s = $('#sendWa');
   if (s) { const ok = valid(5); s.setAttribute('aria-disabled', ok ? 'false' : 'true'); s.style.opacity = ok ? '' : '.4'; s.style.pointerEvents = ok ? '' : 'none'; s.href = waLink(); }
 }
@@ -554,68 +698,78 @@ function render(focus = true) {
   stepper(); navState(); preview(); save();
   if (focus) { const h = stage.querySelector('h2'); if (h) { h.tabIndex = -1; h.focus({ preventScroll: true }); } }
 }
+function applyLang() {
+  const L0 = LANGS[lang];
+  document.documentElement.lang = L0.html; document.documentElement.dir = L0.dir;
+  document.title = t('title');
+  document.querySelectorAll('[data-i]').forEach(el => { el.textContent = t(el.dataset.i); });
+  document.querySelectorAll('[data-i-aria]').forEach(el => el.setAttribute('aria-label', t(el.dataset.iAria)));
+  document.querySelectorAll('[data-lang]').forEach(b => b.setAttribute('aria-pressed', b.dataset.lang === lang ? 'true' : 'false'));
+  document.querySelectorAll('svg.fl').forEach(s => s.style.transform = L0.dir === 'ltr' ? 'scaleX(-1)' : '');
+}
 function go(i) {
-  if (i < 0 || i >= STEPS.length || i === st) return;
+  if (i < 0 || i >= NSTEPS || i === st) return;
   if (i > st) { for (let j = st; j < i; j++) if (!valid(j)) { toast(need()); return; } }
   dir = i > st ? 1 : -1; st = i; render();
   const top = $('.panel').getBoundingClientRect().top + scrollY - 90;
   if (Math.abs(scrollY - top) > 60) scrollTo({ top, behavior: 'smooth' });
 }
 let tt;
-function toast(m) { const t = $('#toast'); t.textContent = m; t.classList.add('on'); clearTimeout(tt); tt = setTimeout(() => t.classList.remove('on'), 2200); }
+function toast(m) { const el = $('#toast'); el.textContent = m; el.classList.add('on'); clearTimeout(tt); tt = setTimeout(() => el.classList.remove('on'), 2200); }
 
-/* ---------- events ---------- */
+/* ---------------------------------------------------------------- events */
 document.addEventListener('click', e => {
-  const t = e.target.closest('[data-svc],[data-k],[data-go],[data-act],[data-toggle],#next,#back');
-  if (!t || t.disabled) return;
-  if (t.id === 'next') { if (valid()) go(st + 1); else toast(need()); return; }
-  if (t.id === 'back') { go(st - 1); return; }
-  const d = t.dataset;
+  const el = e.target.closest('[data-svc],[data-k],[data-go],[data-act],[data-toggle],[data-lang],#next,#back');
+  if (!el || el.disabled) return;
+  if (el.dataset.lang) { if (el.dataset.lang !== lang) { lang = el.dataset.lang; try { localStorage.setItem('alsanad-lang', lang); } catch (x) {} location.reload(); } return; }
+  if (el.id === 'next') { if (valid()) go(st + 1); else toast(need()); return; }
+  if (el.id === 'back') { go(st - 1); return; }
+  const d = el.dataset;
   if (d.svc) {
     const i = A.svc.indexOf(d.svc); i < 0 ? A.svc.push(d.svc) : A.svc.splice(i, 1);
-    t.setAttribute('aria-pressed', i < 0 ? 'true' : 'false'); stepper(); navState(); preview(); save(); return;
+    el.setAttribute('aria-pressed', i < 0 ? 'true' : 'false'); stepper(); navState(); preview(); save(); return;
   }
   if (d.k) {
     A[d.k] = A[d.k] === d.v ? '' : d.v;
-    t.parentElement.querySelectorAll('[data-k]').forEach(b => b.setAttribute('aria-pressed', A[d.k] === b.dataset.v ? 'true' : 'false'));
-    if (d.k === 'kind' && st === 1) {/* extra label depends on kind, handled at step 2 */}
+    el.parentElement.querySelectorAll('[data-k]').forEach(b => b.setAttribute('aria-pressed', A[d.k] === b.dataset.v ? 'true' : 'false'));
     stepper(); navState(); preview(); save(); return;
   }
   if (d.toggle === 'unknown') { A.unknown = !A.unknown; render(false); return; }
   if (d.go !== undefined) { go(+d.go); return; }
   if (d.act === 'copy') {
     const txt = message();
-    (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject()).then(() => toast('تم نسخ الطلب'), () => {
+    (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject()).then(() => toast(t('copied')), () => {
       const ta = document.createElement('textarea'); ta.value = txt; document.body.appendChild(ta); ta.select();
-      try { document.execCommand('copy'); toast('تم نسخ الطلب'); } catch (x) { toast('تعذّر النسخ'); } ta.remove();
+      try { document.execCommand('copy'); toast(t('copied')); } catch (x) { toast(t('copyFail')); } ta.remove();
     });
     return;
   }
   if (d.act === 'reset') {
-    if (!confirm('هل تريد بدء طلب جديد؟ ستُمسح البيانات الحالية.')) return;
+    if (!confirm(t('confirmReset'))) return;
     A = blank(); dir = -1; st = 0; try { localStorage.removeItem(KEY); } catch (x) {} render(); return;
   }
 });
 document.addEventListener('input', e => {
-  const t = e.target;
-  if (t.dataset.color !== undefined) { A.color = t.value; const sw = t.parentElement.querySelector('.sw'); if (sw) sw.style.background = t.value; t.closest('.chips').querySelectorAll('[data-k=color]').forEach(b => b.setAttribute('aria-pressed', 'false')); preview(); navState(); save(); return; }
-  const k = t.dataset.f; if (!k) return;
-  let v = t.value;
-  if (k === 'w' || k === 'h') { v = v.replace(/[٠-٩]/g, c => '٠١٢٣٤٥٦٧٨٩'.indexOf(c)).replace(/[^\d.]/g, ''); if (v !== t.value) t.value = v; }
-  if (k === 'phone') { v = v.replace(/[٠-٩]/g, c => '٠١٢٣٤٥٦٧٨٩'.indexOf(c)); }
+  const el = e.target;
+  if (el.dataset.color !== undefined) { A.color = el.value; const sw = el.parentElement.querySelector('.sw'); if (sw) sw.style.background = el.value; el.closest('.chips').querySelectorAll('[data-k=color]').forEach(b => b.setAttribute('aria-pressed', 'false')); preview(); navState(); save(); return; }
+  const k = el.dataset.f; if (!k) return;
+  let v = el.value;
+  const digits = s => s.replace(/[٠-٩]/g, c => '٠١٢٣٤٥٦٧٨٩'.indexOf(c)).replace(/[۰-۹]/g, c => '۰۱۲۳۴۵۶۷۸۹'.indexOf(c));
+  if (k === 'w' || k === 'h') { v = digits(v).replace(/[^\d.]/g, ''); if (v !== el.value) el.value = v; }
+  if (k === 'phone') v = digits(v);
   A[k] = v;
-  if (st === 5) { const r = $('#rev'); if (r && (k === 'who' || k === 'phone' || k === 'via' || k === 'when')) {} }
   stepper(); navState(); preview(); save();
 });
 document.addEventListener('change', e => { if (e.target.dataset.f === 'gov') { A.gov = e.target.value; preview(); save(); } });
 document.addEventListener('keydown', e => {
   if (e.key !== 'Enter' || e.isComposing) return;
-  const t = e.target; if (t.tagName === 'TEXTAREA' || t.tagName === 'BUTTON' || t.tagName === 'A') return;
-  if (st < STEPS.length - 1) { e.preventDefault(); if (valid()) go(st + 1); else toast(need()); }
+  const el = e.target; if (el.tagName === 'TEXTAREA' || el.tagName === 'BUTTON' || el.tagName === 'A') return;
+  if (st < NSTEPS - 1) { e.preventDefault(); if (valid()) go(st + 1); else toast(need()); }
 });
 let rz; addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(preview, 80); });
 document.fonts?.ready?.then(preview);
 
+applyLang();
 render(false);
 })();
 </script>
