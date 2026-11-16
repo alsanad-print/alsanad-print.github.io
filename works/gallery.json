@@ -1,0 +1,171 @@
+{
+  "version": 1,
+  "categories": [
+    {
+      "id": "facades",
+      "ar": "الواجهات واللوحات",
+      "en": "Storefronts & Signage"
+    },
+    {
+      "id": "letters",
+      "ar": "الحروف البارزة والضوئية",
+      "en": "3D & Illuminated Letters"
+    },
+    {
+      "id": "stands",
+      "ar": "الستاندات والبوكسات",
+      "en": "Stands & Light Boxes"
+    },
+    {
+      "id": "prints",
+      "ar": "المطبوعات",
+      "en": "Print"
+    }
+  ],
+  "works": [
+    {
+      "id": "sample-facades-1",
+      "cat": "facades",
+      "img": "works/facades/sample-1.jpg",
+      "title_ar": "واجهة محل تجاري",
+      "title_en": "Retail storefront",
+      "area_ar": "الموصل",
+      "area_en": "Mosul",
+      "desc_ar": "",
+      "desc_en": "",
+      "sample": true
+    },
+    {
+      "id": "sample-facades-2",
+      "cat": "facades",
+      "img": "works/facades/sample-2.jpg",
+      "title_ar": "لوحة ضوئية",
+      "title_en": "Illuminated sign",
+      "area_ar": "الموصل",
+      "area_en": "Mosul",
+      "desc_ar": "",
+      "desc_en": "",
+      "sample": true
+    },
+    {
+      "id": "sample-facades-3",
+      "cat": "facades",
+      "img": "works/facades/sample-3.jpg",
+      "title_ar": "واجهة معرض",
+      "title_en": "Showroom facade",
+      "area_ar": "الموصل",
+      "area_en": "Mosul",
+      "desc_ar": "",
+      "desc_en": "",
+      "sample": true
+    },
+    {
+      "id": "sample-letters-1",
+      "cat": "letters",
+      "img": "works/letters/sample-1.jpg",
+      "title_ar": "حروف بارزة",
+      "title_en": "3D letters",
+      "area_ar": "الموصل",
+      "area_en": "Mosul",
+      "desc_ar": "",
+      "desc_en": "",
+      "sample": true
+    },
+    {
+      "id": "sample-letters-2",
+      "cat": "letters",
+      "img": "works/letters/sample-2.jpg",
+      "title_ar": "حروف ضوئية",
+      "title_en": "Illuminated letters",
+      "area_ar": "الموصل",
+      "area_en": "Mosul",
+      "desc_ar": "",
+      "desc_en": "",
+      "sample": true
+    },
+    {
+      "id": "sample-letters-3",
+      "cat": "letters",
+      "img": "works/letters/sample-3.jpg",
+      "title_ar": "شعار أكريليك",
+      "title_en": "Acrylic logo",
+      "area_ar": "الموصل",
+      "area_en": "Mosul",
+      "desc_ar": "",
+      "desc_en": "",
+      "sample": true
+    },
+    {
+      "id": "sample-stands-1",
+      "cat": "stands",
+      "img": "works/stands/sample-1.jpg",
+      "title_ar": "ستاند عرض",
+      "title_en": "Display stand",
+      "area_ar": "الموصل",
+      "area_en": "Mosul",
+      "desc_ar": "",
+      "desc_en": "",
+      "sample": true
+    },
+    {
+      "id": "sample-stands-2",
+      "cat": "stands",
+      "img": "works/stands/sample-2.jpg",
+      "title_ar": "بوكس ضوئي",
+      "title_en": "Light box",
+      "area_ar": "الموصل",
+      "area_en": "Mosul",
+      "desc_ar": "",
+      "desc_en": "",
+      "sample": true
+    },
+    {
+      "id": "sample-stands-3",
+      "cat": "stands",
+      "img": "works/stands/sample-3.jpg",
+      "title_ar": "ستاند معارض",
+      "title_en": "Exhibition stand",
+      "area_ar": "الموصل",
+      "area_en": "Mosul",
+      "desc_ar": "",
+      "desc_en": "",
+      "sample": true
+    },
+    {
+      "id": "sample-prints-1",
+      "cat": "prints",
+      "img": "works/prints/sample-1.jpg",
+      "title_ar": "بروشور",
+      "title_en": "Brochure",
+      "area_ar": "الموصل",
+      "area_en": "Mosul",
+      "desc_ar": "",
+      "desc_en": "",
+      "sample": true
+    },
+    {
+      "id": "sample-prints-2",
+      "cat": "prints",
+      "img": "works/prints/sample-2.jpg",
+      "title_ar": "بطاقات عمل",
+      "title_en": "Business cards",
+      "area_ar": "الموصل",
+      "area_en": "Mosul",
+      "desc_ar": "",
+      "desc_en": "",
+      "sample": true
+    },
+    {
+      "id": "sample-prints-3",
+      "cat": "prints",
+      "img": "works/prints/sample-3.jpg",
+      "title_ar": "ملصقات",
+      "title_en": "Stickers",
+      "area_ar": "الموصل",
+      "area_en": "Mosul",
+      "desc_ar": "",
+      "desc_en": "",
+      "sample": true
+    }
+  ]
+}
