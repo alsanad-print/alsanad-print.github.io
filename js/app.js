@@ -1172,7 +1172,7 @@ if (location.hash === '#admin') location.replace('admin.html');
 document.addEventListener('click', e => { if (e.target.closest('a[href*="wa.me"]')) track('whatsapp-click'); });
 
 /* analytics loader */
-if (CONFIG.goatcounter) {
+if (CONFIG.goatcounter && !document.querySelector('script[data-goatcounter]')) {
   const sc = document.createElement('script'); sc.async = true; sc.src = 'https://gc.zgo.at/count.js';
   sc.dataset.goatcounter = `https://${CONFIG.goatcounter}.goatcounter.com/count`; document.head.appendChild(sc);
 }

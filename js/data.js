@@ -35,7 +35,7 @@ export const CONFIG = {
   workshopMap: 'https://maps.app.goo.gl/wxozGYMZJs7YvLGY8',
   mapQuery: '36.366264,43.196077',
   // إحصائيات الزيارات (GoatCounter): اكتب اسم الحساب فقط، مثال: 'alsanad'
-  goatcounter: '',
+  goatcounter: 'alsanadprint',
 };
 
 /* اللغات المتاحة */
