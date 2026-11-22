@@ -464,7 +464,7 @@
     {
       "id": "no1-torku-stand",
       "client": "no1",
-      "kind": "design",
+      "kind": "build",
       "cats": [
         "rollup"
       ],
@@ -476,7 +476,7 @@
       "area_ar": "",
       "area_en": "",
       "area_ku": "",
-      "desc_ar": "تصميم ستاند عرض أرضي للسوبرماركت بأرفف مضيئة وترويسة بارزة لمنتجات no:1 وشعار «خليك نمبر 1 مع نمبر 1».",
+      "desc_ar": "ستاند عرض أرضي للسوبرماركت بأرفف مضيئة وترويسة بارزة لمنتجات no:1 وشعار «خليك نمبر 1 مع نمبر 1».",
       "desc_en": "Floor display stand for supermarkets with lit shelves and a raised header for no:1 products."
     },
     {
