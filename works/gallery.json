@@ -38,6 +38,12 @@
       "ku": "ڕۆڵ ئەپ و ستاند"
     },
     {
+      "id": "billboards",
+      "ar": "بلبوردات ولوحات طرقية",
+      "en": "Billboards",
+      "ku": "بیلبۆرد"
+    },
+    {
       "id": "flags",
       "ar": "أعلام شراعية",
       "en": "Feather flags",
@@ -435,6 +441,82 @@
       "area_ku": "موسڵ",
       "desc_ar": "لوحة ضوئية علوية بهوية تمن الوليمة فوق واجهة المحل.",
       "desc_en": "Rooftop backlit sign in the Alwalimah identity above the storefront."
+    },
+    {
+      "id": "no1-1ar-market",
+      "client": "no1",
+      "kind": "build",
+      "cats": [
+        "lit-letters",
+        "lightbox"
+      ],
+      "cat": "lit-letters",
+      "img": "works/no1/01-1ar-market.jpg",
+      "title_ar": "واجهة 1AR Market — حروف ضوئية بهوية no:1",
+      "title_en": "1AR Market storefront — no:1 illuminated letters",
+      "title_ku": "ڕووکاری 1AR Market — پیتی ڕووناک بە ناسنامەی no:1",
+      "area_ar": "",
+      "area_en": "",
+      "area_ku": "",
+      "desc_ar": "واجهة محل بطابقين: لوحة علوية بحروف بارزة مضيئة لشعار no:1 واسم المحل وأرقام التواصل، ولوحة سفلية ضوئية بهوية Torku.",
+      "desc_en": "Two-tier storefront: an upper panel with raised illuminated no:1 letters, store name and contacts, and a lower backlit panel in the Torku identity."
+    },
+    {
+      "id": "no1-torku-stand",
+      "client": "no1",
+      "kind": "design",
+      "cats": [
+        "rollup"
+      ],
+      "cat": "rollup",
+      "img": "works/no1/02-torku-stand.jpg",
+      "title_ar": "ستاند عرض منتجات — Torku no:1",
+      "title_en": "Product display stand — Torku no:1",
+      "title_ku": "ستاندی نمایشی بەرهەم — Torku no:1",
+      "area_ar": "",
+      "area_en": "",
+      "area_ku": "",
+      "desc_ar": "تصميم ستاند عرض أرضي للسوبرماركت بأرفف مضيئة وترويسة بارزة لمنتجات no:1 وشعار «خليك نمبر 1 مع نمبر 1».",
+      "desc_en": "Floor display stand for supermarkets with lit shelves and a raised header for no:1 products."
+    },
+    {
+      "id": "cocacola-building-billboard",
+      "client": "cocacola",
+      "kind": "build",
+      "cats": [
+        "billboards"
+      ],
+      "cat": "billboards",
+      "img": "works/cocacola/01-building-billboard.jpg",
+      "title_ar": "لوحة واجهة بناية — حملة «لتر مجاناً»",
+      "title_en": "Building-facade billboard — “1 litre free” campaign",
+      "title_ku": "بیلبۆردی ڕووکاری باڵەخانە — هەڵمەتی «١ لیتر بەخۆڕایی»",
+      "area_ar": "",
+      "area_en": "",
+      "area_ku": "",
+      "desc_ar": "لوحة عمودية كبيرة على واجهة بناية تجارية ضمن حملة كوكاكولا «لتر مجاناً».",
+      "desc_en": "Large vertical billboard on a commercial building facade for Coca-Cola's “1 litre free” campaign."
+    },
+    {
+      "id": "cocacola-rooftop-billboards",
+      "client": "cocacola",
+      "kind": "build",
+      "cats": [
+        "billboards"
+      ],
+      "cat": "billboards",
+      "img": "works/cocacola/02-rooftop-day.jpg",
+      "images": [
+        "works/cocacola/03-rooftop-night.jpg"
+      ],
+      "title_ar": "بلبوردات سطوح — حملة «لتر مجاناً»",
+      "title_en": "Rooftop billboards — “1 litre free” campaign",
+      "title_ku": "بیلبۆردی سەربان — هەڵمەتی «١ لیتر بەخۆڕایی»",
+      "area_ar": "",
+      "area_en": "",
+      "area_ku": "",
+      "desc_ar": "بلبوردات أفقية فوق أسطح المحلات باللغة الكردية مع إنارة ليلية، ضمن نفس الحملة.",
+      "desc_en": "Horizontal rooftop billboards in Kurdish with night lighting, part of the same campaign."
     }
   ],
   "clients": [
@@ -470,6 +552,28 @@
       "sector_ku": "برنج و بەرهەمی خۆراک",
       "logo": "works/clients/alwalimah.png",
       "strip": true
+    },
+    {
+      "id": "no1",
+      "name_ar": "نمبر ون",
+      "name_en": "no:1 by Torku",
+      "name_ku": "نەمبەر وەن",
+      "sector_ar": "شوكولاتة وحلويات",
+      "sector_en": "Chocolate & confectionery",
+      "sector_ku": "شۆکۆلاتە و شیرینی",
+      "logo": "works/clients/no1.png",
+      "strip": true
+    },
+    {
+      "id": "cocacola",
+      "name_ar": "كوكاكولا",
+      "name_en": "Coca-Cola",
+      "name_ku": "کۆکاکۆلا",
+      "sector_ar": "مشروبات غازية",
+      "sector_en": "Soft drinks",
+      "sector_ku": "خواردنەوەی گازدار",
+      "logo": "",
+      "strip": false
     }
   ]
 }
