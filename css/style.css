@@ -366,3 +366,31 @@ a.btn-gold{color:#1B2A22}
 #gFull{justify-content:center}
 .clients .cl{pointer-events:auto}
 @media (max-width:760px){#gAll span{display:none}#gAll{width:40px;padding:0;justify-content:center}}
+
+/* ---------- gallery ring ---------- */
+.g-cross{display:none}
+.g-tabs button i{font-style:normal;font-family:var(--en);font-size:11px;margin-inline-start:7px;opacity:.6}
+.g-tabs button.on i{opacity:.8}
+.g-cap{position:absolute;inset-inline:0;bottom:calc(64px + var(--safe-b));margin:auto;width:min(560px,calc(100vw - 32px));text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px;pointer-events:auto;opacity:0;transform:translateY(10px);transition:opacity .35s,transform .45s cubic-bezier(.2,.8,.2,1)}
+.g-cap.on{opacity:1;transform:none}
+.g-cap-no{font-family:var(--en);font-weight:700;font-size:12px;letter-spacing:.2em;color:var(--gold)}
+.g-cap-client{display:flex;align-items:center;gap:8px;font-size:14px;color:#BFD0CE;min-height:22px}
+.g-cap-client img{height:22px;max-width:70px;object-fit:contain;filter:brightness(0) invert(1);opacity:.85}
+.g-cap h3{font-size:clamp(22px,2.6vw,30px);line-height:1.25;text-shadow:0 4px 30px rgba(0,0,0,.6)}
+.g-cap-tags{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+.g-cap-tags span{font-size:12.5px;padding:4px 10px;border-radius:20px;border:1px solid rgba(255,255,255,.14);color:#CFDDDB;background:rgba(6,18,20,.5)}
+.g-cap .btn{margin-top:6px;height:40px}
+.g-arr{position:absolute;top:44%;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:rgba(10,24,27,.65);border:1px solid var(--line);backdrop-filter:blur(8px);pointer-events:auto;transition:.2s}
+.g-arr:hover{border-color:var(--glow);background:rgba(20,50,54,.8)}
+.g-arr.l{left:clamp(10px,3vw,40px)}.g-arr.r{right:clamp(10px,3vw,40px)}
+.g-arr svg{width:22px;height:22px}
+.g-empty{position:absolute;inset:0;display:grid;place-items:center;color:var(--gray);pointer-events:none}
+.g-hint{bottom:calc(18px + var(--safe-b))}
+@media (max-width:760px){.g-arr{display:none}.g-cap{bottom:calc(56px + var(--safe-b))}.g-cap h3{font-size:21px}}
+/* gallery: tabs on their own row, caption backdrop */
+.g-top{flex-wrap:wrap;row-gap:12px}
+.g-tabs{order:3;flex-basis:100%;justify-content:center}
+#galleryUI::after{content:"";position:absolute;inset-inline:0;bottom:0;height:42vh;background:linear-gradient(to top,rgba(4,12,14,.85),rgba(4,12,14,0));pointer-events:none;z-index:-1}
+.g-cap{z-index:1}
+@media (max-width:760px){.g-tabs{justify-content:flex-start}}
+body.mode-gallery .lite-note{display:none}

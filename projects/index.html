@@ -308,6 +308,8 @@ const works = () => D.works.filter(w => !w.sample);
 const clientOf = w => D.clients.find(c => c.id === w.client);
 const cName = c => c ? (c['name_' + lang] || c.name_ar || c.name || '') : '';
 const kindOf = w => w.kind === 'design' ? 'design' : 'build';
+const catsOf = w => w.cats?.length ? w.cats : (w.cat ? [w.cat] : []);
+const catNames = w => catsOf(w).map(catName).filter(Boolean).join('، ');
 const catName = id => { const c = D.categories.find(x => x.id === id); return c ? pick(c, lang) : ''; };
 const media = w => {
   const m = [];
@@ -318,7 +320,7 @@ const media = w => {
   return m;
 };
 function filtered() {
-  return works().filter(w => (S.cat === 'all' || w.cat === S.cat) && (S.kind === 'all' || kindOf(w) === S.kind));
+  return works().filter(w => (S.cat === 'all' || catsOf(w).includes(S.cat)) && (S.kind === 'all' || kindOf(w) === S.kind));
 }
 function logoTile(c, cls = 'logo-tile') {
   if (c?.logo) return `<span class="${cls}"><img src="${esc(R(c.logo))}" alt="${esc(cName(c))}" loading="lazy"></span>`;
@@ -336,7 +338,7 @@ function card(w) {
       <div class="badges"><span class="bd ${k}">${t(k)}</span>${w.before ? `<span class="bd">${I.ba}${t('before')}/${t('after')}</span>` : ''}${w.video ? `<span class="bd">${I.play}${t('video')}</span>` : ''}</div></div>
     <div class="body">${c ? `<div class="cl">${miniLogo(c)}<span>${esc(cName(c))}</span></div>` : ''}
       <h3>${esc(field(w, 'title', lang))}</h3>
-      <div class="meta">${esc(catName(w.cat))}${field(w, 'area', lang) ? ' · ' + esc(field(w, 'area', lang)) : ''}</div></div></a>`;
+      <div class="meta">${esc(catNames(w))}${field(w, 'area', lang) ? ' · ' + esc(field(w, 'area', lang)) : ''}</div></div></a>`;
 }
 
 /* ---------------- render ---------------- */
@@ -349,7 +351,7 @@ function renderStatic() {
   $('#stats').innerHTML = [[cl.size, t('stClients')], [W.filter(w => kindOf(w) === 'build').length, t('stProjects')], [W.filter(w => kindOf(w) === 'design').length, t('stDesigns')]]
     .filter(([n], i) => n > 0 || i === 0).map(([n, l]) => `<div class="stat"><b>${n}</b><span>${l}</span></div>`).join('');
   $('#stats').style.gridTemplateColumns = `repeat(${$('#stats').children.length},1fr)`;
-  const usedCats = D.categories.filter(c => W.some(w => w.cat === c.id));
+  const usedCats = D.categories.filter(c => W.some(w => catsOf(w).includes(c.id)));
   $('#cats').innerHTML = `<button class="chip ${S.cat === 'all' ? 'on' : ''}" data-cat="all">${t('all')}</button>` + usedCats.map(c => `<button class="chip ${S.cat === c.id ? 'on' : ''}" data-cat="${esc(c.id)}">${esc(pick(c, lang))}</button>`).join('');
   $('#kinds').innerHTML = ['all', 'build', 'design'].map(k => `<button data-kind="${k}" class="${S.kind === k ? 'on' : ''}">${t(k === 'all' ? 'kindAll' : k)}</button>`).join('');
   $('#views').innerHTML = [['clients', 'vClients'], ['grid', 'vGrid']].map(([v, k]) => `<button data-view="${v}" class="${S.view === v ? 'on' : ''}">${t(k)}</button>`).join('');
@@ -420,7 +422,7 @@ function drawMedia() {
 function drawViewer() {
   const w = V.list[V.i], c = clientOf(w), k = kindOf(w);
   drawMedia();
-  const facts = [[t('category'), catName(w.cat)], [t('type'), t(k)], [t('loc'), field(w, 'area', lang)], [t('year'), w.year || '']].filter(f => f[1]);
+  const facts = [[t('category'), catNames(w)], [t('type'), t(k)], [t('loc'), field(w, 'area', lang)], [t('year'), w.year || '']].filter(f => f[1]);
   let btns = '';
   if (CONFIG.whatsapp) btns += `<a class="btn btn-gold" href="https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(t('msg') + field(w, 'title', lang) + '\n' + location.href)}" target="_blank" rel="noopener">${I.wa}${t('similar')}</a>`;
   btns += `<button class="btn" data-act="share">${I.link}${t('share')}</button>`;

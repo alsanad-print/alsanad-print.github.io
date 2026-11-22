@@ -146,7 +146,16 @@
     <button class="btn" id="gList"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/></svg><span data-i18n="listView">عرض شبكي</span></button>
   </div>
   <div class="g-hint" id="gHint"></div>
-  <div class="g-cross"></div>
+  <div class="g-cap" id="gCap">
+    <span class="g-cap-no" id="gCapNo"></span>
+    <div class="g-cap-client" id="gCapClient"></div>
+    <h3 id="gCapTitle"></h3>
+    <div class="g-cap-tags" id="gCapTags"></div>
+    <button class="btn btn-gold" id="gOpen"><span>عرض العمل</span></button>
+  </div>
+  <button class="g-arr l" id="gArrL" aria-label="previous"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+  <button class="g-arr r" id="gArrR" aria-label="next"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+  <div class="g-empty" id="gEmpty" hidden></div>
   <div class="g-list" id="gListView"><div class="g-grid" id="gGrid"></div></div>
   <div class="g-card" id="gCard">
     <div class="g-card-box">

@@ -1,34 +1,64 @@
 {
-  "version": 2,
+  "version": 3,
   "categories": [
     {
-      "id": "facades",
-      "ar": "الواجهات واللوحات",
-      "en": "Storefronts & Signage",
-      "ku": "ڕووکار و تابلۆ"
+      "id": "lit-letters",
+      "ar": "حروف ضوئية بارزة",
+      "en": "Illuminated 3D letters",
+      "ku": "پیتی ڕووناکی بەرجەستە"
     },
     {
-      "id": "letters",
-      "ar": "الحروف البارزة والضوئية",
-      "en": "3D & Illuminated Letters",
-      "ku": "پیتی بەرجەستە و ڕووناک"
+      "id": "raised-signs",
+      "ar": "لوحات بارزة بدون إضاءة",
+      "en": "Non-illuminated raised signs",
+      "ku": "تابلۆی بەرجەستەی بێ ڕووناکی"
     },
     {
-      "id": "stands",
-      "ar": "الستاندات والبوكسات",
-      "en": "Stands & Light Boxes",
-      "ku": "ستاند و بۆکس"
+      "id": "sticker",
+      "ar": "ستيكر",
+      "en": "Vinyl sticker",
+      "ku": "ستیکەر"
     },
     {
-      "id": "prints",
-      "ar": "المطبوعات",
-      "en": "Print",
-      "ku": "چاپەمەنی"
+      "id": "uv",
+      "ar": "طباعة UV",
+      "en": "UV printing",
+      "ku": "چاپی UV"
     },
     {
-      "id": "design",
-      "ar": "الهويات والتصاميم",
-      "en": "Identity & Design",
+      "id": "lightbox",
+      "ar": "بوكسات ضوئية",
+      "en": "Light boxes",
+      "ku": "بۆکسی ڕووناکی"
+    },
+    {
+      "id": "rollup",
+      "ar": "رول أب وستاندات",
+      "en": "Roll-ups & stands",
+      "ku": "ڕۆڵ ئەپ و ستاند"
+    },
+    {
+      "id": "flags",
+      "ar": "أعلام شراعية",
+      "en": "Feather flags",
+      "ku": "ئاڵای شەراعی"
+    },
+    {
+      "id": "wayfinding",
+      "ar": "لوحات إرشادية وسلامة",
+      "en": "Wayfinding & safety signs",
+      "ku": "تابلۆی ڕێنمایی و سەلامەتی"
+    },
+    {
+      "id": "print",
+      "ar": "مطبوعات تجارية",
+      "en": "Commercial print",
+      "ku": "چاپەمەنی بازرگانی"
+    },
+    {
+      "id": "identity",
+      "ar": "هويات وتصاميم",
+      "en": "Identity & design",
       "ku": "ناسنامە و دیزاین"
     }
   ],
@@ -37,7 +67,7 @@
       "id": "alsaqi-storefront-3d",
       "client": "alsaqi",
       "kind": "build",
-      "cat": "facades",
+      "cat": "lit-letters",
       "year": "2026",
       "img": "works/alsaqi/01-storefront-3d.jpg",
       "title_ar": "واجهة ضوئية بحروف بارزة ثلاثية الأبعاد",
@@ -51,13 +81,16 @@
       "images": [
         "works/alsaqi/01-storefront-3d-2.jpg",
         "works/alsaqi/01-storefront-3d-3.jpg"
+      ],
+      "cats": [
+        "lit-letters"
       ]
     },
     {
       "id": "alsaqi-interior-wall-sign",
       "client": "alsaqi",
       "kind": "build",
-      "cat": "facades",
+      "cat": "raised-signs",
       "year": "2026",
       "img": "works/alsaqi/02-interior-wall-sign.jpg",
       "title_ar": "لوحة الواجهة الداخلية",
@@ -70,13 +103,16 @@
       "desc_en": "Raised acrylic and foam sign with color vinyl, part of the branch interior identity.",
       "images": [
         "works/alsaqi/02-interior-wall-sign-2.jpg"
+      ],
+      "cats": [
+        "raised-signs"
       ]
     },
     {
       "id": "alsaqi-roll-ups",
       "client": "alsaqi",
       "kind": "build",
-      "cat": "stands",
+      "cat": "rollup",
       "year": "2026",
       "img": "works/alsaqi/03-roll-ups.jpg",
       "title_ar": "ستاندات رول أب",
@@ -90,13 +126,16 @@
       "images": [
         "works/alsaqi/03-roll-ups-2.jpg",
         "works/alsaqi/03-roll-ups-3.jpg"
+      ],
+      "cats": [
+        "rollup"
       ]
     },
     {
       "id": "alsaqi-feather-flags",
       "client": "alsaqi",
       "kind": "build",
-      "cat": "stands",
+      "cat": "flags",
       "year": "2026",
       "img": "works/alsaqi/04-feather-flags.jpg",
       "title_ar": "أعلام شراعية",
@@ -110,13 +149,16 @@
       "images": [
         "works/alsaqi/04-feather-flags-2.jpg",
         "works/alsaqi/04-feather-flags-3.jpg"
+      ],
+      "cats": [
+        "flags"
       ]
     },
     {
       "id": "alsaqi-round-lightbox",
       "client": "alsaqi",
       "kind": "build",
-      "cat": "stands",
+      "cat": "lightbox",
       "year": "2026",
       "img": "works/alsaqi/05-round-lightbox.jpg",
       "title_ar": "بوكس ضوئي دائري",
@@ -126,13 +168,16 @@
       "area_en": "Mosul",
       "area_ku": "موسڵ",
       "desc_ar": "بوكس ضوئي دائري بقطر 60 سم يحمل شعار الشركة.",
-      "desc_en": "Round 60 cm light box carrying the company logo."
+      "desc_en": "Round 60 cm light box carrying the company logo.",
+      "cats": [
+        "lightbox"
+      ]
     },
     {
       "id": "alsaqi-counter-numbers",
       "client": "alsaqi",
       "kind": "build",
-      "cat": "letters",
+      "cat": "sticker",
       "year": "2026",
       "img": "works/alsaqi/06-counter-numbers.jpg",
       "title_ar": "ترقيم الكاونترات",
@@ -145,13 +190,16 @@
       "desc_en": "Customer-service counter numbers in white and turquoise.",
       "images": [
         "works/alsaqi/06-counter-numbers-2.jpg"
+      ],
+      "cats": [
+        "sticker"
       ]
     },
     {
       "id": "alsaqi-wall-logo",
       "client": "alsaqi",
       "kind": "build",
-      "cat": "prints",
+      "cat": "sticker",
       "year": "2026",
       "img": "works/alsaqi/07-wall-logo.jpg",
       "title_ar": "شعار جداري",
@@ -164,13 +212,16 @@
       "desc_en": "Printed and cut vinyl wall logo, 60×60 cm, installed on site.",
       "images": [
         "works/alsaqi/07-wall-logo-2.jpg"
+      ],
+      "cats": [
+        "sticker"
       ]
     },
     {
       "id": "alsaqi-safety-signs",
       "client": "alsaqi",
       "kind": "build",
-      "cat": "facades",
+      "cat": "wayfinding",
       "year": "2026",
       "img": "works/alsaqi/08-safety-signs.jpg",
       "title_ar": "لوحات السلامة والتنبيه",
@@ -187,13 +238,17 @@
         "works/alsaqi/08-safety-signs-4.jpg",
         "works/alsaqi/08-safety-signs-5.jpg",
         "works/alsaqi/08-safety-signs-6.jpg"
+      ],
+      "cats": [
+        "wayfinding",
+        "uv"
       ]
     },
     {
       "id": "alsaqi-wayfinding",
       "client": "alsaqi",
       "kind": "build",
-      "cat": "facades",
+      "cat": "wayfinding",
       "year": "2026",
       "img": "works/alsaqi/09-wayfinding.jpg",
       "title_ar": "اللوحات الإرشادية",
@@ -208,13 +263,17 @@
         "works/alsaqi/09-wayfinding-2.jpg",
         "works/alsaqi/09-wayfinding-3.jpg",
         "works/alsaqi/09-wayfinding-4.jpg"
+      ],
+      "cats": [
+        "wayfinding",
+        "uv"
       ]
     },
     {
       "id": "alsaqi-qr-stands",
       "client": "alsaqi",
       "kind": "build",
-      "cat": "prints",
+      "cat": "uv",
       "year": "2026",
       "img": "works/alsaqi/10-qr-stands.jpg",
       "title_ar": "منصات ولوحات رموز QR",
@@ -227,13 +286,16 @@
       "desc_en": "Table stands and QR signs for the company app and complaint platforms, UV-printed.",
       "images": [
         "works/alsaqi/10-qr-stands-2.jpg"
+      ],
+      "cats": [
+        "uv"
       ]
     },
     {
       "id": "karwanchi-khoshawi",
       "client": "karwanchi",
       "kind": "build",
-      "cat": "letters",
+      "cat": "lit-letters",
       "img": "works/karwanchi/01-khoshawi.jpg",
       "images": [
         "works/karwanchi/01-khoshawi-2.jpg"
@@ -245,13 +307,16 @@
       "desc_en": "Illuminated 3D-letter signs carrying the Karwanchi and K9 energy drink identity for Khoshawi Market.",
       "area_ar": "أربيل",
       "area_en": "Erbil",
-      "area_ku": "هەولێر"
+      "area_ku": "هەولێر",
+      "cats": [
+        "lit-letters"
+      ]
     },
     {
       "id": "karwanchi-mmw",
       "client": "karwanchi",
       "kind": "build",
-      "cat": "letters",
+      "cat": "lit-letters",
       "img": "works/karwanchi/02-mmw.jpg",
       "title_ar": "لوحة زاوية ضوئية بارزة — ماركت MMW",
       "title_en": "Illuminated corner sign — MMW Market",
@@ -260,13 +325,16 @@
       "desc_en": "Corner sign with illuminated 3D letters and an LED frame, carrying the Karwanchi and K9 identity.",
       "area_ar": "أربيل",
       "area_en": "Erbil",
-      "area_ku": "هەولێر"
+      "area_ku": "هەولێر",
+      "cats": [
+        "lit-letters"
+      ]
     },
     {
       "id": "karwanchi-rahma",
       "client": "karwanchi",
       "kind": "build",
-      "cat": "facades",
+      "cat": "sticker",
       "img": "works/karwanchi/03-rahma.jpg",
       "title_ar": "واجهة ستيكر — ماركت رحمة",
       "title_en": "Vinyl storefront — Rahma Market",
@@ -275,7 +343,10 @@
       "desc_en": "Full storefront in printed and applied vinyl, featuring Karwanchi brands and K9.",
       "area_ar": "أربيل",
       "area_en": "Erbil",
-      "area_ku": "هەولێر"
+      "area_ku": "هەولێر",
+      "cats": [
+        "sticker"
+      ]
     }
   ],
   "clients": [

@@ -306,9 +306,9 @@ details.more>div{display:flex;flex-direction:column;gap:10px;margin-top:10px}
         <label class="f"><span class="req">نوع العمل</span><select id="mKind"><option value="build">تصميم وتنفيذ</option><option value="design">تصميم فقط</option></select></label>
       </div>
       <div class="two">
-        <label class="f"><span class="req">الفئة</span><select id="mCat"></select></label>
         <label class="f">السنة<input id="mYear" dir="ltr" placeholder="2026"></label>
       </div>
+      <div class="f"><span class="req">الفئات (اختر واحدة أو أكثر)</span><div class="stchk" id="mCats"></div></div>
       <div class="two">
         <label class="f"><span class="req">اسم العمل (عربي)</span><input id="mTitleAr" required></label>
         <label class="f">المنطقة (عربي)<input id="mAreaAr" placeholder="مثال: الموصل - الدواسة"></label>
@@ -399,6 +399,7 @@ const ls = { get: k => { try { return localStorage.getItem(k); } catch (e) { ret
 const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
 const slug = s => (s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 30);
 const cName = c => c ? (c.name_ar || c.name || '') : '';
+const catsOf = w => w.cats?.length ? w.cats : (w.cat ? [w.cat] : []);
 
 const S = { token: ls.get('alsanad-gh') || '', gal: null, base: '', files: {}, del: new Set(), cat: 'all', client: 'all', tab: 'works' };
 
@@ -485,11 +486,11 @@ $$('.tabs button').forEach(b => b.addEventListener('click', () => { S.tab = b.da
 
 function renderWorks() {
   const d = S.gal, base = JSON.parse(S.base), bmap = new Map((base.works || []).map(w => [w.id, JSON.stringify(w)]));
-  const inCat = w => S.cat === 'all' || w.cat === S.cat, inCl = w => S.client === 'all' || (S.client === 'none' ? !w.client : w.client === S.client);
+  const inCat = w => S.cat === 'all' || catsOf(w).includes(S.cat), inCl = w => S.client === 'all' || (S.client === 'none' ? !w.client : w.client === S.client);
   $('#catList').innerHTML = `<div class="cat ${S.cat === 'all' ? 'on' : ''}" data-cat="all"><div class="nm"><b>جميع الفئات</b></div><span class="cnt">${d.works.length}</span></div>` +
     d.categories.map((c, i) => `<div class="cat ${S.cat === c.id ? 'on' : ''}" data-cat="${esc(c.id)}"><div class="nm"><b>${esc(c.ar)}</b><small>${esc(c.en)}</small></div>
       <span class="tools"><button class="icon-btn" data-cact="up" data-i="${i}">${ICON.up}</button><button class="icon-btn" data-cact="down" data-i="${i}">${ICON.down}</button><button class="icon-btn" data-cact="edit" data-i="${i}">${ICON.edit}</button><button class="icon-btn" data-cact="del" data-i="${i}">${ICON.del}</button></span>
-      <span class="cnt">${d.works.filter(w => w.cat === c.id).length}</span></div>`).join('');
+      <span class="cnt">${d.works.filter(w => catsOf(w).includes(c.id)).length}</span></div>`).join('');
   $('#clFilter').innerHTML = [['all', 'جميع العملاء', d.works.length], ...d.clients.map(c => [c.id, cName(c), d.works.filter(w => w.client === c.id).length]), ['none', 'بدون عميل', d.works.filter(w => !w.client).length]]
     .map(([id, n, k]) => `<div class="cat ${S.client === id ? 'on' : ''}" data-clf="${esc(id)}"><div class="nm"><b>${esc(n)}</b></div><span class="cnt">${k}</span></div>`).join('');
   const list = d.works.map((w, i) => ({ w, i })).filter(o => inCat(o.w) && inCl(o.w));
@@ -498,7 +499,7 @@ function renderWorks() {
     const isNew = !bmap.has(w.id), isEdit = !isNew && bmap.get(w.id) !== JSON.stringify(w), cl = d.clients.find(c => c.id === w.client);
     return `<div class="card w"><div class="th" style="background-image:url('${esc(src(w.img))}')" data-img="${esc(src(w.img))}"><div class="missing" hidden></div>
       <div class="badges">${isNew ? '<span class="badge new">جديد</span>' : ''}${isEdit ? '<span class="badge edit">معدّل</span>' : ''}${w.sample ? '<span class="badge sample">تجريبي</span>' : `<span class="badge kind">${w.kind === 'design' ? 'تصميم' : 'تصميم وتنفيذ'}</span>`}${w.video ? '<span class="badge kind">▶</span>' : ''}${w.before ? '<span class="badge kind">قبل/بعد</span>' : ''}${(w.images || []).length ? `<span class="badge kind">+${w.images.length}</span>` : ''}</div></div>
-      <div class="meta"><b>${esc(w.title_ar) || '<span class="muted">بدون عنوان</span>'}</b><small>${esc(cl ? cName(cl) : 'بدون عميل')} · ${esc(cn(w.cat))}</small></div>
+      <div class="meta"><b>${esc(w.title_ar) || '<span class="muted">بدون عنوان</span>'}</b><small>${esc(cl ? cName(cl) : 'بدون عميل')} · ${esc(catsOf(w).map(cn).join('، '))}</small></div>
       <div class="acts"><span><button class="icon-btn" data-act="up" data-i="${i}">${ICON.up}</button><button class="icon-btn" data-act="down" data-i="${i}">${ICON.down}</button></span>
       <span><button class="icon-btn" data-act="edit" data-i="${i}">${ICON.edit}</button><button class="icon-btn" data-act="del" data-i="${i}">${ICON.del}</button></span></div></div>`;
   }).join('') : `<div class="card empty" style="grid-column:1/-1">لا توجد أعمال هنا بعد. أضف صوراً من الأعلى.</div>`;
@@ -518,7 +519,7 @@ $('#catList').addEventListener('click', e => {
     if (b.dataset.cact === 'down' && i < cats.length - 1) [cats[i + 1], cats[i]] = [cats[i], cats[i + 1]];
     if (b.dataset.cact === 'edit') { openCat(i); return; }
     if (b.dataset.cact === 'del') {
-      if (S.gal.works.some(w => w.cat === cats[i].id)) { toast('لا يمكن حذف فئة تحتوي على أعمال.', 'err'); return; }
+      if (S.gal.works.some(w => catsOf(w).includes(cats[i].id))) { toast('لا يمكن حذف فئة تحتوي على أعمال.', 'err'); return; }
       if (!confirm(`حذف الفئة «${cats[i].ar}»؟`)) return;
       if (S.cat === cats[i].id) S.cat = 'all'; cats.splice(i, 1);
     }
@@ -589,13 +590,14 @@ function clientOptions(sel) {
   return `<option value="">— بدون عميل —</option>` + S.gal.clients.map(c => `<option value="${esc(c.id)}" ${c.id === sel ? 'selected' : ''}>${esc(cName(c))}</option>`).join('') + `<option value="__new">+ عميل جديد…</option>`;
 }
 function openWork({ index = -1, media = null, qPos = 0 }) {
-  const w = index >= 0 ? S.gal.works[index] : { cat: S.cat !== 'all' ? S.cat : S.gal.categories[0].id, client: !['all', 'none'].includes(S.client) ? S.client : (M?.lastClient || ''), kind: 'build' };
+  const w = index >= 0 ? S.gal.works[index] : { cats: S.cat !== 'all' ? [S.cat] : [], client: !['all', 'none'].includes(S.client) ? S.client : (M?.lastClient || ''), kind: 'build' };
   M = { index, media, w, before: null, removeBefore: false, extras: (w.images || []).map(p => ({ path: p })), lastClient: M?.lastClient };
   $('#mHead').textContent = index >= 0 ? 'تعديل العمل' : 'عمل جديد';
   $('#mQueue').textContent = index < 0 && qTotal > 1 ? `${qPos} / ${qTotal}` : '';
   mediaPreview();
   $('#mClient').innerHTML = clientOptions(w.client);
-  $('#mCat').innerHTML = S.gal.categories.map(c => `<option value="${esc(c.id)}">${esc(c.ar)}</option>`).join(''); $('#mCat').value = w.cat;
+  const wc = new Set(catsOf(w));
+  $('#mCats').innerHTML = S.gal.categories.map(c => `<label><input type="checkbox" value="${esc(c.id)}" ${wc.has(c.id) ? 'checked' : ''}> ${esc(c.ar)}</label>`).join('');
   $('#mKind').value = w.kind === 'design' ? 'design' : 'build';
   for (const [id, k] of [['mTitleAr', 'title_ar'], ['mAreaAr', 'area_ar'], ['mDescAr', 'desc_ar'], ['mTitleEn', 'title_en'], ['mAreaEn', 'area_en'], ['mDescEn', 'desc_en'], ['mTitleKu', 'title_ku'], ['mAreaKu', 'area_ku'], ['mDescKu', 'desc_ku'], ['mYear', 'year']]) $('#' + id).value = w[k] || '';
   $('#mOk').textContent = index < 0 && queue.length ? 'حفظ والتالي' : 'حفظ';
@@ -614,10 +616,13 @@ $('#mCancel').addEventListener('click', () => { closeM('wModal'); if (M?.index <
 $('#mForm').addEventListener('submit', e => {
   e.preventDefault();
   const v = id => $('#' + id).value.trim();
-  const fields = { client: v('mClient'), kind: v('mKind'), cat: v('mCat'), year: v('mYear'), title_ar: v('mTitleAr'), area_ar: v('mAreaAr'), desc_ar: v('mDescAr'), title_en: v('mTitleEn'), area_en: v('mAreaEn'), desc_en: v('mDescEn'), title_ku: v('mTitleKu'), area_ku: v('mAreaKu'), desc_ku: v('mDescKu') };
+  const chosen = [...document.querySelectorAll('#mCats input:checked')].map(x => x.value);
+  const fields = { client: v('mClient'), kind: v('mKind'), cat: chosen[0] || '', year: v('mYear'), title_ar: v('mTitleAr'), area_ar: v('mAreaAr'), desc_ar: v('mDescAr'), title_en: v('mTitleEn'), area_en: v('mAreaEn'), desc_en: v('mDescEn'), title_ku: v('mTitleKu'), area_ku: v('mAreaKu'), desc_ku: v('mDescKu') };
   if (!fields.title_ar) { toast('اسم العمل بالعربي مطلوب.', 'err'); return; }
+  if (!chosen.length) { toast('اختر فئة واحدة على الأقل.', 'err'); return; }
   const w = M.index >= 0 ? S.gal.works[M.index] : { id: uid() };
   for (const k in fields) { if (fields[k]) w[k] = fields[k]; else delete w[k]; }
+  w.cats = chosen;
   delete w.sample;
   const folder = `works/${w.client || 'general'}`, base = `${folder}/${Date.now().toString(36)}-${slug(fields.title_en) || 'project'}`;
   if (M.media) {

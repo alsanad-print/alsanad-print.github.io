@@ -60,10 +60,10 @@ export function classicHTML(lang, data, hasGL = true) {
     <div class="cl-head"><em>02</em><h2>${esc(u.gallery)}</h2></div>
     <p style="margin:-8px 0 18px"><a class="btn" href="projects/">${esc(u.allProjects || '')} →</a></p>
     ${works.length ? `
-    <div class="cl-filters"><button class="on" data-f="all">${esc(u.all)}</button>${cats.filter(c => works.some(w => w.cat === c.id)).map(c => `<button data-f="${esc(c.id)}">${esc(pick(c, lang))}</button>`).join('')}</div>
+    <div class="cl-filters"><button class="on" data-f="all">${esc(u.all)}</button>${cats.filter(c => works.some(w => (w.cats || [w.cat]).includes(c.id))).map(c => `<button data-f="${esc(c.id)}">${esc(pick(c, lang))}</button>`).join('')}</div>
     <div class="cl-grid">
-      ${works.map((w, i) => { const c = cats.find(x => x.id === w.cat); return `
-      <button class="cl-w" data-cat="${esc(w.cat)}" data-i="${i}">
+      ${works.map((w, i) => { const c = cats.find(x => x.id === (w.cats || [w.cat])[0]); return `
+      <button class="cl-w" data-cat="${esc((w.cats || [w.cat]).join(' '))}" data-i="${i}">
         <img src="${esc(w.img)}" alt="${esc(field(w, 'title', lang))}" loading="lazy">
         ${w.before ? `<span class="cl-badge">${esc(u.before)} / ${esc(u.after)}</span>` : w.video ? `<span class="cl-badge">▶ ${esc(u.video)}</span>` : ''}
         <span class="cl-w-t"><b>${esc(field(w, 'title', lang))}</b><small>${esc(c ? pick(c, lang) : '')} · ${esc(field(w, 'area', lang))}</small></span>
@@ -122,7 +122,7 @@ export function renderClassic(el, { lang, data, onLang, hasGL = true }) {
   el.querySelectorAll('[data-cl-lang]').forEach(b => b.addEventListener('click', () => onLang?.(b.dataset.clLang)));
   el.querySelectorAll('.cl-filters button').forEach(b => b.addEventListener('click', () => {
     el.querySelectorAll('.cl-filters button').forEach(x => x.classList.toggle('on', x === b));
-    el.querySelectorAll('.cl-w').forEach(w => { w.hidden = b.dataset.f !== 'all' && w.dataset.cat !== b.dataset.f; });
+    el.querySelectorAll('.cl-w').forEach(w => { w.hidden = b.dataset.f !== 'all' && !w.dataset.cat.split(' ').includes(b.dataset.f); });
   }));
   const lb = el.querySelector('#clLb'), lbBody = el.querySelector('#clLbBody');
   el.querySelectorAll('.cl-w').forEach(b => b.addEventListener('click', () => {
