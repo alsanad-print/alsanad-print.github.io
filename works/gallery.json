@@ -347,6 +347,94 @@
       "cats": [
         "sticker"
       ]
+    },
+    {
+      "id": "alwalimah-abu-mustafa",
+      "client": "alwalimah",
+      "kind": "build",
+      "cats": [
+        "lightbox"
+      ],
+      "cat": "lightbox",
+      "img": "works/alwalimah/01-abu-mustafa.jpg",
+      "title_ar": "لوحة ضوئية — محلات أبو مصطفى",
+      "title_en": "Backlit sign — Abu Mustafa Stores",
+      "area_ar": "الموصل",
+      "area_en": "Mosul",
+      "area_ku": "موسڵ",
+      "desc_ar": "لوحة ضوئية ممتدة على واجهتي المحل بهوية تمن الوليمة، مع إنارة سفلية للواجهة.",
+      "desc_en": "Backlit sign wrapping both sides of the store in the Alwalimah identity, with downlights under the canopy.",
+      "images": [
+        "works/alwalimah/01-abu-mustafa-2.jpg"
+      ]
+    },
+    {
+      "id": "alwalimah-abu-muataz",
+      "client": "alwalimah",
+      "kind": "build",
+      "cats": [
+        "lightbox"
+      ],
+      "cat": "lightbox",
+      "img": "works/alwalimah/02-abu-muataz.jpg",
+      "title_ar": "لوحة ضوئية — محلات أبو معتز",
+      "title_en": "Backlit sign — Abu Muataz Stores",
+      "area_ar": "الموصل",
+      "area_en": "Mosul",
+      "area_ku": "موسڵ",
+      "desc_ar": "لوحة ضوئية علوية بهوية تمن الوليمة تعرض نشاط المحل وأرقام التواصل.",
+      "desc_en": "Rooftop backlit sign in the Alwalimah identity, showing the store activity and contact numbers."
+    },
+    {
+      "id": "alwalimah-azzawi",
+      "client": "alwalimah",
+      "kind": "build",
+      "cats": [
+        "lightbox"
+      ],
+      "cat": "lightbox",
+      "img": "works/alwalimah/03-azzawi.jpg",
+      "title_ar": "لوحة ضوئية — محلات العزاوي",
+      "title_en": "Backlit sign — Al-Azzawi Stores",
+      "area_ar": "الموصل",
+      "area_en": "Mosul",
+      "area_ku": "موسڵ",
+      "desc_ar": "لوحة ضوئية علوية بعرض الواجهة بهوية تمن الوليمة.",
+      "desc_en": "Full-width rooftop backlit sign in the Alwalimah identity."
+    },
+    {
+      "id": "alwalimah-shumaisi",
+      "client": "alwalimah",
+      "kind": "build",
+      "cats": [
+        "lightbox"
+      ],
+      "cat": "lightbox",
+      "img": "works/alwalimah/04-shumaisi.jpg",
+      "title_ar": "لوحة ضوئية — محلات عبد الرحمن الشميسي",
+      "title_en": "Backlit sign — Abdulrahman Al-Shumaisi Stores",
+      "area_ar": "الموصل",
+      "area_en": "Mosul",
+      "area_ku": "موسڵ",
+      "desc_ar": "لوحة ضوئية للواجهة بهوية تمن الوليمة مع إنارة أمامية.",
+      "desc_en": "Backlit storefront sign in the Alwalimah identity with front lighting."
+    },
+    {
+      "id": "alwalimah-alaa-alabadi",
+      "client": "alwalimah",
+      "kind": "build",
+      "cats": [
+        "lightbox"
+      ],
+      "cat": "lightbox",
+      "img": "works/alwalimah/05-alaa-alabadi.jpg",
+      "title_ar": "لوحة ضوئية — محلات علاء العبادي",
+      "title_en": "Backlit sign — Alaa Al-Abadi Stores",
+      "area_ar": "الموصل",
+      "area_en": "Mosul",
+      "area_ku": "موسڵ",
+      "desc_ar": "لوحة ضوئية علوية بهوية تمن الوليمة فوق واجهة المحل.",
+      "desc_en": "Rooftop backlit sign in the Alwalimah identity above the storefront."
     }
   ],
   "clients": [
@@ -370,6 +458,17 @@
       "sector_en": "Food products & K9 energy drink",
       "sector_ku": "بەرهەمی خۆراک و خواردنەوەی وزەی K9",
       "logo": "works/clients/karwanchi.png",
+      "strip": true
+    },
+    {
+      "id": "alwalimah",
+      "name_ar": "تمن الوليمة",
+      "name_en": "Alwalimah Rice",
+      "name_ku": "برنجی ئەلوەلیمە",
+      "sector_ar": "أرز ومواد غذائية",
+      "sector_en": "Rice & food products",
+      "sector_ku": "برنج و بەرهەمی خۆراک",
+      "logo": "works/clients/alwalimah.png",
       "strip": true
     }
   ]
