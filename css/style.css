@@ -359,3 +359,10 @@ a.btn-gold{color:#1B2A22}
   .t-long{display:none}.t-short{display:inline}
 }
 @media (max-width:760px){ .lite-btn{top:calc(66px + var(--safe-t));bottom:auto;inset-inline-start:12px} }
+
+.g-card-client{display:inline-flex;align-items:center;gap:10px;padding:8px 12px 8px 10px;border-radius:12px;border:1px solid var(--line);color:var(--white);text-decoration:none;font-weight:700;width:max-content;max-width:100%}
+.g-card-client img{height:26px;max-width:60px;object-fit:contain;filter:brightness(0) invert(1)}
+.g-card-client:hover{border-color:var(--glow)}
+#gFull{justify-content:center}
+.clients .cl{pointer-events:auto}
+@media (max-width:760px){#gAll span{display:none}#gAll{width:40px;padding:0;justify-content:center}}

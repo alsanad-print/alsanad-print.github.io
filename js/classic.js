@@ -13,7 +13,7 @@ export function classicHTML(lang, data, hasGL = true) {
   const u = UI[lang];
   const cats = data.categories || [];
   const works = (data.works || []).filter(w => !w.sample);
-  const clients = (data.clients || []).filter(c => c.logo);
+  const clients = (data.clients || []).filter(c => c.logo && c.strip !== false);
   const map = CONFIG.mapLink || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(CONFIG.mapQuery)}`;
   const year = new Date().getFullYear();
   return `
@@ -58,6 +58,7 @@ export function classicHTML(lang, data, hasGL = true) {
 
   <section class="cl-sec" id="c-work">
     <div class="cl-head"><em>02</em><h2>${esc(u.gallery)}</h2></div>
+    <p style="margin:-8px 0 18px"><a class="btn" href="projects/">${esc(u.allProjects || '')} →</a></p>
     ${works.length ? `
     <div class="cl-filters"><button class="on" data-f="all">${esc(u.all)}</button>${cats.filter(c => works.some(w => w.cat === c.id)).map(c => `<button data-f="${esc(c.id)}">${esc(pick(c, lang))}</button>`).join('')}</div>
     <div class="cl-grid">
@@ -81,7 +82,7 @@ export function classicHTML(lang, data, hasGL = true) {
   ${clients.length ? `
   <section class="cl-sec">
     <div class="cl-head"><em>04</em><h2>${esc(u.clients)}</h2></div>
-    <div class="cl-clients">${clients.map(c => `<img src="${esc(c.logo)}" alt="${esc(c.name)}" loading="lazy">`).join('')}</div>
+    <div class="cl-clients">${clients.map(c => `<img src="${esc(c.logo)}" alt="${esc(c['name_' + lang] || c.name_ar || c.name)}" loading="lazy">`).join('')}</div>
   </section>` : ''}
 
   <section class="cl-sec" id="c-contact">

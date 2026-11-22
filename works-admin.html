@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>إدارة الأعمال | السند</title>
+<link rel="icon" href="assets/favicon.png">
+<link rel="stylesheet" href="css/fonts.css">
+<style>
+:root{--bg:#0B1B1F;--panel:#10272B;--panel2:#143236;--petrol:#22967F;--gold:#F5C64F;--glow:#3CC4A4;--white:#F2F6F5;--gray:#93A3A2;--line:rgba(255,255,255,.09);--red:#E5675A;--ar:'Baloo Bhaijaan 2',system-ui,sans-serif;--en:'Montserrat',system-ui,sans-serif;--ku:'Noto Kufi Arabic',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--white);font-family:var(--ar);min-height:100vh;-webkit-font-smoothing:antialiased}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer;background:none;border:0}
+a{color:var(--glow)}
+svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+[hidden]{display:none!important}
+.top{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px clamp(16px,4vw,40px);background:rgba(11,27,31,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top .brand{display:flex;align-items:center;gap:16px}
+.top img{height:32px}
+.top h1{font-size:16px;font-weight:700;padding-inline-start:16px;border-inline-start:1px solid var(--line)}
+.top h1 small{display:block;font-family:var(--en);font-size:10px;letter-spacing:.18em;color:var(--gold);font-weight:700}
+.top-r{display:flex;gap:10px;align-items:center}
+.status{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--gray);padding:7px 12px;border-radius:8px;border:1px solid var(--line);white-space:nowrap}
+.status i{width:8px;height:8px;border-radius:50%;background:var(--gray)}
+.status.ok i{background:var(--glow);box-shadow:0 0 10px var(--glow)}
+.status.err i{background:var(--red)}
+.wrap{max-width:1240px;margin:auto;padding:24px clamp(16px,4vw,40px) 140px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:42px;padding:0 16px;border-radius:10px;border:1px solid var(--line);background:var(--panel2);font-weight:700;font-size:14.5px;white-space:nowrap;transition:.2s;text-decoration:none;color:var(--white)}
+.btn:hover{border-color:rgba(79,227,193,.5)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn-gold{background:var(--gold);color:#1B2A22;border-color:transparent}
+.btn-wa{background:#1F8F5F;border-color:transparent;color:#fff}
+.btn-ghost{background:transparent}
+.btn-danger{color:var(--red)}
+.btn-sm{height:34px;padding:0 11px;font-size:13px;border-radius:8px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px}
+.sec-title{display:flex;align-items:baseline;gap:12px;margin-bottom:14px}
+.sec-title em{font-style:normal;font-family:var(--en);font-weight:800;font-size:12px;letter-spacing:.16em;color:var(--gold)}
+.sec-title h2{font-size:20px}
+.muted{color:var(--gray);font-size:14px;line-height:1.7}
+.mono{font-family:var(--en);letter-spacing:.06em}
+
+#conn{padding:22px;margin-bottom:22px}
+#conn .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}
+label.f{display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--gray)}
+.f input,.f select,.f textarea{height:44px;padding:0 12px;border-radius:10px;border:1px solid var(--line);background:#0C2023;color:var(--white);font-size:15px;outline:none;transition:border-color .2s;width:100%}
+.f textarea{height:auto;min-height:70px;padding:10px 12px;resize:vertical;line-height:1.6}
+.f input:focus,.f select:focus,.f textarea:focus{border-color:var(--glow)}
+.f [dir=ltr]{font-family:var(--en);font-size:14px}
+.f .ku{font-family:var(--ku);font-size:14px}
+details.help{margin-top:6px}
+details.help summary{cursor:pointer;color:var(--glow);font-size:14px}
+details.help ol{margin:12px 22px 0;line-height:1.9;color:#C9D7D5;font-size:14px}
+details.help code{font-family:var(--en);font-size:12.5px;background:#0C2023;padding:2px 6px;border-radius:5px}
+.conn-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+#conn.collapsed{display:none}
+
+/* tabs */
+.tabs{display:flex;gap:6px;margin-bottom:22px;border-bottom:1px solid var(--line)}
+.tabs button{display:flex;align-items:center;gap:8px;padding:12px 16px;font-weight:700;font-size:15.5px;color:var(--gray);border-bottom:2px solid transparent;margin-bottom:-1px}
+.tabs button.on{color:var(--white);border-color:var(--gold)}
+.tabs button .cnt{font-family:var(--en);font-size:11.5px;padding:2px 7px;border-radius:10px;background:rgba(255,255,255,.07)}
+
+.layout{display:grid;grid-template-columns:270px 1fr;gap:22px;align-items:start}
+.cats{padding:14px;position:sticky;top:84px}
+.cat{display:flex;align-items:center;gap:8px;padding:10px 12px;border-radius:10px;cursor:pointer;border:1px solid transparent}
+.cat:hover{background:rgba(255,255,255,.03)}
+.cat.on{background:rgba(79,227,193,.08);border-color:rgba(79,227,193,.25)}
+.cat .nm{flex:1;min-width:0}
+.cat .nm b{display:block;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cat .nm small{display:block;font-family:var(--en);font-size:11.5px;color:var(--gray);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cat .cnt{font-family:var(--en);font-size:12px;color:var(--gold);font-weight:700;min-width:22px;text-align:center}
+.cat .tools{display:none;gap:2px}
+.cat:hover .tools,.cat.on .tools{display:flex}
+.icon-btn{width:30px;height:30px;border-radius:7px;display:inline-grid;place-items:center;color:var(--gray)}
+.icon-btn:hover{background:rgba(255,255,255,.07);color:var(--white)}
+.icon-btn svg{width:15px;height:15px}
+.cats hr{border:0;border-top:1px solid var(--line);margin:12px 0}
+.toolbar{display:flex;gap:10px;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap}
+.drop{border:1.5px dashed rgba(79,227,193,.35);border-radius:14px;padding:24px;text-align:center;cursor:pointer;transition:.2s;margin-bottom:16px;background:rgba(79,227,193,.03)}
+.drop:hover,.drop.over{border-color:var(--glow);background:rgba(79,227,193,.07)}
+.drop b{display:block;font-size:17px;margin:8px 0 4px}
+.drop svg{width:30px;height:30px;color:var(--glow)}
+.gridw{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.w{overflow:hidden;display:flex;flex-direction:column}
+.w .th{aspect-ratio:4/3;background:#0C2023 center/cover no-repeat;position:relative}
+.w .missing{position:absolute;inset:0;display:grid;place-items:center;text-align:center;color:var(--gray);font-size:13px;padding:10px}
+.badges{position:absolute;top:8px;inset-inline-start:8px;display:flex;gap:6px;flex-wrap:wrap}
+.badge{font-size:11.5px;font-weight:700;padding:3px 8px;border-radius:6px;background:rgba(11,27,31,.88);border:1px solid var(--line)}
+.badge.new{color:var(--glow);border-color:rgba(79,227,193,.4)}
+.badge.edit{color:var(--gold);border-color:rgba(245,198,79,.4)}
+.badge.sample,.badge.kind{color:var(--gray)}
+.w .meta{padding:12px 14px;flex:1}
+.w .meta b{display:block;font-size:15.5px}
+.w .meta small{display:block;color:var(--gray);font-size:13px;margin-top:2px}
+.w .acts{display:flex;gap:2px;padding:6px 8px;border-top:1px solid var(--line);justify-content:space-between}
+.empty{padding:40px;text-align:center;color:var(--gray)}
+
+/* orders */
+.lock{max-width:460px;margin:30px auto;padding:28px;text-align:center}
+.lock h3{font-size:21px;margin-bottom:8px}
+.lock form{display:flex;flex-direction:column;gap:10px;margin-top:18px;text-align:start}
+.lock .chk{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--gray)}
+.err{color:#F09A8E;font-size:14px;min-height:20px}
+.otools{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px}
+.otools input{height:42px;padding:0 12px;border-radius:10px;border:1px solid var(--line);background:#0C2023;color:var(--white);min-width:220px;outline:none}
+.seg{display:flex;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.seg button{padding:9px 14px;font-size:14px;font-weight:700;color:var(--gray)}
+.seg button.on{background:var(--petrol);color:#fff}
+.orows{display:grid;gap:10px}
+.orow{display:grid;grid-template-columns:150px 1fr auto;gap:16px;align-items:center;padding:14px 16px}
+.orow .code{font-family:var(--en);font-weight:700;letter-spacing:.06em;color:var(--gold);font-size:14px}
+.orow .code small{display:block;color:var(--gray);font-family:var(--ar);letter-spacing:0;font-weight:500;font-size:12.5px;margin-top:2px}
+.orow .ti b{display:block;font-size:16px}
+.orow .ti small{color:var(--gray);font-size:13px}
+.stepper{display:flex;gap:4px;margin-top:8px;flex-wrap:wrap}
+.stepper button{height:28px;padding:0 10px;border-radius:7px;font-size:12.5px;font-weight:700;border:1px solid var(--line);color:var(--gray)}
+.stepper button.done{background:rgba(245,198,79,.15);color:var(--gold);border-color:rgba(245,198,79,.3)}
+.stepper button.now{background:var(--glow);color:#0B1B1F;border-color:transparent}
+.stepper button.skip{opacity:.3;text-decoration:line-through;cursor:default}
+.oacts{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+.stchk{display:flex;gap:8px;flex-wrap:wrap}
+.stchk label{display:flex;align-items:center;gap:6px;padding:7px 10px;border-radius:8px;border:1px solid var(--line);font-size:13.5px;cursor:pointer}
+.codebox{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 14px;border-radius:10px;background:#0C2023;border:1px solid var(--line)}
+.codebox b{font-family:var(--en);letter-spacing:.1em;color:var(--gold);font-size:18px}
+
+/* clients */
+.clgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px}
+.clc{padding:16px;display:flex;flex-direction:column;align-items:center;gap:10px}
+.clc .lg{height:70px;width:100%;display:grid;place-items:center;background:#0C2023;border-radius:10px}
+.clc img{max-height:50px;max-width:80%;filter:brightness(0) invert(1);opacity:.85}
+.clc b{font-size:14px;text-align:center}
+
+/* publish bar */
+.bar{position:fixed;bottom:18px;inset-inline:0;margin:auto;width:min(760px,calc(100% - 24px));z-index:30;display:flex;align-items:center;gap:14px;justify-content:space-between;padding:12px 18px 12px 14px;border-radius:14px;background:#16393C;border:1px solid rgba(245,198,79,.35);box-shadow:0 20px 60px -10px rgba(0,0,0,.6);transform:translateY(140%);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.bar.show{transform:none}
+.bar .txt{font-size:14.5px}
+.bar .txt b{color:var(--gold);font-family:var(--en)}
+.bar .btns{display:flex;gap:8px}
+
+/* modal */
+.modal{position:fixed;inset:0;z-index:50;display:grid;place-items:center;padding:16px;background:rgba(3,10,12,.72);backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .25s}
+.modal.open{opacity:1;pointer-events:auto}
+.mbox{width:min(940px,100%);max-height:calc(100vh - 32px);overflow:auto;display:grid;grid-template-columns:1fr 1.2fr;border-radius:16px;background:var(--panel);border:1px solid var(--line)}
+.mbox.one{display:block;width:min(560px,100%)}
+.mimg{background:#081517;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:18px;min-height:260px}
+.mimg img,.mimg video{max-width:100%;max-height:44vh;border-radius:8px;display:block}
+.before{width:100%;border-top:1px solid var(--line);padding-top:12px;display:flex;flex-direction:column;align-items:center;gap:8px}
+.before img{max-height:110px}
+.before small{color:var(--gray)}
+.mform{padding:22px;display:flex;flex-direction:column;gap:12px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.three{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.mform h3{font-size:19px;display:flex;justify-content:space-between;align-items:center}
+.mform h3 small{font-family:var(--en);font-size:12px;color:var(--gold);letter-spacing:.1em}
+.mfoot{display:flex;gap:8px;justify-content:flex-end;margin-top:6px;flex-wrap:wrap}
+.req::after{content:" *";color:var(--gold)}
+details.more summary{cursor:pointer;color:var(--glow);font-size:14px;padding:4px 0}
+details.more>div{display:flex;flex-direction:column;gap:10px;margin-top:10px}
+
+#prog .mbox{display:block;width:min(520px,100%);padding:26px}
+#prog h3{font-size:19px;margin-bottom:8px}
+.pbar{height:6px;border-radius:6px;background:rgba(255,255,255,.08);overflow:hidden;margin:16px 0 10px}
+.pbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--glow),var(--gold));transition:width .3s}
+#plog{font-size:12.5px;color:var(--gray);line-height:1.8;max-height:180px;overflow:auto;font-family:var(--en);direction:ltr;text-align:left}
+.toast{position:fixed;top:80px;inset-inline:0;margin:auto;width:max-content;max-width:calc(100% - 24px);z-index:60;padding:12px 18px;border-radius:10px;background:#16393C;border:1px solid var(--line);font-size:14.5px;transform:translateY(-20px);opacity:0;transition:.3s;pointer-events:none}
+.toast.show{transform:none;opacity:1}
+.toast.ok{border-color:rgba(79,227,193,.5)}
+.toast.err{border-color:rgba(229,103,90,.6)}
+
+@media (max-width:860px){
+  #conn .grid{grid-template-columns:1fr 1fr}
+  .layout{grid-template-columns:1fr}
+  .cats{position:static}
+  .mbox{grid-template-columns:1fr}
+  .mimg{min-height:0}
+  .mimg img,.mimg video{max-height:30vh}
+  .top h1{display:none}
+  .gridw{grid-template-columns:repeat(2,1fr);gap:10px}
+  .orow{grid-template-columns:1fr}
+  .oacts{justify-content:flex-start}
+  .three{grid-template-columns:1fr}
+}
+@media (max-width:480px){ .two{grid-template-columns:1fr} .bar{flex-direction:column;align-items:stretch} .bar .btns .btn{flex:1} .status span{display:none} }
+
+.extras{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+.extras span{position:relative;width:64px;height:48px;border-radius:8px;overflow:hidden}
+.extras img{width:100%;height:100%;object-fit:cover}
+.extras button{position:absolute;top:2px;inset-inline-end:2px;width:20px;height:20px;border-radius:6px;background:rgba(0,0,0,.7);font-size:14px;line-height:1}
+.logo-pick{display:flex;align-items:center;gap:14px}
+.lp{width:110px;height:80px;border-radius:12px;background:#0C2023;border:1px solid var(--line);display:grid;place-items:center}
+.lp img{max-width:80%;max-height:70%;object-fit:contain}
+.lp span{font-size:12px;color:var(--gray)}
+.chk{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--gray)}
+.clc small{text-align:center}
+.clc .lg img{filter:none;opacity:1}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <a href="./"><img src="assets/logo-secondary-white.png" alt="AL-SANAD"></a>
+    <h1><small>PORTFOLIO MANAGER</small>إدارة الأعمال والعملاء</h1>
+  </div>
+  <div class="top-r">
+    <a class="btn btn-sm btn-ghost" href="projects/" target="_blank">صفحة الأعمال ↗</a>
+    <a class="btn btn-sm btn-ghost" href="admin.html">إدارة الطلبات</a>
+    <div class="status" id="status"><i></i><span>غير متصل</span></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="card" id="conn" hidden>
+    <div class="sec-title"><em>00</em><h2>تسجيل الدخول</h2></div>
+    <p class="muted">أدخل مفتاح GitHub (نفس المفتاح المستخدم في إدارة الطلبات). يُحفظ على هذا الجهاز فقط.</p>
+    <div class="grid" style="grid-template-columns:1fr">
+      <label class="f">مفتاح GitHub (Token)<input id="cToken" dir="ltr" type="password" placeholder="github_pat_…"></label>
+    </div>
+    <div class="conn-row"><button class="btn btn-gold" id="cSave">دخول</button></div>
+    <details class="help">
+      <summary>كيف أحصل على المفتاح؟</summary>
+      <ol>
+        <li>من حساب <code>alsanad-print</code> على GitHub افتح <code>Settings</code> ← <code>Developer settings</code> ← <code>Personal access tokens</code> ← <code>Fine-grained tokens</code>.</li>
+        <li><code>Generate new token</code> ← في <code>Repository access</code> اختر مستودع الموقع فقط.</li>
+        <li>في <code>Permissions</code> اجعل <code>Contents</code> على <code>Read and write</code>، ثم انسخ المفتاح والصقه هنا.</li>
+      </ol>
+    </details>
+  </section>
+
+  <section id="app" hidden>
+    <nav class="tabs">
+      <button data-tab="works" class="on">الأعمال <span class="cnt" id="nWorks">0</span></button>
+      <button data-tab="clients">العملاء والوكالات <span class="cnt" id="nClients">0</span></button>
+    </nav>
+
+    <section data-pane="works">
+      <div class="layout">
+        <aside class="card cats">
+          <p class="muted" style="font-size:12.5px;padding:0 6px 6px">الفئات</p>
+          <div id="catList"></div>
+          <hr>
+          <button class="btn btn-sm btn-ghost" id="addCat" style="width:100%"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>إضافة فئة</button>
+          <hr>
+          <p class="muted" style="font-size:12.5px;padding:0 6px 6px">العملاء</p>
+          <div id="clFilter"></div>
+        </aside>
+        <div>
+          <div class="drop" id="drop">
+            <svg viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M20 16v3a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-3"/></svg>
+            <b>إضافة أعمال جديدة</b>
+            <span class="muted">اسحب الصور أو الفيديوهات هنا أو انقر للاختيار. كل ملف يصير عملاً مستقلاً، وتكدر تضيف صوراً إضافية لنفس العمل من داخله.</span>
+            <input type="file" id="file" accept="image/*,video/mp4" multiple hidden>
+          </div>
+          <div class="toolbar">
+            <div class="muted" id="countTxt"></div>
+            <button class="btn btn-sm btn-ghost btn-danger" id="clearSamples" hidden>حذف جميع الأعمال التجريبية</button>
+          </div>
+          <div class="gridw" id="works"></div>
+        </div>
+      </div>
+    </section>
+
+    <section data-pane="clients" hidden>
+      <div class="toolbar">
+        <p class="muted">كل عميل أو وكالة يظهر بصفحة الأعمال بقسم خاص باسمه وشعاره. الشعار يُفضّل PNG بخلفية شفافة.</p>
+        <button class="btn btn-gold" id="clAdd"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>إضافة عميل</button>
+      </div>
+      <div class="clgrid" id="clList"></div>
+    </section>
+  </section>
+</main>
+
+<div class="bar" id="bar">
+  <div class="txt">لديك <b id="pendN">0</b> تغييرات غير منشورة</div>
+  <div class="btns">
+    <button class="btn btn-ghost" id="discard">تجاهل التغييرات</button>
+    <button class="btn btn-gold" id="publish">نشر على الموقع</button>
+  </div>
+</div>
+
+<!-- work modal -->
+<div class="modal" id="wModal">
+  <div class="mbox">
+    <div class="mimg">
+      <div id="mMedia"></div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center">
+        <button class="btn btn-sm" id="mReplace">استبدال الصورة الرئيسية</button>
+        <button class="btn btn-sm" id="mExtraAdd">+ صور إضافية</button>
+      </div>
+      <input type="file" id="mFile" accept="image/*,video/mp4" hidden>
+      <input type="file" id="mExtraFile" accept="image/*" multiple hidden>
+      <div class="extras" id="mExtras"></div>
+      <div class="before">
+        <img id="mBefore" alt="" hidden>
+        <small>صورة «قبل التنفيذ» (اختيارية) — تظهر كمقارنة قبل/بعد</small>
+        <div style="display:flex;gap:6px"><button class="btn btn-sm" id="mBeforeAdd">إضافة صورة قبل</button><button class="btn btn-sm btn-ghost btn-danger" id="mBeforeDel" hidden>إزالة</button></div>
+        <input type="file" id="mBeforeFile" accept="image/*" hidden>
+      </div>
+    </div>
+    <form class="mform" id="mForm" autocomplete="off">
+      <h3><span id="mHead">بيانات العمل</span><small id="mQueue"></small></h3>
+      <div class="two">
+        <label class="f"><span class="req">العميل / الوكالة</span><select id="mClient"></select></label>
+        <label class="f"><span class="req">نوع العمل</span><select id="mKind"><option value="build">تصميم وتنفيذ</option><option value="design">تصميم فقط</option></select></label>
+      </div>
+      <div class="two">
+        <label class="f"><span class="req">الفئة</span><select id="mCat"></select></label>
+        <label class="f">السنة<input id="mYear" dir="ltr" placeholder="2026"></label>
+      </div>
+      <div class="two">
+        <label class="f"><span class="req">اسم العمل (عربي)</span><input id="mTitleAr" required></label>
+        <label class="f">المنطقة (عربي)<input id="mAreaAr" placeholder="مثال: الموصل - الدواسة"></label>
+      </div>
+      <label class="f">وصف مختصر (عربي، اختياري)<textarea id="mDescAr"></textarea></label>
+      <details class="more"><summary>الإنكليزي والكردي (اختياري — إذا تُرك فارغاً يظهر العربي)</summary><div>
+        <div class="two">
+          <label class="f">Title (English)<input id="mTitleEn" dir="ltr"></label>
+          <label class="f">Location (English)<input id="mAreaEn" dir="ltr"></label>
+        </div>
+        <label class="f">Description (English)<textarea id="mDescEn" dir="ltr"></textarea></label>
+        <div class="two">
+          <label class="f">ناو (کوردی)<input id="mTitleKu" class="ku"></label>
+          <label class="f">شوێن (کوردی)<input id="mAreaKu" class="ku"></label>
+        </div>
+        <label class="f">وەسف (کوردی)<textarea id="mDescKu" class="ku"></textarea></label>
+      </div></details>
+      <div class="mfoot">
+        <button type="button" class="btn btn-ghost" id="mCancel">إلغاء</button>
+        <button type="submit" class="btn btn-gold" id="mOk">حفظ</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- category modal -->
+<div class="modal" id="cModal">
+  <div class="mbox one">
+    <form class="mform" id="cForm">
+      <h3 id="cHead">فئة جديدة</h3>
+      <label class="f"><span class="req">اسم الفئة (عربي)</span><input id="cAr" required></label>
+      <label class="f"><span class="req">Category (English)</span><input id="cEn" dir="ltr" required></label>
+      <label class="f">ناوی پۆل (کوردی)<input id="cKu" class="ku"></label>
+      <div class="mfoot"><button type="button" class="btn btn-ghost" data-close>إلغاء</button><button type="submit" class="btn btn-gold">حفظ</button></div>
+    </form>
+  </div>
+</div>
+
+<!-- client modal -->
+<div class="modal" id="clModal">
+  <div class="mbox one" style="width:min(620px,100%)">
+    <form class="mform" id="clForm" autocomplete="off">
+      <h3 id="clHead">عميل جديد</h3>
+      <div class="logo-pick">
+        <div class="lp"><img id="clPrev" alt="" hidden><span id="clNoLogo">بدون شعار</span></div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap"><button type="button" class="btn btn-sm" id="clLogoBtn">رفع الشعار</button><button type="button" class="btn btn-sm btn-ghost btn-danger" id="clLogoDel" hidden>إزالة</button></div>
+        <input type="file" id="clFile" accept="image/png,image/svg+xml,image/jpeg,image/webp" hidden>
+      </div>
+      <div class="two">
+        <label class="f"><span class="req">اسم العميل (عربي)</span><input id="clAr" required></label>
+        <label class="f">Client name (English)<input id="clEn" dir="ltr"></label>
+      </div>
+      <div class="two">
+        <label class="f">القطاع (عربي)<input id="clSecAr" placeholder="مثال: مطاعم، صيدليات، وكالة سيارات"></label>
+        <label class="f">Sector (English)<input id="clSecEn" dir="ltr"></label>
+      </div>
+      <div class="two">
+        <label class="f">ناو (کوردی)<input id="clKu" class="ku"></label>
+        <label class="f">کەرت (کوردی)<input id="clSecKu" class="ku"></label>
+      </div>
+      <label class="chk"><input type="checkbox" id="clStrip" checked> إظهار الشعار بشريط «شركاء النجاح» بالصفحة الرئيسية</label>
+      <div class="mfoot"><button type="button" class="btn btn-ghost" data-close>إلغاء</button><button type="submit" class="btn btn-gold">حفظ</button></div>
+    </form>
+  </div>
+</div>
+
+<div class="modal" id="prog">
+  <div class="mbox">
+    <h3 id="pTitle">جارٍ النشر…</h3>
+    <p class="muted" id="pSub">يرجى عدم إغلاق الصفحة.</p>
+    <div class="pbar"><i id="pFill"></i></div>
+    <div id="plog"></div>
+    <div class="mfoot"><button class="btn" id="pClose" hidden>إغلاق</button></div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+<script type="module">
+const REPO = 'alsanad-print/alsanad-print.github.io', BRANCH = 'main', GAL = 'works/gallery.json';
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const ICON = {
+  up: '<svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>',
+  down: '<svg viewBox="0 0 24 24"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>',
+  edit: '<svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>',
+  del: '<svg viewBox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/></svg>',
+};
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const ls = { get: k => { try { return localStorage.getItem(k); } catch (e) { return null; } }, set: (k, v) => { try { v == null ? localStorage.removeItem(k) : localStorage.setItem(k, v); } catch (e) {} } };
+const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+const slug = s => (s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 30);
+const cName = c => c ? (c.name_ar || c.name || '') : '';
+
+const S = { token: ls.get('alsanad-gh') || '', gal: null, base: '', files: {}, del: new Set(), cat: 'all', client: 'all', tab: 'works' };
+
+function toast(msg, type = 'ok') { const t = $('#toast'); t.textContent = msg; t.className = 'toast show ' + type; clearTimeout(t._h); t._h = setTimeout(() => t.className = 'toast', 3800); }
+function setStatus(st, text) { const s = $('#status'); s.className = 'status ' + st; s.querySelector('span').textContent = text; }
+const b64Utf8 = str => { const b = new TextEncoder().encode(str); let s = ''; for (let i = 0; i < b.length; i += 0x8000) s += String.fromCharCode(...b.subarray(i, i + 0x8000)); return btoa(s); };
+const utf8B64 = b64 => new TextDecoder().decode(Uint8Array.from(atob(b64.replace(/\s/g, '')), c => c.charCodeAt(0)));
+
+/* ---------------- github ---------------- */
+async function gh(path, opts = {}) {
+  const r = await fetch(`https://api.github.com/repos/${REPO}${path}`, { ...opts, headers: { Accept: 'application/vnd.github+json', Authorization: `Bearer ${S.token}`, 'X-GitHub-Api-Version': '2022-11-28', ...(opts.body ? { 'Content-Type': 'application/json' } : {}) } });
+  if (!r.ok) { let m = ''; try { m = (await r.json()).message; } catch (e) {} throw Object.assign(new Error(m || r.statusText), { status: r.status }); }
+  return r.status === 204 ? null : r.json();
+}
+const cu = p => `/contents/${p.split('/').map(encodeURIComponent).join('/')}`;
+const getFile = p => gh(`${cu(p)}?ref=${BRANCH}&t=${Date.now()}`);
+const putFile = (p, b64, message, sha) => gh(cu(p), { method: 'PUT', body: JSON.stringify({ message, content: b64, branch: BRANCH, ...(sha ? { sha } : {}) }) });
+const delFile = (p, message, sha) => gh(cu(p), { method: 'DELETE', body: JSON.stringify({ message, sha, branch: BRANCH }) });
+async function shaOf(p) { try { return (await getFile(p)).sha; } catch (e) { if (e.status === 404) return null; throw e; } }
+
+/* ---------------- media ---------------- */
+function toCanvas(src, max, type = 'image/jpeg', q = .86, keepAlpha = false) {
+  const w0 = src.videoWidth || src.width, h0 = src.videoHeight || src.height;
+  const k = Math.min(1, max / Math.max(w0, h0)); const w = Math.round(w0 * k), h = Math.round(h0 * k);
+  const c = document.createElement('canvas'); c.width = w; c.height = h; const x = c.getContext('2d');
+  if (!keepAlpha) { x.fillStyle = '#fff'; x.fillRect(0, 0, w, h); }
+  x.drawImage(src, 0, 0, w, h);
+  const url = c.toDataURL(type, q); return { url, b64: url.split(',')[1], ext: type === 'image/png' ? 'png' : 'jpg' };
+}
+const processImage = async f => toCanvas(await createImageBitmap(f), 2000);
+async function processLogo(f) {
+  if (f.type === 'image/svg+xml') { const t = await f.text(); return { url: 'data:image/svg+xml;base64,' + b64Utf8(t), b64: b64Utf8(t), ext: 'svg' }; }
+  return toCanvas(await createImageBitmap(f), 600, 'image/png', 1, true);
+}
+const readB64 = f => new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(r.result.split(',')[1]); r.onerror = rej; r.readAsDataURL(f); });
+async function processVideo(f) {
+  if (f.size > 25 * 1024 * 1024) throw new Error('size');
+  const url = URL.createObjectURL(f);
+  const v = Object.assign(document.createElement('video'), { src: url, muted: true, playsInline: true, preload: 'auto' });
+  await new Promise((res, rej) => { v.onloadeddata = res; v.onerror = rej; });
+  v.currentTime = Math.min(1, (v.duration || 2) * .1);
+  await new Promise(res => { v.onseeked = res; setTimeout(res, 2500); });
+  return { img: toCanvas(v, 1800), video: { b64: await readB64(f), url } };
+}
+const prepMedia = async f => f.type === 'video/mp4' ? processVideo(f) : { img: await processImage(f) };
+
+/* ---------------- connect ---------------- */
+async function connect() {
+  if (!S.token) { $('#conn').hidden = false; return; }
+  setStatus('', 'جارٍ الاتصال…');
+  try {
+    const repo = await gh('');
+    if (!repo.permissions?.push) throw Object.assign(new Error('no push'), { status: 403 });
+    try { const f = await getFile(GAL); S.gal = JSON.parse(utf8B64(f.content)); }
+    catch (e) { if (e.status !== 404) throw e; S.gal = { version: 2, categories: [], works: [], clients: [] }; }
+    const g = S.gal; g.version = 2; g.categories ||= []; g.works ||= []; g.clients ||= [];
+    g.works.forEach(w => { w.id ||= uid(); });
+    g.clients.forEach(c => { c.id ||= slug(c.name_en || c.name) || uid(); if (c.name && !c.name_ar) { c.name_ar = c.name; delete c.name; } });
+    S.base = JSON.stringify(g);
+    ls.set('alsanad-gh', S.token);
+    setStatus('ok', 'متصل'); $('#conn').hidden = true; $('#app').hidden = false; render();
+  } catch (e) {
+    setStatus('err', 'تعذّر الاتصال'); $('#conn').hidden = false;
+    toast(e.status === 401 ? 'المفتاح غير صحيح أو منتهي الصلاحية.' : e.status === 403 ? 'المفتاح لا يملك صلاحية الكتابة (Contents: Read and write).' : e.status === 404 ? 'المفتاح لا يملك صلاحية على مستودع الموقع.' : 'تعذّر الاتصال: ' + e.message, 'err');
+  }
+}
+$('#cSave').addEventListener('click', () => { S.token = $('#cToken').value.trim(); connect(); });
+$('#cToken').addEventListener('keydown', e => { if (e.key === 'Enter') $('#cSave').click(); });
+
+/* ---------------- render ---------------- */
+const dirty = () => S.gal && JSON.stringify(S.gal) !== S.base;
+const pending = () => Object.keys(S.files).length + S.del.size + (dirty() ? 1 : 0);
+const src = p => S.files[p]?.url || p;
+function render() {
+  if (!S.gal) return;
+  $$('.tabs button').forEach(b => b.classList.toggle('on', b.dataset.tab === S.tab));
+  $$('[data-pane]').forEach(p => p.hidden = p.dataset.pane !== S.tab);
+  $('#nWorks').textContent = S.gal.works.filter(w => !w.sample).length;
+  $('#nClients').textContent = S.gal.clients.length;
+  if (S.tab === 'works') renderWorks(); else renderClients();
+  const n = pending(); $('#pendN').textContent = n; $('#bar').classList.toggle('show', n > 0);
+}
+$$('.tabs button').forEach(b => b.addEventListener('click', () => { S.tab = b.dataset.tab; render(); }));
+
+function renderWorks() {
+  const d = S.gal, base = JSON.parse(S.base), bmap = new Map((base.works || []).map(w => [w.id, JSON.stringify(w)]));
+  const inCat = w => S.cat === 'all' || w.cat === S.cat, inCl = w => S.client === 'all' || (S.client === 'none' ? !w.client : w.client === S.client);
+  $('#catList').innerHTML = `<div class="cat ${S.cat === 'all' ? 'on' : ''}" data-cat="all"><div class="nm"><b>جميع الفئات</b></div><span class="cnt">${d.works.length}</span></div>` +
+    d.categories.map((c, i) => `<div class="cat ${S.cat === c.id ? 'on' : ''}" data-cat="${esc(c.id)}"><div class="nm"><b>${esc(c.ar)}</b><small>${esc(c.en)}</small></div>
+      <span class="tools"><button class="icon-btn" data-cact="up" data-i="${i}">${ICON.up}</button><button class="icon-btn" data-cact="down" data-i="${i}">${ICON.down}</button><button class="icon-btn" data-cact="edit" data-i="${i}">${ICON.edit}</button><button class="icon-btn" data-cact="del" data-i="${i}">${ICON.del}</button></span>
+      <span class="cnt">${d.works.filter(w => w.cat === c.id).length}</span></div>`).join('');
+  $('#clFilter').innerHTML = [['all', 'جميع العملاء', d.works.length], ...d.clients.map(c => [c.id, cName(c), d.works.filter(w => w.client === c.id).length]), ['none', 'بدون عميل', d.works.filter(w => !w.client).length]]
+    .map(([id, n, k]) => `<div class="cat ${S.client === id ? 'on' : ''}" data-clf="${esc(id)}"><div class="nm"><b>${esc(n)}</b></div><span class="cnt">${k}</span></div>`).join('');
+  const list = d.works.map((w, i) => ({ w, i })).filter(o => inCat(o.w) && inCl(o.w));
+  const cn = id => d.categories.find(c => c.id === id)?.ar || '—';
+  $('#works').innerHTML = list.length ? list.map(({ w, i }) => {
+    const isNew = !bmap.has(w.id), isEdit = !isNew && bmap.get(w.id) !== JSON.stringify(w), cl = d.clients.find(c => c.id === w.client);
+    return `<div class="card w"><div class="th" style="background-image:url('${esc(src(w.img))}')" data-img="${esc(src(w.img))}"><div class="missing" hidden></div>
+      <div class="badges">${isNew ? '<span class="badge new">جديد</span>' : ''}${isEdit ? '<span class="badge edit">معدّل</span>' : ''}${w.sample ? '<span class="badge sample">تجريبي</span>' : `<span class="badge kind">${w.kind === 'design' ? 'تصميم' : 'تصميم وتنفيذ'}</span>`}${w.video ? '<span class="badge kind">▶</span>' : ''}${w.before ? '<span class="badge kind">قبل/بعد</span>' : ''}${(w.images || []).length ? `<span class="badge kind">+${w.images.length}</span>` : ''}</div></div>
+      <div class="meta"><b>${esc(w.title_ar) || '<span class="muted">بدون عنوان</span>'}</b><small>${esc(cl ? cName(cl) : 'بدون عميل')} · ${esc(cn(w.cat))}</small></div>
+      <div class="acts"><span><button class="icon-btn" data-act="up" data-i="${i}">${ICON.up}</button><button class="icon-btn" data-act="down" data-i="${i}">${ICON.down}</button></span>
+      <span><button class="icon-btn" data-act="edit" data-i="${i}">${ICON.edit}</button><button class="icon-btn" data-act="del" data-i="${i}">${ICON.del}</button></span></div></div>`;
+  }).join('') : `<div class="card empty" style="grid-column:1/-1">لا توجد أعمال هنا بعد. أضف صوراً من الأعلى.</div>`;
+  $$('#works .th').forEach(th => { const im = new Image(); im.onerror = () => { const m = th.querySelector('.missing'); m.hidden = false; m.textContent = 'الصورة غير موجودة بعد'; }; im.src = th.dataset.img; });
+  $('#countTxt').textContent = `${list.length} عمل`;
+  $('#clearSamples').hidden = !d.works.some(w => w.sample);
+}
+function dropFile(p) { if (!p) return; if (S.files[p]) delete S.files[p]; else if (!/\/sample-\d+\.jpg$/.test(p)) S.del.add(p); }
+
+/* categories */
+let editCat = -1;
+$('#catList').addEventListener('click', e => {
+  const b = e.target.closest('[data-cact]'), cats = S.gal.categories;
+  if (b) {
+    e.stopPropagation(); const i = +b.dataset.i;
+    if (b.dataset.cact === 'up' && i > 0) [cats[i - 1], cats[i]] = [cats[i], cats[i - 1]];
+    if (b.dataset.cact === 'down' && i < cats.length - 1) [cats[i + 1], cats[i]] = [cats[i], cats[i + 1]];
+    if (b.dataset.cact === 'edit') { openCat(i); return; }
+    if (b.dataset.cact === 'del') {
+      if (S.gal.works.some(w => w.cat === cats[i].id)) { toast('لا يمكن حذف فئة تحتوي على أعمال.', 'err'); return; }
+      if (!confirm(`حذف الفئة «${cats[i].ar}»؟`)) return;
+      if (S.cat === cats[i].id) S.cat = 'all'; cats.splice(i, 1);
+    }
+    render(); return;
+  }
+  const row = e.target.closest('[data-cat]'); if (row) { S.cat = row.dataset.cat; render(); }
+});
+$('#clFilter').addEventListener('click', e => { const r = e.target.closest('[data-clf]'); if (r) { S.client = r.dataset.clf; render(); } });
+function openCat(i) {
+  editCat = i; const c = i >= 0 ? S.gal.categories[i] : {};
+  $('#cHead').textContent = i >= 0 ? 'تعديل الفئة' : 'فئة جديدة';
+  $('#cAr').value = c.ar || ''; $('#cEn').value = c.en || ''; $('#cKu').value = c.ku || '';
+  openM('cModal'); setTimeout(() => $('#cAr').focus(), 50);
+}
+$('#addCat').addEventListener('click', () => openCat(-1));
+$('#cForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const ar = $('#cAr').value.trim(), en = $('#cEn').value.trim(), ku = $('#cKu').value.trim(); if (!ar || !en) return;
+  if (editCat >= 0) { const c = S.gal.categories[editCat]; Object.assign(c, { ar, en }); if (ku) c.ku = ku; else delete c.ku; }
+  else { let id = slug(en) || 'cat'; while (S.gal.categories.some(c => c.id === id)) id += '-' + Math.random().toString(36).slice(2, 4); S.gal.categories.push({ id, ar, en, ...(ku ? { ku } : {}) }); S.cat = id; }
+  closeM('cModal'); render();
+});
+
+/* works list actions */
+$('#works').addEventListener('click', e => {
+  const b = e.target.closest('[data-act]'); if (!b) return;
+  const i = +b.dataset.i, ws = S.gal.works, w = ws[i];
+  const vis = $$('#works [data-act=up]').map(x => +x.dataset.i), p = vis.indexOf(i);
+  if (b.dataset.act === 'up' && p > 0) { const j = vis[p - 1]; [ws[j], ws[i]] = [ws[i], ws[j]]; }
+  if (b.dataset.act === 'down' && p < vis.length - 1) { const j = vis[p + 1]; [ws[j], ws[i]] = [ws[i], ws[j]]; }
+  if (b.dataset.act === 'edit') { openWork({ index: i }); return; }
+  if (b.dataset.act === 'del') { if (!confirm(`حذف العمل «${w.title_ar || 'بدون عنوان'}»؟`)) return; [w.img, w.before, w.video, ...(w.images || [])].forEach(dropFile); ws.splice(i, 1); }
+  render();
+});
+$('#clearSamples').addEventListener('click', () => { if (!confirm('حذف جميع الأعمال التجريبية؟')) return; S.gal.works = S.gal.works.filter(w => !w.sample); render(); });
+
+/* add files */
+const drop = $('#drop'), fileIn = $('#file');
+drop.addEventListener('click', () => fileIn.click());
+['dragenter', 'dragover'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.add('over'); }));
+['dragleave', 'drop'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.remove('over'); }));
+drop.addEventListener('drop', e => addFiles([...e.dataTransfer.files]));
+fileIn.addEventListener('change', () => { addFiles([...fileIn.files]); fileIn.value = ''; });
+let queue = [], qTotal = 0;
+function addFiles(files) {
+  files = files.filter(f => f.type.startsWith('image/') || f.type === 'video/mp4'); if (!files.length) return;
+  if (!S.gal.categories.length) { toast('أضف فئة واحدة على الأقل أولاً.', 'err'); return; }
+  queue = files.slice(); qTotal = queue.length; nextQ();
+}
+async function nextQ() {
+  const f = queue.shift(); if (!f) return;
+  try { openWork({ media: await prepMedia(f), qPos: qTotal - queue.length }); }
+  catch (e) { toast(e.message === 'size' ? `الفيديو ${f.name} أكبر من 25 ميغابايت.` : 'تعذّرت قراءة الملف: ' + f.name, 'err'); nextQ(); }
+}
+
+/* work modal */
+let M = null;
+function mediaPreview() {
+  const w = M.w, m = M.media;
+  const vid = m?.video?.url || (m ? null : (w.video ? src(w.video) : null));
+  const img = m?.img?.url || src(w.img);
+  $('#mMedia').innerHTML = vid ? `<video src="${esc(vid)}" poster="${esc(img)}" controls muted playsinline></video>` : `<img src="${esc(img)}" alt="">`;
+  $('#mExtras').innerHTML = M.extras.map((x, k) => `<span><img src="${esc(x.url || src(x.path))}" alt=""><button type="button" data-xdel="${k}">×</button></span>`).join('');
+  const bsrc = M.before ? M.before.url : (M.removeBefore ? null : (w.before ? src(w.before) : null));
+  $('#mBefore').hidden = !bsrc; if (bsrc) $('#mBefore').src = bsrc; $('#mBeforeDel').hidden = !bsrc;
+}
+function clientOptions(sel) {
+  return `<option value="">— بدون عميل —</option>` + S.gal.clients.map(c => `<option value="${esc(c.id)}" ${c.id === sel ? 'selected' : ''}>${esc(cName(c))}</option>`).join('') + `<option value="__new">+ عميل جديد…</option>`;
+}
+function openWork({ index = -1, media = null, qPos = 0 }) {
+  const w = index >= 0 ? S.gal.works[index] : { cat: S.cat !== 'all' ? S.cat : S.gal.categories[0].id, client: !['all', 'none'].includes(S.client) ? S.client : (M?.lastClient || ''), kind: 'build' };
+  M = { index, media, w, before: null, removeBefore: false, extras: (w.images || []).map(p => ({ path: p })), lastClient: M?.lastClient };
+  $('#mHead').textContent = index >= 0 ? 'تعديل العمل' : 'عمل جديد';
+  $('#mQueue').textContent = index < 0 && qTotal > 1 ? `${qPos} / ${qTotal}` : '';
+  mediaPreview();
+  $('#mClient').innerHTML = clientOptions(w.client);
+  $('#mCat').innerHTML = S.gal.categories.map(c => `<option value="${esc(c.id)}">${esc(c.ar)}</option>`).join(''); $('#mCat').value = w.cat;
+  $('#mKind').value = w.kind === 'design' ? 'design' : 'build';
+  for (const [id, k] of [['mTitleAr', 'title_ar'], ['mAreaAr', 'area_ar'], ['mDescAr', 'desc_ar'], ['mTitleEn', 'title_en'], ['mAreaEn', 'area_en'], ['mDescEn', 'desc_en'], ['mTitleKu', 'title_ku'], ['mAreaKu', 'area_ku'], ['mDescKu', 'desc_ku'], ['mYear', 'year']]) $('#' + id).value = w[k] || '';
+  $('#mOk').textContent = index < 0 && queue.length ? 'حفظ والتالي' : 'حفظ';
+  openM('wModal'); setTimeout(() => $('#mTitleAr').focus(), 60);
+}
+$('#mClient').addEventListener('change', () => { if ($('#mClient').value === '__new') { $('#mClient').value = ''; openClient(-1, true); } });
+$('#mReplace').addEventListener('click', () => $('#mFile').click());
+$('#mFile').addEventListener('change', async () => { const f = $('#mFile').files[0]; $('#mFile').value = ''; if (!f) return; try { M.media = await prepMedia(f); mediaPreview(); } catch (e) { toast(e.message === 'size' ? 'الفيديو أكبر من 25 ميغابايت.' : 'تعذّرت قراءة الملف.', 'err'); } });
+$('#mExtraAdd').addEventListener('click', () => $('#mExtraFile').click());
+$('#mExtraFile').addEventListener('change', async () => { const fs = [...$('#mExtraFile').files]; $('#mExtraFile').value = ''; for (const f of fs) { try { M.extras.push(await processImage(f)); } catch (e) {} } mediaPreview(); });
+$('#mExtras').addEventListener('click', e => { const b = e.target.closest('[data-xdel]'); if (b) { M.extras.splice(+b.dataset.xdel, 1); mediaPreview(); } });
+$('#mBeforeAdd').addEventListener('click', () => $('#mBeforeFile').click());
+$('#mBeforeFile').addEventListener('change', async () => { const f = $('#mBeforeFile').files[0]; $('#mBeforeFile').value = ''; if (!f) return; M.before = await processImage(f); M.removeBefore = false; mediaPreview(); });
+$('#mBeforeDel').addEventListener('click', () => { M.before = null; M.removeBefore = true; mediaPreview(); });
+$('#mCancel').addEventListener('click', () => { closeM('wModal'); if (M?.index < 0) nextQ(); });
+$('#mForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const v = id => $('#' + id).value.trim();
+  const fields = { client: v('mClient'), kind: v('mKind'), cat: v('mCat'), year: v('mYear'), title_ar: v('mTitleAr'), area_ar: v('mAreaAr'), desc_ar: v('mDescAr'), title_en: v('mTitleEn'), area_en: v('mAreaEn'), desc_en: v('mDescEn'), title_ku: v('mTitleKu'), area_ku: v('mAreaKu'), desc_ku: v('mDescKu') };
+  if (!fields.title_ar) { toast('اسم العمل بالعربي مطلوب.', 'err'); return; }
+  const w = M.index >= 0 ? S.gal.works[M.index] : { id: uid() };
+  for (const k in fields) { if (fields[k]) w[k] = fields[k]; else delete w[k]; }
+  delete w.sample;
+  const folder = `works/${w.client || 'general'}`, base = `${folder}/${Date.now().toString(36)}-${slug(fields.title_en) || 'project'}`;
+  if (M.media) {
+    dropFile(w.img); dropFile(w.video); delete w.video;
+    w.img = `${base}.jpg`; S.files[w.img] = M.media.img;
+    if (M.media.video) { w.video = `${base}.mp4`; S.files[w.video] = M.media.video; }
+  }
+  if (M.before) { dropFile(w.before); w.before = `${base}-before.jpg`; S.files[w.before] = M.before; }
+  else if (M.removeBefore && w.before) { dropFile(w.before); delete w.before; }
+  const keep = new Set(M.extras.filter(x => x.path).map(x => x.path));
+  (w.images || []).filter(p => !keep.has(p)).forEach(dropFile);
+  const imgs = M.extras.map((x, k) => { if (x.path) return x.path; const p = `${base}-${k + 2}.jpg`; S.files[p] = x; return p; });
+  if (imgs.length) w.images = imgs; else delete w.images;
+  if (M.index < 0) S.gal.works.push(w);
+  M.lastClient = w.client || '';
+  closeM('wModal'); render();
+  if (M.index < 0) setTimeout(nextQ, 250);
+});
+
+/* ---------------- clients ---------------- */
+function renderClients() {
+  $('#clList').innerHTML = S.gal.clients.length ? S.gal.clients.map((c, i) => `<div class="card clc"><div class="lg">${c.logo ? `<img src="${esc(src(c.logo))}" alt="">` : '<span class="muted">بدون شعار</span>'}</div>
+    <b>${esc(cName(c))}</b><small class="muted">${esc(c.sector_ar || '')} · ${S.gal.works.filter(w => w.client === c.id).length} عمل</small>
+    <div><button class="icon-btn" data-clact="up" data-i="${i}">${ICON.up}</button><button class="icon-btn" data-clact="down" data-i="${i}">${ICON.down}</button><button class="icon-btn" data-clact="edit" data-i="${i}">${ICON.edit}</button><button class="icon-btn" data-clact="del" data-i="${i}">${ICON.del}</button></div></div>`).join('')
+    : '<div class="card empty" style="grid-column:1/-1">لا يوجد عملاء بعد. أضف أول عميل.</div>';
+}
+let CL = null;
+function openClient(i, fromWork = false) {
+  const c = i >= 0 ? S.gal.clients[i] : {};
+  CL = { index: i, logo: null, removeLogo: false, fromWork };
+  $('#clHead').textContent = i >= 0 ? 'تعديل العميل' : 'عميل جديد';
+  const map = { clAr: 'name_ar', clEn: 'name_en', clKu: 'name_ku', clSecAr: 'sector_ar', clSecEn: 'sector_en', clSecKu: 'sector_ku' };
+  for (const id in map) $('#' + id).value = c[map[id]] || '';
+  $('#clStrip').checked = c.strip !== false;
+  showLogo(c.logo ? src(c.logo) : null);
+  openM('clModal'); setTimeout(() => $('#clAr').focus(), 60);
+}
+function showLogo(u) { $('#clPrev').hidden = !u; if (u) $('#clPrev').src = u; $('#clNoLogo').hidden = !!u; $('#clLogoDel').hidden = !u; }
+$('#clAdd').addEventListener('click', () => openClient(-1));
+$('#clLogoBtn').addEventListener('click', () => $('#clFile').click());
+$('#clFile').addEventListener('change', async () => { const f = $('#clFile').files[0]; $('#clFile').value = ''; if (!f) return; try { CL.logo = await processLogo(f); CL.removeLogo = false; showLogo(CL.logo.url); } catch (e) { toast('تعذّرت قراءة الشعار.', 'err'); } });
+$('#clLogoDel').addEventListener('click', () => { CL.logo = null; CL.removeLogo = true; showLogo(null); });
+$('#clList').addEventListener('click', e => {
+  const b = e.target.closest('[data-clact]'); if (!b) return; const i = +b.dataset.i, L = S.gal.clients;
+  if (b.dataset.clact === 'up' && i > 0) [L[i - 1], L[i]] = [L[i], L[i - 1]];
+  if (b.dataset.clact === 'down' && i < L.length - 1) [L[i + 1], L[i]] = [L[i], L[i + 1]];
+  if (b.dataset.clact === 'edit') { openClient(i); return; }
+  if (b.dataset.clact === 'del') {
+    const n = S.gal.works.filter(w => w.client === L[i].id).length;
+    if (!confirm(n ? `العميل «${cName(L[i])}» مرتبط بـ ${n} عمل. حذفه يترك الأعمال بدون عميل. متابعة؟` : `حذف العميل «${cName(L[i])}»؟`)) return;
+    S.gal.works.forEach(w => { if (w.client === L[i].id) delete w.client; });
+    dropFile(L[i].logo); L.splice(i, 1);
+  }
+  render();
+});
+$('#clForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const v = id => $('#' + id).value.trim();
+  if (!v('clAr')) return;
+  const isNew = CL.index < 0;
+  const c = isNew ? {} : S.gal.clients[CL.index];
+  if (isNew) { let id = slug(v('clEn')) || 'client-' + uid().slice(-4); while (S.gal.clients.some(x => x.id === id)) id += '-' + Math.random().toString(36).slice(2, 4); c.id = id; }
+  const f = { name_ar: v('clAr'), name_en: v('clEn'), name_ku: v('clKu'), sector_ar: v('clSecAr'), sector_en: v('clSecEn'), sector_ku: v('clSecKu') };
+  for (const k in f) { if (f[k]) c[k] = f[k]; else delete c[k]; }
+  c.strip = $('#clStrip').checked;
+  if (CL.logo) { dropFile(c.logo); c.logo = `works/clients/${c.id}-${Date.now().toString(36)}.${CL.logo.ext}`; S.files[c.logo] = CL.logo; }
+  else if (CL.removeLogo && c.logo) { dropFile(c.logo); delete c.logo; }
+  if (isNew) S.gal.clients.push(c);
+  closeM('clModal');
+  if (CL.fromWork) { $('#mClient').innerHTML = clientOptions(c.id); }
+  render();
+});
+
+/* ---------------- modals ---------------- */
+function openM(id) { $('#' + id).classList.add('open'); }
+function closeM(id) { $('#' + id).classList.remove('open'); }
+$$('.modal').forEach(m => m.addEventListener('click', e => { if (e.target.closest('[data-close]')) closeM(m.id); }));
+addEventListener('keydown', e => { if (e.key === 'Escape') { const top = $$('.modal.open').filter(m => m.id !== 'prog').pop(); if (top) closeM(top.id); } });
+
+/* ---------------- publish ---------------- */
+$('#discard').addEventListener('click', () => { if (!confirm('تجاهل جميع التغييرات غير المنشورة؟')) return; S.gal = JSON.parse(S.base); S.files = {}; S.del = new Set(); render(); });
+$('#publish').addEventListener('click', async () => {
+  openM('prog'); $('#pClose').hidden = true; $('#pTitle').textContent = 'جارٍ النشر…'; $('#pSub').textContent = 'يرجى عدم إغلاق الصفحة.'; $('#plog').innerHTML = ''; $('#pFill').style.width = '0';
+  const log = t => { $('#plog').innerHTML += esc(t) + '<br>'; $('#plog').scrollTop = 1e9; };
+  const files = Object.entries(S.files);
+  const used = new Set([...S.gal.works.flatMap(w => [w.img, w.before, w.video, ...(w.images || [])]), ...S.gal.clients.map(c => c.logo)].filter(Boolean));
+  const dels = [...S.del].filter(p => !used.has(p));
+  const total = files.length + dels.length + 1; let done = 0;
+  const tick = () => { done++; $('#pFill').style.width = (done / total * 100) + '%'; };
+  try {
+    for (const [p, f] of files) { log('↑ ' + p); await putFile(p, f.b64, `أعمال: رفع ${p.split('/').pop()}`, await shaOf(p)); delete S.files[p]; tick(); }
+    for (const p of dels) { log('✕ ' + p); const sha = await shaOf(p); if (sha) await delFile(p, `أعمال: حذف ${p.split('/').pop()}`, sha); S.del.delete(p); tick(); }
+    log('✓ ' + GAL);
+    S.gal.updated = new Date().toISOString();
+    await putFile(GAL, b64Utf8(JSON.stringify(S.gal, null, 2) + '\n'), `تحديث معرض الأعمال (${S.gal.works.filter(w => !w.sample).length} عمل)`, await shaOf(GAL));
+    S.base = JSON.stringify(S.gal); S.del = new Set(); tick();
+    $('#pTitle').textContent = 'تم النشر بنجاح'; $('#pSub').textContent = 'تظهر التحديثات على الموقع خلال دقيقة إلى دقيقتين.';
+  } catch (e) {
+    $('#pTitle').textContent = 'تعذّر إكمال النشر';
+    $('#pSub').textContent = (e.status === 409 || e.status === 422 ? 'حدث تعارض مع نسخة أحدث. أعد تحميل الصفحة ثم حاول مجدداً. ' : '') + 'التفاصيل: ' + e.message;
+  }
+  $('#pClose').hidden = false; render();
+});
+$('#pClose').addEventListener('click', () => closeM('prog'));
+addEventListener('beforeunload', e => { if (pending() > 0) { e.preventDefault(); e.returnValue = ''; } });
+connect();
+</script>
+</body>
+</html>

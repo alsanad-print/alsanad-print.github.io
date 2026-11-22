@@ -21,7 +21,7 @@ const isSmall = () => innerWidth <= 760;
 let lang = 'ar';
 try { const l = localStorage.getItem('alsanad-lang'); if (LANGS.some(x => x.id === l)) lang = l; } catch (e) {}
 const isRTL = () => lang !== 'en';
-const isOwner = (() => { try { return !!localStorage.getItem('alsanad-admin'); } catch (e) { return false; } })();
+const isOwner = (() => { try { return !!(localStorage.getItem('alsanad-gh') || localStorage.getItem('alsanad-admin')); } catch (e) { return false; } })();
 /* analytics (GoatCounter) */
 export function track(name) { try { window.goatcounter?.count?.({ path: name, title: name, event: true }); } catch (e) {} }
 window.__track = track;
@@ -1140,11 +1140,11 @@ $('#langMenu').addEventListener('click', e => { const b = e.target.closest('butt
 
 /* clients strip */
 function renderClients() {
-  const list = (galleryData.clients || []).filter(c => c.logo);
+  const list = (galleryData.clients || []).filter(c => c.logo && c.strip !== false);
   const el = $('#clients');
   document.body.classList.toggle('has-clients', list.length >= 3);
   if (list.length < 3) { el.innerHTML = ''; return; }
-  const items = list.map(c => `<span class="cl"><img src="${c.logo}" alt="${(c.name || '').replace(/"/g, '&quot;')}" loading="lazy"></span>`).join('');
+  const items = list.map(c => `<a class="cl" href="projects/#c-${encodeURIComponent(c.id || '')}"><img src="${c.logo}" alt="${(c['name_' + lang] || c.name_ar || c.name || '').replace(/"/g, '&quot;')}" loading="lazy"></a>`).join('');
   el.innerHTML = `<b>${UI[lang].clients}</b><div class="cl-track"><div class="cl-row">${items}${items}</div></div>`;
 }
 

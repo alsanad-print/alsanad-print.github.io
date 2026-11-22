@@ -369,7 +369,12 @@ export class Gallery {
       const r = box.querySelector('input'); r.addEventListener('input', () => r.parentElement.style.setProperty('--p', r.value + '%'));
     } else box.innerHTML = `<img src="${f?.src || ''}" alt="">`;
     window.__track?.('work-' + (o.id || i));
-    $('#gCat').textContent = cat ? pick(cat, this.lang) : '';
+    const kind = o.kind === 'design' ? 'design' : 'build';
+    $('#gCat').textContent = (cat ? pick(cat, this.lang) : '') + ' · ' + u[kind];
+    const cl = (this.data.clients || []).find(c => c.id === o.client), ge = $('#gClient');
+    ge.hidden = !cl;
+    if (cl) { ge.href = 'projects/#c-' + encodeURIComponent(cl.id); ge.innerHTML = (cl.logo ? `<img src="${cl.logo}" alt="">` : '') + `<span>${cl['name_' + this.lang] || cl.name_ar || cl.name || ''}</span>`; }
+    $('#gFull').href = o.sample ? 'projects/' : 'projects/#p-' + encodeURIComponent(o.id || '');
     $('#gTitle').textContent = field(o, 'title', this.lang);
     $('#gArea').textContent = field(o, 'area', this.lang);
     $('#gDesc').textContent = field(o, 'desc', this.lang);

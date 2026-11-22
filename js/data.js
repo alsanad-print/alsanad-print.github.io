@@ -332,6 +332,10 @@ export const UI = {
   ar: {
     brand: 'السند للدعاية والإعلان',
     orderBtn: 'تقديم طلب',
+    allProjects: 'كل المشاريع',
+    fullProject: 'عرض المشروع كاملاً',
+    design: 'تصميم',
+    build: 'تصميم وتنفيذ',
     orderFull: 'تقديم طلب خدمة',
     journey: 'تتبّع طلبك',
     journeyShort: 'تتبّع طلبك',
@@ -411,6 +415,10 @@ export const UI = {
   en: {
     brand: 'Al-Sanad Advertising',
     orderBtn: 'Place an order',
+    allProjects: 'All projects',
+    fullProject: 'View full project',
+    design: 'Design',
+    build: 'Design & build',
     orderFull: 'Place a service order',
     journey: 'Track your order',
     journeyShort: 'Track order',
@@ -487,6 +495,10 @@ export const UI = {
   ku: {
     brand: 'سەنەد بۆ ڕیکلام و ڕاگەیاندن',
     orderBtn: 'داواکاری نوێ',
+    allProjects: 'هەموو پڕۆژەکان',
+    fullProject: 'بینینی تەواوی پڕۆژە',
+    design: 'دیزاین',
+    build: 'دیزاین و جێبەجێکردن',
     orderFull: 'پێشکەشکردنی داواکاری',
     journey: 'بەدواداچوونی داواکاری',
     journeyShort: 'بەدواداچوون',

@@ -141,7 +141,8 @@
   <div class="g-top">
     <button class="btn" id="gBack"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg><span data-i18n="back">العودة إلى المنظومة</span></button>
     <div class="g-tabs" id="gTabs"></div>
-    <a class="btn btn-gold" id="gAdd" href="admin.html" style="display:none"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg><span data-i18n="addWork">إضافة عمل</span></a>
+    <a class="btn btn-gold" id="gAdd" href="works-admin.html" style="display:none"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg><span data-i18n="addWork">إضافة عمل</span></a>
+    <a class="btn" id="gAll" href="projects/"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span data-i18n="allProjects">كل المشاريع</span></a>
     <button class="btn" id="gList"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/></svg><span data-i18n="listView">عرض شبكي</span></button>
   </div>
   <div class="g-hint" id="gHint"></div>
@@ -153,9 +154,11 @@
       <div class="g-card-img" id="gMedia"></div>
       <div class="g-card-info">
         <span class="g-card-cat" id="gCat"></span>
+        <a class="g-card-client" id="gClient" hidden></a>
         <h3 id="gTitle"></h3>
         <div class="g-card-area"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.3 7-11.5A7 7 0 0 0 5 9.5C5 14.7 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span id="gArea"></span></div>
         <p id="gDesc"></p>
+        <a class="btn" id="gFull" href="projects/"><span data-i18n="fullProject">عرض المشروع كاملاً</span></a>
         <a class="btn btn-wa" id="gAsk" target="_blank" rel="noopener" style="display:none"><svg viewBox="0 0 24 24"><path d="M3 21l1.7-5A8.5 8.5 0 1 1 8 19.3z"/></svg><span></span></a>
         <div class="g-card-nav"><button class="btn" id="gPrev" data-i18n="prev">السابق</button><button class="btn" id="gNext" data-i18n="next">التالي</button></div>
       </div>

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /works-admin.html
+Disallow: /ops-k7x2q9/
+
+Sitemap: https://alsanad-print.github.io/sitemap.xml
