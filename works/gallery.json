@@ -455,9 +455,9 @@
       "title_ar": "واجهة 1AR Market — حروف ضوئية بهوية no:1",
       "title_en": "1AR Market storefront — no:1 illuminated letters",
       "title_ku": "ڕووکاری 1AR Market — پیتی ڕووناک بە ناسنامەی no:1",
-      "area_ar": "",
-      "area_en": "",
-      "area_ku": "",
+      "area_ar": "أربيل",
+      "area_en": "Erbil",
+      "area_ku": "هەولێر",
       "desc_ar": "واجهة محل بطابقين: لوحة علوية بحروف بارزة مضيئة لشعار no:1 واسم المحل وأرقام التواصل، ولوحة سفلية ضوئية بهوية Torku.",
       "desc_en": "Two-tier storefront: an upper panel with raised illuminated no:1 letters, store name and contacts, and a lower backlit panel in the Torku identity."
     },
@@ -473,9 +473,9 @@
       "title_ar": "ستاند عرض منتجات — Torku no:1",
       "title_en": "Product display stand — Torku no:1",
       "title_ku": "ستاندی نمایشی بەرهەم — Torku no:1",
-      "area_ar": "",
-      "area_en": "",
-      "area_ku": "",
+      "area_ar": "أربيل",
+      "area_en": "Erbil",
+      "area_ku": "هەولێر",
       "desc_ar": "ستاند عرض أرضي للسوبرماركت بأرفف مضيئة وترويسة بارزة لمنتجات no:1 وشعار «خليك نمبر 1 مع نمبر 1».",
       "desc_en": "Floor display stand for supermarkets with lit shelves and a raised header for no:1 products."
     },
@@ -491,9 +491,9 @@
       "title_ar": "لوحة واجهة بناية — حملة «لتر مجاناً»",
       "title_en": "Building-facade billboard — “1 litre free” campaign",
       "title_ku": "بیلبۆردی ڕووکاری باڵەخانە — هەڵمەتی «١ لیتر بەخۆڕایی»",
-      "area_ar": "",
-      "area_en": "",
-      "area_ku": "",
+      "area_ar": "الرمادي",
+      "area_en": "Ramadi",
+      "area_ku": "ڕومادی",
       "desc_ar": "لوحة عمودية كبيرة على واجهة بناية تجارية ضمن حملة كوكاكولا «لتر مجاناً».",
       "desc_en": "Large vertical billboard on a commercial building facade for Coca-Cola's “1 litre free” campaign."
     },
@@ -512,9 +512,9 @@
       "title_ar": "بلبوردات سطوح — حملة «لتر مجاناً»",
       "title_en": "Rooftop billboards — “1 litre free” campaign",
       "title_ku": "بیلبۆردی سەربان — هەڵمەتی «١ لیتر بەخۆڕایی»",
-      "area_ar": "",
-      "area_en": "",
-      "area_ku": "",
+      "area_ar": "أربيل",
+      "area_en": "Erbil",
+      "area_ku": "هەولێر",
       "desc_ar": "بلبوردات أفقية فوق أسطح المحلات باللغة الكردية مع إنارة ليلية، ضمن نفس الحملة.",
       "desc_en": "Horizontal rooftop billboards in Kurdish with night lighting, part of the same campaign."
     }
@@ -572,8 +572,8 @@
       "sector_ar": "مشروبات غازية",
       "sector_en": "Soft drinks",
       "sector_ku": "خواردنەوەی گازدار",
-      "logo": "",
-      "strip": false
+      "logo": "works/clients/cocacola.png",
+      "strip": true
     }
   ]
 }
