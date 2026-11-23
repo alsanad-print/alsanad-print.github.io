@@ -1298,9 +1298,13 @@ async function boot() {
     if (r.ok) { const j = await r.json(); if (j && Array.isArray(j.categories)) galleryData = { categories: j.categories, works: j.works || [], clients: j.clients || [] }; }
   } catch (e) {}
   // portal thumbnails: first real project images, else brand posters
-  const thumbs = [];
-  for (const w of galleryData.works.filter(w => !w.sample).slice(0, 5)) { const t = await loadTex(w.img); if (t) thumbs.push(t); }
-  galleryThumbs = thumbs;
+  // load them in parallel and never hold the intro longer than ~3s on slow networks
+  const picks = galleryData.works.filter(w => !w.sample).slice(0, 5);
+  const thumbs = await Promise.race([
+    Promise.all(picks.map(w => loadTex(w.img).catch(() => null))),
+    wait(3).then(() => []),
+  ]);
+  galleryThumbs = thumbs.filter(Boolean);
   setProgress(.55);
   // poster textures
   for (let v = 0; v < 5; v++) {
