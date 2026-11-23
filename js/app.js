@@ -1332,6 +1332,7 @@ async function boot() {
   $('#loader').classList.add('done');
   tween(2.2, k => { cam.zoom = 1.9 + (home.zoom - 1.9) * k; cam.updateProjectionMatrix(); }, { e: ease.out, tag: 'cam' });
   if (location.hash === '#gallery') setTimeout(enterGallery, 600);
+  if (location.hash === '#track') setTimeout(() => openModal('track'), 900);
   const m = location.hash.match(/^#track-([A-Za-z0-9-]+)$/);
   if (m) setTimeout(() => { openModal('track'); $('#trackInput').value = prettyCode(m[1]); $('#trackForm').requestSubmit(); }, 1400);
 }

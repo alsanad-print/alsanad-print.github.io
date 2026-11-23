@@ -2,43 +2,40 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<script>
+  // old links (order tracking / 3D gallery) live on the interactive tour page now
+  if (/^#(track-|gallery)/.test(location.hash)) location.replace('tour.html' + location.search + location.hash);
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>السند للدعاية والإعلان | AL-SANAD — تصميم، طباعة، تصنيع وتركيب في الموصل</title>
 <meta name="google-site-verification" content="4MthPSSISriKGMQSJ_4YMl9v4fB3_YbdmzcJ9rT78-c">
-<meta name="description" content="السند للدعاية والإعلان في الموصل: منظومة متكاملة للتصميم والطباعة وتصنيع الحروف البارزة والواجهات والتوصيل والتركيب في جميع محافظات العراق.">
-<meta name="keywords" content="مطبعة الموصل, دعاية وإعلان الموصل, واجهات محلات, حروف بارزة, طباعة UV, CNC, لوحات ضوئية, السند">
+<meta name="description" content="السند للدعاية والإعلان في الموصل: حروف بارزة ولوحات ضوئية، ستيكر وفلكس، طباعة UV، ستاندات ورول أب، ومطبوعات تجارية — تصميم وطباعة وتصنيع وتركيب في جميع محافظات العراق.">
+<meta name="keywords" content="مطبعة الموصل, دعاية وإعلان الموصل, واجهات محلات, حروف بارزة, لوحات ضوئية, ستيكر, فلكس, طباعة UV, رول أب, السند">
 <meta name="theme-color" content="#0B1B1F">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ar_IQ">
 <meta property="og:site_name" content="السند للدعاية والإعلان">
 <meta property="og:title" content="السند للدعاية والإعلان | AL-SANAD">
-<meta property="og:description" content="منظومة متكاملة للدعاية والإعلان — من الفكرة إلى التركيب.">
+<meta property="og:description" content="نحن السند لمشروعك — كل ما تحتاجه من خدمات الطباعة والإعلان في مكان واحد.">
 <meta property="og:url" content="https://alsanad-print.github.io/">
 <link rel="canonical" href="https://alsanad-print.github.io/">
 <meta property="og:image" content="https://alsanad-print.github.io/assets/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/favicon.png">
-<link rel="apple-touch-icon" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="css/fonts.css">
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/classic.css">
+<link rel="stylesheet" href="css/home.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "السند للدعاية والإعلان",
   "alternateName": "AL-SANAD Advertising",
-  "description": "منظومة متكاملة للتصميم والطباعة وتصنيع الحروف البارزة والواجهات والتوصيل والتركيب.",
+  "description": "تصميم وطباعة وتصنيع الحروف البارزة والواجهات والتوصيل والتركيب في الموصل وجميع محافظات العراق.",
   "image": "https://alsanad-print.github.io/assets/og.jpg",
-  "logo": "https://alsanad-print.github.io/assets/logo-primary-petrol.png",
+  "logo": "https://alsanad-print.github.io/assets/logo-primary-white.png",
   "telephone": ["+9647742522111", "+9647704992688"],
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "دورة البكر، قرب شركة كيا للسيارات",
-    "addressLocality": "الموصل",
-    "addressRegion": "نينوى",
-    "addressCountry": "IQ"
-  },
+  "address": { "@type": "PostalAddress", "streetAddress": "دورة البكر، قرب شركة كيا للسيارات", "addressLocality": "الموصل", "addressRegion": "نينوى", "addressCountry": "IQ" },
   "geo": { "@type": "GeoCoordinates", "latitude": 36.366264, "longitude": 43.196077 },
   "hasMap": "https://maps.app.goo.gl/BwCGg1EzQn7Desu36",
   "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday","Monday","Tuesday","Wednesday","Thursday"], "opens": "09:00", "closes": "18:00" }],
@@ -46,253 +43,145 @@
   "sameAs": ["https://www.instagram.com/alsanad_print/", "https://www.tiktok.com/@alsanad_print"]
 }
 </script>
-<script type="importmap">
-{ "imports": { "three": "./lib/three.module.min.js" } }
-</script>
-<link rel="modulepreload" href="lib/three.module.min.js">
-<link rel="modulepreload" href="js/main.js">
-<link rel="modulepreload" href="js/app.js">
-<link rel="modulepreload" href="js/data.js">
-<link rel="modulepreload" href="js/gallery.js">
-<link rel="modulepreload" href="js/util.js">
-<link rel="modulepreload" href="lib/addons/postprocessing/EffectComposer.js">
-<link rel="modulepreload" href="lib/addons/postprocessing/UnrealBloomPass.js">
 <script data-goatcounter="https://alsanadprint.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
-<canvas id="scene" aria-hidden="true"></canvas>
-<div id="labels" aria-hidden="true"></div>
 
-<div id="loader">
-  <img src="assets/mark-white.png" alt="" class="loader-mark">
-  <div class="loader-bar"><i></i></div>
-  <p data-i18n="loading">جارٍ تهيئة المنظومة</p>
+<!-- intro -->
+<div id="intro" aria-hidden="true">
+  <div class="intro-grid"></div>
+  <div class="intro-box">
+    <img class="intro-mark" src="assets/mark-white.png" alt="">
+    <img class="intro-word" src="assets/logo-secondary-white.png" alt="">
+    <div class="intro-line"><i></i></div>
+    <div class="intro-tag" data-t="introTag"></div>
+  </div>
 </div>
 
-<header class="topbar">
-  <a class="brand" href="#" aria-label="AL-SANAD"><img src="assets/logo-secondary-white.png" alt="السند للدعاية والإعلان"></a>
-  <nav class="actions">
-    <a class="btn btn-gold" id="btnOrder" href="order/"><svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M12 11v6M9 14h6"/></svg><span data-i18n="orderBtn">تقديم طلب</span></a>
-    <button class="btn" id="btnJourney"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><span class="t-long" data-i18n="journey">تتبّع طلبك</span><span class="t-short" data-i18n="journeyShort">تتبّع طلبك</span></button>
-    <button class="btn" id="btnGallery"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 16l5-5 4 4 3-3 6 6"/></svg><span data-i18n="gallery">معرض الأعمال</span></button>
-    <button class="btn" id="btnContact"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span data-i18n="contactBtn">تواصل معنا</span></button>
-    <div class="lang">
-      <button class="btn btn-icon" id="btnLang" aria-label="Language"><span id="langCur">ع</span></button>
-      <div class="lang-menu" id="langMenu">
-        <button data-l="ar">العربية</button>
-        <button data-l="ku">کوردی</button>
-        <button data-l="en">English</button>
-      </div>
-    </div>
-    <a class="btn btn-icon owner-only" href="admin.html" title="لوحة الإدارة" aria-label="Admin"><svg viewBox="0 0 24 24"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></a>
+<header class="nav" id="nav">
+  <a class="brand" href="#top"><img src="assets/logo-secondary-white.png" alt="السند للدعاية والإعلان"></a>
+  <nav class="links" id="links">
+    <a href="#about" data-t="navAbout"></a>
+    <a href="#services" data-t="navServices"></a>
+    <a href="#work" data-t="navWork"></a>
+    <a href="tour.html" data-t="navTour"></a>
+    <a href="#contact" data-t="navContact"></a>
   </nav>
+  <div class="nav-end">
+    <div class="langs" id="langs"></div>
+    <a class="btn gold sm" href="order/" data-t="navOrder"></a>
+    <button class="burger" id="burger" aria-label="menu"><i></i><i></i><i></i></button>
+  </div>
 </header>
+<div class="drawer" id="drawer"></div>
 
-<div class="hint" id="hint"><span class="pulse"></span><span data-i18n="hint">اختر أيّ قسم لاستعراض تفاصيله</span></div>
-<footer class="tagline" id="tagline"></footer>
-<div class="clients" id="clients"></div>
-<button class="lite-btn" id="btnLite" data-i18n="liteView">عرض مبسّط</button>
-<div class="lite-note" id="liteNote"><span>⚡</span><span data-i18n="liteView">عرض مبسّط</span><button class="btn btn-sm" onclick="document.getElementById('btnLite').click()">→</button></div>
-
-<!-- station panel -->
-<aside id="panel" aria-hidden="true">
-  <button class="panel-close" id="panelClose" aria-label="close">×</button>
-  <div class="panel-inner">
-    <div class="panel-kicker"><span class="panel-icon" id="panelIcon"></span><span id="panelTag"></span></div>
-    <h2 id="panelTitle"></h2>
-    <p id="panelDesc"></p>
-    <div class="panel-stats" id="panelStats"></div>
-    <ul class="panel-points" id="panelPoints"></ul>
-    <div class="panel-chips" id="panelChips"></div>
-    <div class="panel-cta" id="panelCta"></div>
-  </div>
-</aside>
-
-<!-- journey / order card -->
-<div id="journey" aria-hidden="true">
-  <div class="journey-card">
-    <div class="journey-top"><span class="journey-step" id="jStep"></span><button class="link" id="jSkip" data-i18n="skip">إنهاء الجولة</button></div>
-    <h3 id="jTitle"></h3>
-    <p id="jText"></p>
-    <div class="journey-dots" id="jDots"></div>
-    <div class="journey-end" id="jEnd"></div>
-  </div>
-</div>
-
-<!-- track modal -->
-<div class="mc" id="m-track" aria-hidden="true">
-  <div class="mc-box">
-    <button class="panel-close" data-close aria-label="close">×</button>
-    <em class="mc-kick">ORDER TRACKING</em>
-    <h3 data-i18n="trackTitle">تتبّع طلبك</h3>
-    <p class="mc-sub" data-i18n="trackSub">أدخل رقم الطلب المرسل إليك لمعرفة المرحلة الحالية لتنفيذه.</p>
-    <form id="trackForm" class="mc-form" autocomplete="off">
-      <input id="trackInput" dir="ltr" data-i18n-ph="trackPh" placeholder="AS-7K3P-9XQ2" spellcheck="false" autocapitalize="characters">
-      <button class="btn btn-gold" id="trackGo" data-i18n="trackGo">تتبّع</button>
-    </form>
-    <p class="mc-err" id="trackErr"></p>
-    <button class="link mc-tour" id="trackTour" data-i18n="trackTour">أو شاهد جولة تعريفية بمراحل العمل</button>
-  </div>
-</div>
-
-<!-- contact modal -->
-<div class="mc" id="m-contact" aria-hidden="true">
-  <div class="mc-box">
-    <button class="panel-close" data-close aria-label="close">×</button>
-    <em class="mc-kick">CONTACT</em>
-    <h3 data-i18n="cTitle">تواصل معنا</h3>
-    <p class="mc-sub" data-i18n="cSub">يسعدنا استقبال استفساراتكم ومشاريعكم.</p>
-    <div id="contactBody"></div>
-  </div>
-</div>
-
-<!-- gallery UI -->
-<div id="galleryUI" aria-hidden="true">
-  <div class="g-top">
-    <button class="btn" id="gBack"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg><span data-i18n="back">العودة إلى المنظومة</span></button>
-    <div class="g-tabs" id="gTabs"></div>
-    <a class="btn btn-gold" id="gAdd" href="works-admin.html" style="display:none"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg><span data-i18n="addWork">إضافة عمل</span></a>
-    <a class="btn" id="gAll" href="projects/"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span data-i18n="allProjects">كل المشاريع</span></a>
-    <button class="btn" id="gList"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/></svg><span data-i18n="listView">عرض شبكي</span></button>
-  </div>
-  <div class="g-hint" id="gHint"></div>
-  <div class="g-cap" id="gCap">
-    <span class="g-cap-no" id="gCapNo"></span>
-    <div class="g-cap-client" id="gCapClient"></div>
-    <h3 id="gCapTitle"></h3>
-    <div class="g-cap-tags" id="gCapTags"></div>
-    <button class="btn btn-gold" id="gOpen"><span>عرض العمل</span></button>
-  </div>
-  <button class="g-arr l" id="gArrL" aria-label="previous"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
-  <button class="g-arr r" id="gArrR" aria-label="next"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
-  <div class="g-empty" id="gEmpty" hidden></div>
-  <div class="g-list" id="gListView"><div class="g-grid" id="gGrid"></div></div>
-  <div class="g-card" id="gCard">
-    <div class="g-card-box">
-      <button class="panel-close" id="gCardClose" aria-label="close">×</button>
-      <div class="g-card-img" id="gMedia"></div>
-      <div class="g-card-info">
-        <span class="g-card-cat" id="gCat"></span>
-        <a class="g-card-client" id="gClient" hidden></a>
-        <h3 id="gTitle"></h3>
-        <div class="g-card-area"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.3 7-11.5A7 7 0 0 0 5 9.5C5 14.7 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span id="gArea"></span></div>
-        <p id="gDesc"></p>
-        <a class="btn" id="gFull" href="projects/"><span data-i18n="fullProject">عرض المشروع كاملاً</span></a>
-        <a class="btn btn-wa" id="gAsk" target="_blank" rel="noopener" style="display:none"><svg viewBox="0 0 24 24"><path d="M3 21l1.7-5A8.5 8.5 0 1 1 8 19.3z"/></svg><span></span></a>
-        <div class="g-card-nav"><button class="btn" id="gPrev" data-i18n="prev">السابق</button><button class="btn" id="gNext" data-i18n="next">التالي</button></div>
+<main id="top">
+  <!-- hero -->
+  <section class="hero">
+    <div class="hero-cols" id="heroCols" aria-hidden="true"></div>
+    <div class="hero-shade"></div>
+    <div class="hero-in wrap">
+      <div class="eyebrow en">AL-SANAD · PRINTING &amp; ADVERTISING · MOSUL</div>
+      <h1><span data-t="heroA"></span><br><span class="acc" data-t="heroB"></span></h1>
+      <p class="lead" data-t="heroP"></p>
+      <div class="cta">
+        <a class="btn gold" href="order/" data-t="ctaOrder"></a>
+        <a class="btn ghost" href="#work" data-t="ctaWork"></a>
+        <a class="btn ghost" href="tour.html"><span class="dot"></span><span data-t="ctaTour"></span></a>
       </div>
     </div>
-  </div>
-</div>
+    <a class="scroll-hint" href="#statement" aria-label="scroll"><i></i></a>
+  </section>
 
-<div id="fade"></div>
+  <!-- statement -->
+  <section class="statement" id="statement">
+    <div class="outline-marquee en" aria-hidden="true"><div class="om-track"><span>AL-SANAD · PRINTING · ADVERTISING · </span><span>AL-SANAD · PRINTING · ADVERTISING · </span></div></div>
+    <div class="wrap reveal"><h2 class="big" data-t="statement"></h2></div>
+  </section>
 
-<!-- classic page: simple view, no-WebGL fallback and search-engine content -->
-<main id="classic">
-<!--CLASSIC-->
-  <header class="cl-top">
-    <img class="cl-logo" src="assets/logo-secondary-white.png" alt="السند للدعاية والإعلان">
-    <nav class="cl-nav">
-      <a href="#c-services">خدماتنا</a>
-      <a href="#c-work">معرض الأعمال</a>
-      <a href="#c-track">تتبّع طلبك</a>
-      <a href="#c-contact">تواصل معنا</a>
-    </nav>
-    <div class="cl-tools">
-      <div class="cl-langs"><button data-cl-lang="ar" class="on">ع</button><button data-cl-lang="ku" class="">کو</button><button data-cl-lang="en" class="">EN</button></div>
-      <button class="btn btn-gold" data-act="full-view">العرض التفاعلي</button>
+  <!-- about -->
+  <section class="about wrap" id="about">
+    <div class="about-text reveal">
+      <div class="eyebrow en">ABOUT US</div>
+      <h2 data-t="aboutH"></h2>
+      <p data-t="aboutP"></p>
+      <div class="stats" id="stats"></div>
     </div>
-  </header>
-
-  <section class="cl-hero">
-    <em>AL-SANAD ADVERTISING</em>
-    <h1>منظومة متكاملة للدعاية والإعلان</h1>
-    <p>تصميم، طباعة، تصنيع، توصيل وتركيب. من الفكرة إلى التنفيذ تحت سقف واحد.</p>
-    <div class="cl-cta">
-      <a class="btn btn-gold" href="order/">تقديم طلب خدمة</a>
-      <a class="btn btn-wa" href="https://wa.me/9647742522111" target="_blank" rel="noopener"><span>تواصل عبر واتساب</span></a>
-      <a class="btn" href="#c-track">تتبّع طلبك</a>
-    </div>
+    <div class="why reveal" id="why"></div>
   </section>
 
-  <section class="cl-sec" id="c-services">
-    <div class="cl-head"><em>01</em><h2>خدماتنا</h2></div>
-    <div class="cl-svc">
-      
-      <article class="cl-card">
-        <span class="no">01</span>
-        <h3>المكتب الرئيسي</h3>
-        <p class="tag">نقطة انطلاق كل مشروع</p>
-        <p>يبدأ كل مشروع من هنا. نستقبل طلبك، وندرس طبيعة نشاطك، ونطوّر التصميم الذي يعبّر عنه. ولا ينتقل أي عمل إلى مرحلة التنفيذ قبل اعتماده منك.</p>
-        <ul><li>استقبال الطلبات وتحليل الاحتياجات</li><li>تصميم الهويات البصرية والشعارات</li><li>تصميم الواجهات والمحتوى الرقمي والمطبوعات</li><li>اعتماد التصميم مع العميل قبل التنفيذ</li><li>نماذج لونية تضمن مطابقة الألوان المعتمدة</li></ul>
-      </article>
-      <article class="cl-card">
-        <span class="no">02</span>
-        <h3>الطباعة</h3>
-        <p class="tag">دقة لونية في جميع المقاسات</p>
-        <p>تُنفَّذ جميع أعمال الطباعة والإعلان داخل منشآتنا، من الملصقات الصغيرة إلى الواجهات بمقاساتها الكاملة.</p>
-        <ul><li>طابعة UV رول بعرض 160 سم</li><li>طابعة UV فلات للطباعة المباشرة على الألواح</li><li>خامات الفلكس والستيكر والشفاف</li><li>المطبوعات التجارية: بطاقات العمل، الوصولات، البروشورات</li><li>نماذج تدرّج لوني لضبط اللون قبل الطباعة النهائية</li></ul>
-      </article>
-      <article class="cl-card">
-        <span class="no">03</span>
-        <h3>المعمل</h3>
-        <p class="tag">من الخامة إلى المجسّم</p>
-        <p>نُصنّع الحروف البارزة والستاندات وأعمال الـCNC داخلياً، إلى جانب الهياكل الحديدية والبوكسات وأنظمة الإضاءة.</p>
-        <ul><li>قصّ CNC للأكريليك والخشب والفوم</li><li>الحروف البارزة والحروف الضوئية</li><li>الستاندات والبوكسات</li><li>الهياكل والأعمال الحديدية</li><li>أنظمة الإضاءة للواجهات واللوحات</li></ul>
-      </article>
-      <article class="cl-card">
-        <span class="no">04</span>
-        <h3>التوصيل</h3>
-        <p class="tag">تغطية شاملة لمحافظات العراق</p>
-        <p>ننقل أعمالك من الموصل إلى جميع محافظات العراق.</p>
-        <ul><li>التوصيل إلى جميع محافظات العراق</li><li>نقل الأعمال من منشآتنا إلى موقعك مباشرةً</li></ul>
-      </article>
-      <article class="cl-card">
-        <span class="no">05</span>
-        <h3>التركيب</h3>
-        <p class="tag">تنفيذ متكامل في موقعك</p>
-        <p>يتولى فريق التركيب التابع للسند تثبيت الواجهات واللوحات في موقعك، ويسلّمها جاهزة للتشغيل.</p>
-        <ul><li>فريق تركيب متخصص تابع للسند</li><li>تركيب الواجهات واللوحات والحروف البارزة</li><li>تسليم العمل جاهزاً للتشغيل</li></ul>
-      </article>
-    </div>
-  </section>
-
-  <section class="cl-sec" id="c-work">
-    <div class="cl-head"><em>02</em><h2>معرض الأعمال</h2></div>
-    <p class="cl-muted">تُضاف الأعمال قريباً</p>
-  </section>
-
-  <section class="cl-sec" id="c-track">
-    <div class="cl-head"><em>03</em><h2>تتبّع طلبك</h2></div>
-    <p class="cl-muted">أدخل رقم الطلب المرسل إليك لمعرفة المرحلة الحالية لتنفيذه.</p>
-    <form class="cl-track" id="clTrack"><input dir="ltr" placeholder="مثال: AS-7K3P-9XQ2" autocomplete="off"><button class="btn btn-gold">تتبّع</button></form>
-    <p class="cl-err" id="clTrackErr"></p>
-    <div id="clTrackOut"></div>
-  </section>
-
-  
-
-  <section class="cl-sec" id="c-contact">
-    <div class="cl-head"><em>04</em><h2>تواصل معنا</h2></div>
-    <div class="cl-contact">
-      <div><small>المكتب الرئيسي</small><b>الموصل – دورة البكر، قرب شركة كيا للسيارات</b><a href="https://maps.app.goo.gl/BwCGg1EzQn7Desu36" target="_blank" rel="noopener">فتح في الخرائط ↗</a></div>
-      <div><small>المعمل</small><a href="https://maps.app.goo.gl/wxozGYMZJs7YvLGY8" target="_blank" rel="noopener">الموقع على الخريطة ↗</a></div>
-      <div><small>ساعات العمل</small><b>السبت – الخميس، من 9:00 صباحاً إلى 6:00 مساءً · الجمعة عطلة</b></div>
-      <div><small>الهاتف</small><b><bdi dir="ltr">0774 252 2111</bdi></b><a href="https://wa.me/9647742522111" target="_blank" rel="noopener">تواصل عبر واتساب ↗</a></div>
-      <div><small>هاتف الاستفسارات</small><b><a href="tel:+9647704992688"><bdi dir="ltr">0770 499 2688</bdi></a></b></div>
-      <div><small>تابعونا</small>
-        <a href="https://www.instagram.com/alsanad_print/" target="_blank" rel="noopener">Instagram · <bdi dir="ltr">@alsanad_print</bdi></a>
-        <a href="https://www.tiktok.com/@alsanad_print" target="_blank" rel="noopener">TikTok · <bdi dir="ltr">@alsanad_print</bdi></a>
+  <!-- services overview -->
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="eyebrow en">OUR SERVICES</div>
+        <h2 data-t="servH"></h2>
+        <p data-t="servP"></p>
       </div>
+      <div class="svc-grid" id="svcGrid"></div>
     </div>
   </section>
 
-  <footer class="cl-foot">© 2026 السند للدعاية والإعلان — جميع الحقوق محفوظة</footer>
+  <!-- work by category -->
+  <section class="work" id="work">
+    <div class="wrap sec-head reveal">
+      <div class="eyebrow en">SELECTED WORK</div>
+      <h2 data-t="workH"></h2>
+      <p data-t="workP"></p>
+    </div>
+    <div id="catSections"></div>
+    <div class="wrap center reveal"><a class="btn ghost" href="projects/" data-t="allProjects"></a></div>
+  </section>
 
-  <div class="cl-lb" id="clLb" hidden><div class="cl-lb-box"><button class="cl-x" data-lb-close>×</button><div id="clLbBody"></div></div></div>
-<!--/CLASSIC-->
+  <!-- clients -->
+  <section class="clients" id="clients">
+    <div class="wrap sec-head center reveal"><div class="eyebrow en">TRUSTED BY</div><h2 data-t="clientsH"></h2></div>
+    <div class="logo-marquee"><div class="lm-track" id="lmTrack"></div></div>
+  </section>
+
+  <!-- interactive tour promo -->
+  <section class="tour wrap" id="tour">
+    <div class="tour-card reveal">
+      <div class="tour-text">
+        <div class="eyebrow en">INTERACTIVE TOUR</div>
+        <h2 data-t="tourH"></h2>
+        <p data-t="tourP"></p>
+        <div class="cta">
+          <a class="btn gold" href="tour.html" data-t="tourBtn"></a>
+          <a class="btn ghost" href="tour.html#track" id="trackLink" data-t="trackBtn"></a>
+        </div>
+      </div>
+      <div class="tour-img"><img src="assets/hub-tour.jpg" alt="" loading="lazy"></div>
+    </div>
+  </section>
+
+  <!-- contact -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="sec-head reveal"><div class="eyebrow en">GET IN TOUCH</div><h2 data-t="contactH"></h2><p data-t="contactP"></p></div>
+      <div class="c-grid reveal" id="cGrid"></div>
+    </div>
+  </section>
 </main>
 
-<script type="module" src="js/main.js"></script>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <img src="assets/logo-secondary-white.png" alt="" class="foot-logo">
+    <div class="foot-links"><a href="projects/" data-t="navWork"></a><a href="order/" data-t="navOrder"></a><a href="tour.html" data-t="navTour"></a></div>
+    <div class="foot-copy">© <span id="yr"></span> <span data-t="rights"></span></div>
+  </div>
+</footer>
+
+<!-- lightbox -->
+<div class="lb" id="lb" aria-hidden="true">
+  <button class="lb-x" id="lbX" aria-label="close">×</button>
+  <button class="lb-nav prev" id="lbPrev" aria-label="previous">‹</button>
+  <button class="lb-nav next" id="lbNext" aria-label="next">›</button>
+  <figure class="lb-fig"><img id="lbImg" alt=""><figcaption id="lbCap"></figcaption></figure>
+</div>
+
+<a class="wa-float" id="waFloat" href="https://wa.me/9647742522111" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/><path d="M8.5 8.5c.3 2.6 2.4 4.7 5 5l1.2-1.2 2 .9-.4 1.6c-3.8.2-8-4-7.8-7.8l1.6-.4.9 2z"/></svg></a>
+
+<script type="module" src="js/home.js"></script>
 </body>
 </html>
