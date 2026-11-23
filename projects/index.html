@@ -354,6 +354,7 @@ function renderStatic() {
   $('#stats').style.gridTemplateColumns = `repeat(${$('#stats').children.length},1fr)`;
   const usedCats = D.categories.filter(c => W.some(w => catsOf(w).includes(c.id)));
   $('#cats').innerHTML = `<button class="chip ${S.cat === 'all' ? 'on' : ''}" data-cat="all">${t('all')}</button>` + usedCats.map(c => `<button class="chip ${S.cat === c.id ? 'on' : ''}" data-cat="${esc(c.id)}">${esc(pick(c, lang))}</button>`).join('');
+  $('#kinds').hidden = !W.some(w => kindOf(w) === 'design');
   $('#kinds').innerHTML = ['all', 'build', 'design'].map(k => `<button data-kind="${k}" class="${S.kind === k ? 'on' : ''}">${t(k === 'all' ? 'kindAll' : k)}</button>`).join('');
   $('#views').innerHTML = [['clients', 'vClients'], ['grid', 'vGrid']].map(([v, k]) => `<button data-view="${v}" class="${S.view === v ? 'on' : ''}">${t(k)}</button>`).join('');
   let btns = `<a class="btn btn-gold" href="../order/">${t('ctaB')}</a>`;

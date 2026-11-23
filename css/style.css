@@ -394,3 +394,28 @@ a.btn-gold{color:#1B2A22}
 .g-cap{z-index:1}
 @media (max-width:760px){.g-tabs{justify-content:flex-start}}
 body.mode-gallery .lite-note{display:none}
+
+/* narrow phones: keep the whole top bar on screen */
+@media (max-width:430px){
+  .topbar{padding-inline:10px;gap:6px}
+  .brand img{height:22px}
+  .actions{gap:4px}
+  .actions .btn{height:36px;padding:0 9px}
+  .actions .btn-icon,#btnGallery,#btnContact,#btnJourney{width:34px}
+  #btnOrder{font-size:12.5px;gap:5px}
+  #btnOrder svg{width:16px;height:16px}
+}
+@media (max-width:380px){
+  .brand img{height:19px}
+  .actions{gap:3px}
+  .actions .btn{height:34px;padding:0 7px}
+  .actions .btn-icon,#btnGallery,#btnContact,#btnJourney{width:31px}
+  .actions .btn svg{width:16px;height:16px}
+  #btnOrder{font-size:12px}
+}
+/* gallery: the open project sheet sits above the ring caption */
+.g-card{z-index:5}
+#galleryUI:has(.g-card.open) .g-cap,#galleryUI:has(.g-card.open) .g-arr{opacity:0!important;pointer-events:none!important}
+/* keep the "simple view" pill out of the way of an open station panel */
+body.panel-open .lite-btn,body.in-journey .lite-btn{opacity:0;pointer-events:none}
+.lite-btn{transition:opacity .3s}

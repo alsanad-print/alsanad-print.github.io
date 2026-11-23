@@ -66,3 +66,11 @@
 .cl-lb-t p{color:#C3D3D1;margin-top:8px;line-height:1.7}
 .cl-x{position:absolute;top:10px;inset-inline-end:10px;z-index:3;width:36px;height:36px;border-radius:10px;background:rgba(8,20,22,.8);font-size:22px}
 @media (max-width:760px){ .cl-nav{display:none} .cl-logo{height:28px} }
+
+.fv-s{display:none}
+@media (max-width:520px){
+  .cl-top{gap:10px;padding-inline:14px}
+  .cl-tools{gap:8px}
+  .cl-tools .fv-l{display:none}.cl-tools .fv-s{display:inline;font-family:Montserrat,sans-serif;font-weight:800}
+  .cl-tools .btn-gold{padding-inline:14px}
+}

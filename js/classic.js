@@ -27,7 +27,7 @@ export function classicHTML(lang, data, hasGL = true) {
     </nav>
     <div class="cl-tools">
       <div class="cl-langs">${LANGS.map(l => `<button data-cl-lang="${l.id}" class="${l.id === lang ? 'on' : ''}">${l.short}</button>`).join('')}</div>
-      ${hasGL ? `<button class="btn btn-gold" data-act="full-view">${esc(u.fullView)}</button>` : ''}
+      ${hasGL ? `<button class="btn btn-gold" data-act="full-view" title="${esc(u.fullView)}"><span class="fv-l">${esc(u.fullView)}</span><span class="fv-s">3D</span></button>` : ''}
     </div>
   </header>
 

@@ -989,6 +989,12 @@ $('#jEnd').addEventListener('click', e => {
   if (b.dataset.act === 'close') { endJourney(); flyHome(); }
 });
 $('#btnJourney').addEventListener('click', () => openModal('track'));
+addEventListener('keydown', e => {
+  if (e.key !== 'Escape' || mode === 'gallery') return;
+  if (openModalId) { closeModal(); return; }
+  if (journey.active) { endJourney(); flyHome(); return; }
+  if (selected) closePanel();
+});
 
 /* =====================================================================
    modals: track + contact
