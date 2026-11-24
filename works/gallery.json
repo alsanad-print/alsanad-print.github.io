@@ -62,6 +62,12 @@
       "ku": "چاپەمەنی بازرگانی"
     },
     {
+      "id": "business-cards",
+      "ar": "بطاقات الأعمال",
+      "en": "Business cards",
+      "ku": "کارتی کار"
+    },
+    {
       "id": "flags",
       "ar": "أعلام شراعية",
       "en": "Feather flags",
@@ -549,6 +555,30 @@
       "desc_ar": "بلبوردات أفقية فوق أسطح المحلات باللغة الكردية مع إنارة ليلية، ضمن نفس الحملة.",
       "desc_en": "Horizontal rooftop billboards in Kurdish with night lighting, part of the same campaign.",
       "desc_ku": "بیلبۆردی ئاسۆیی لەسەر سەربانی دوکانەکان بە زمانی کوردی لەگەڵ ڕووناکی شەو، لە هەمان هەڵمەت."
+    },
+    {
+      "id": "alteef-business-card",
+      "client": "alteef",
+      "kind": "build",
+      "cats": [
+        "business-cards"
+      ],
+      "cat": "business-cards",
+      "year": "2026",
+      "img": "works/alteef/01-business-card-mockup.jpg",
+      "images": [
+        "works/alteef/02-front.jpg",
+        "works/alteef/03-back.jpg"
+      ],
+      "title_ar": "بطاقة أعمال بوجهين لمعرض تجاري",
+      "title_en": "Two-sided business card for a retail showroom",
+      "title_ku": "کارتی کار بە دوو ڕوو بۆ پێشانگایەکی بازرگانی",
+      "area_ar": "الموصل",
+      "area_en": "Mosul",
+      "area_ku": "موسڵ",
+      "desc_ar": "تصميم وطباعة بطاقة أعمال بوجهين بمقاس 9×5.6 سم: وجه كحلي بتفاصيل ذهبية يعرض أقسام المعرض، وظهر بمعلومات التواصل والموقع.",
+      "desc_en": "Design and print of a two-sided 9×5.6 cm business card: a navy front with gold details showing the showroom's departments, and a back with contact details and location.",
+      "desc_ku": "دیزاین و چاپی کارتی کار بە دوو ڕوو بە قەبارەی ٩×٥.٦ سم: ڕووی یەکەم بە ڕەنگی سورمەیی و وردەکاری زێڕین بەشەکانی پێشانگا پیشان دەدات، ڕووی دووەم زانیاری پەیوەندی و شوێن."
     }
   ],
   "clients": [
@@ -606,7 +636,18 @@
       "sector_ku": "خواردنەوەی گازدار",
       "logo": "works/clients/cocacola.png",
       "strip": true
+    },
+    {
+      "id": "alteef",
+      "name_ar": "معرض الطيف للتقسيط",
+      "name_en": "Al-Teef Installment Showroom",
+      "name_ku": "پێشانگای تەیف بۆ قیست",
+      "sector_ar": "أجهزة كهربائية ومنزلية وموبايلات وغرف نوم بالتقسيط — الموصل",
+      "sector_en": "Home appliances, mobiles & bedrooms on installments — Mosul",
+      "sector_ku": "کەلوپەلی کارەبایی و ماڵەوە، مۆبایل و ژووری نوستن بە قیست — موسڵ",
+      "logo": "works/clients/alteef.png",
+      "strip": true
     }
   ],
-  "updated": "2026-11-24T13:54:27.955Z"
+  "updated": "2026-11-24T14:20:51.000Z"
 }
