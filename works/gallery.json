@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 2,
   "categories": [
     {
       "id": "flex",
@@ -50,12 +50,6 @@
       "ku": "بیلبۆرد"
     },
     {
-      "id": "flags",
-      "ar": "أعلام شراعية",
-      "en": "Feather flags",
-      "ku": "ئاڵای شەراعی"
-    },
-    {
       "id": "wayfinding",
       "ar": "لوحات إرشادية وسلامة",
       "en": "Wayfinding & safety signs",
@@ -66,6 +60,12 @@
       "ar": "مطبوعات تجارية",
       "en": "Commercial print",
       "ku": "چاپەمەنی بازرگانی"
+    },
+    {
+      "id": "flags",
+      "ar": "أعلام شراعية",
+      "en": "Feather flags",
+      "ku": "ئاڵای شەراعی"
     },
     {
       "id": "identity",
@@ -91,8 +91,7 @@
       "desc_ar": "واجهة ضوئية بحروف بارزة ثلاثية الأبعاد من الأكريليك والفوم مع إنارة وستيكر ملوّن، من التصميم حتى التركيب.",
       "desc_en": "Illuminated storefront with 3D acrylic and foam letters, lighting and color vinyl, from design to installation.",
       "images": [
-        "works/alsaqi/01-storefront-3d-2.jpg",
-        "works/alsaqi/01-storefront-3d-3.jpg"
+        "works/alsaqi/01-storefront-3d-2.jpg"
       ],
       "cats": [
         "lit-letters"
@@ -608,5 +607,6 @@
       "logo": "works/clients/cocacola.png",
       "strip": true
     }
-  ]
+  ],
+  "updated": "2026-11-24T13:54:27.955Z"
 }
