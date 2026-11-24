@@ -84,6 +84,7 @@ const T = {
 
 /* category copy + icons (works themselves come from works/gallery.json) */
 const CAT = {
+  'flex': { ar: 'واجهات فلكس مطبوعة بألوان زاهية تمتد على عرض المحل وتعرض هويتك ومنتجاتك بوضوح.', en: 'Vivid printed flex fascias spanning the full storefront to show your brand and products.', ku: 'ڕووکاری فلێکسی چاپکراو بە ڕەنگی گەش بە درێژایی دوکانەکە.', ic: '<rect x="2" y="5" width="20" height="9" rx="1"/><path d="M5 14v6M19 14v6M6 9h7"/>' },
   'lit-letters': { ar: 'حروف بارزة مضيئة بإضاءة LED، من الأكريليك والفوم، تمنح واجهتك حضوراً لافتاً ليلاً ونهاراً.', en: 'LED-lit 3D letters in acrylic and foam that give your storefront presence day and night.', ku: 'پیتی بەرجەستەی ڕووناک بە LED لە ئەکریلیک و فۆم، ڕووکارەکەت شەو و ڕۆژ دیار دەکات.', ic: '<path d="M4 20V5l6 15V5"/><path d="M14 5h6M17 5v15"/><circle cx="7" cy="2.5" r=".6"/>' },
   'raised-signs': { ar: 'لوحات بارزة من الأكريليك والفوم للمداخل والجدران الداخلية والهويات المؤسسية.', en: 'Raised acrylic and foam signs for entrances, interior walls and corporate identity.', ku: 'تابلۆی بەرجەستە لە ئەکریلیک و فۆم بۆ دەروازە و دیواری ناوەوە.', ic: '<rect x="3" y="6" width="18" height="12" rx="1.5"/><path d="M7 10h6M7 14h10"/>' },
   'sticker': { ar: 'ستيكر وميش مطبوع وملصوق للواجهات والزجاج والسيارات، بجودة عالية ومتانة ممتازة.', en: 'Printed and applied sticker and mesh for storefronts, glass and vehicles — durable and sharp.', ku: 'ستیکەر و میش بۆ ڕووکار و شووشە و ئۆتۆمبێل، بە کوالیتی و بەرگەگرتنی بەرز.', ic: '<path d="M4 4h12l4 4v12H4z"/><path d="M16 4v4h4"/><path d="M8 14l3-3 5 5"/>' },

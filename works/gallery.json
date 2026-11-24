@@ -2,6 +2,12 @@
   "version": 3,
   "categories": [
     {
+      "id": "flex",
+      "ar": "واجهات فلكس",
+      "en": "Flex storefronts",
+      "ku": "ڕووکاری فلێکس"
+    },
+    {
       "id": "lit-letters",
       "ar": "حروف ضوئية بارزة",
       "en": "Illuminated 3D letters",
@@ -188,7 +194,7 @@
       "id": "alsaqi-counter-numbers",
       "client": "alsaqi",
       "kind": "build",
-      "cat": "sticker",
+      "cat": "uv",
       "year": "2026",
       "img": "works/alsaqi/06-counter-numbers.jpg",
       "title_ar": "ترقيم الكاونترات",
@@ -197,21 +203,21 @@
       "area_ar": "الموصل",
       "area_en": "Mosul",
       "area_ku": "موسڵ",
-      "desc_ar": "ترقيم كاونترات خدمة العملاء بلونين، الأبيض والتركوازي.",
-      "desc_en": "Customer-service counter numbers in white and turquoise.",
+      "desc_ar": "ترقيم كاونترات خدمة العملاء بطباعة UV بلونين، الأبيض والتركوازي.",
+      "desc_en": "Customer-service counter numbering, UV-printed in white and turquoise.",
       "images": [
         "works/alsaqi/06-counter-numbers-2.jpg"
       ],
       "cats": [
-        "sticker"
+        "uv"
       ],
-      "desc_ku": "ژمارەکردنی کاونتەرەکانی خزمەتگوزاری کڕیاران بە دوو ڕەنگ، سپی و فیرۆزەیی."
+      "desc_ku": "ژمارەکردنی کاونتەرەکانی خزمەتگوزاری کڕیاران بە چاپی UV بە دوو ڕەنگ، سپی و فیرۆزەیی."
     },
     {
       "id": "alsaqi-wall-logo",
       "client": "alsaqi",
       "kind": "build",
-      "cat": "sticker",
+      "cat": "uv",
       "year": "2026",
       "img": "works/alsaqi/07-wall-logo.jpg",
       "title_ar": "شعار جداري",
@@ -220,15 +226,15 @@
       "area_ar": "الموصل",
       "area_en": "Mosul",
       "area_ku": "موسڵ",
-      "desc_ar": "شعار جداري مطبوع ومقصوص من الستيكر بمقاس 60×60 سم، مع التركيب.",
-      "desc_en": "Printed and cut vinyl wall logo, 60×60 cm, installed on site.",
+      "desc_ar": "شعار جداري مطبوع بتقنية UV بمقاس 60×60 سم، مع التركيب.",
+      "desc_en": "Wall logo UV-printed at 60×60 cm, including installation.",
       "images": [
         "works/alsaqi/07-wall-logo-2.jpg"
       ],
       "cats": [
-        "sticker"
+        "uv"
       ],
-      "desc_ku": "لۆگۆیەکی دیواری چاپکراو و بڕدراو لە ستیکەر بە قەبارەی ٦٠×٦٠ سم، لەگەڵ دامەزراندن."
+      "desc_ku": "لۆگۆیەکی دیواری چاپکراو بە تەکنیکی UV بە قەبارەی ٦٠×٦٠ سم، لەگەڵ دامەزراندن."
     },
     {
       "id": "alsaqi-safety-signs",
@@ -372,98 +378,98 @@
       "client": "alwalimah",
       "kind": "build",
       "cats": [
-        "lightbox"
+        "flex"
       ],
-      "cat": "lightbox",
+      "cat": "flex",
       "img": "works/alwalimah/01-abu-mustafa.jpg",
-      "title_ar": "لوحة ضوئية — محلات أبو مصطفى",
-      "title_en": "Backlit sign — Abu Mustafa Stores",
+      "title_ar": "واجهة فلكس — محلات أبو مصطفى",
+      "title_en": "Flex storefront — Abu Mustafa Stores",
       "area_ar": "الموصل",
       "area_en": "Mosul",
       "area_ku": "موسڵ",
-      "desc_ar": "لوحة ضوئية ممتدة على واجهتي المحل بهوية تمن الوليمة، مع إنارة سفلية للواجهة.",
-      "desc_en": "Backlit sign wrapping both sides of the store in the Alwalimah identity, with downlights under the canopy.",
+      "desc_ar": "واجهة فلكس مطبوعة ممتدة على واجهتي المحل بهوية تمن الوليمة.",
+      "desc_en": "Flex sign wrapping both sides of the store in the Alwalimah identity.",
       "images": [
         "works/alwalimah/01-abu-mustafa-2.jpg"
       ],
-      "desc_ku": "تابلۆیەکی ڕووناک لەسەر هەردوو ڕووکاری دوکانەکە بە ناسنامەی برنجی ئەلوەلیمە، لەگەڵ ڕووناکی خوارەوە.",
-      "title_ku": "تابلۆی ڕووناک — دوکانەکانی ئەبو مستەفا"
+      "desc_ku": "ڕووکارێکی فلێکس لەسەر هەردوو ڕووکاری دوکانەکە بە ناسنامەی برنجی ئەلوەلیمە.",
+      "title_ku": "ڕووکاری فلێکس — دوکانەکانی ئەبو مستەفا"
     },
     {
       "id": "alwalimah-abu-muataz",
       "client": "alwalimah",
       "kind": "build",
       "cats": [
-        "lightbox"
+        "flex"
       ],
-      "cat": "lightbox",
+      "cat": "flex",
       "img": "works/alwalimah/02-abu-muataz.jpg",
-      "title_ar": "لوحة ضوئية — محلات أبو معتز",
-      "title_en": "Backlit sign — Abu Muataz Stores",
+      "title_ar": "واجهة فلكس — محلات أبو معتز",
+      "title_en": "Flex storefront — Abu Muataz Stores",
       "area_ar": "الموصل",
       "area_en": "Mosul",
       "area_ku": "موسڵ",
-      "desc_ar": "لوحة ضوئية علوية بهوية تمن الوليمة تعرض نشاط المحل وأرقام التواصل.",
-      "desc_en": "Rooftop backlit sign in the Alwalimah identity, showing the store activity and contact numbers.",
-      "desc_ku": "تابلۆیەکی ڕووناکی سەرەوە بە ناسنامەی ئەلوەلیمە کە چالاکی دوکان و ژمارەکانی پەیوەندی نیشان دەدات.",
-      "title_ku": "تابلۆی ڕووناک — دوکانەکانی ئەبو موعتەز"
+      "desc_ar": "واجهة فلكس علوية بهوية تمن الوليمة تعرض نشاط المحل وأرقام التواصل.",
+      "desc_en": "Printed flex fascia in the Alwalimah identity, showing the store activity and contact numbers.",
+      "desc_ku": "ڕووکارێکی فلێکسی سەرەوە بە ناسنامەی ئەلوەلیمە کە چالاکی دوکان و ژمارەکانی پەیوەندی نیشان دەدات.",
+      "title_ku": "ڕووکاری فلێکس — دوکانەکانی ئەبو موعتەز"
     },
     {
       "id": "alwalimah-azzawi",
       "client": "alwalimah",
       "kind": "build",
       "cats": [
-        "lightbox"
+        "flex"
       ],
-      "cat": "lightbox",
+      "cat": "flex",
       "img": "works/alwalimah/03-azzawi.jpg",
-      "title_ar": "لوحة ضوئية — محلات العزاوي",
-      "title_en": "Backlit sign — Al-Azzawi Stores",
+      "title_ar": "واجهة فلكس — محلات العزاوي",
+      "title_en": "Flex storefront — Al-Azzawi Stores",
       "area_ar": "الموصل",
       "area_en": "Mosul",
       "area_ku": "موسڵ",
-      "desc_ar": "لوحة ضوئية علوية بعرض الواجهة بهوية تمن الوليمة.",
-      "desc_en": "Full-width rooftop backlit sign in the Alwalimah identity.",
-      "desc_ku": "تابلۆیەکی ڕووناکی سەرەوە بە پانی ڕووکار بە ناسنامەی ئەلوەلیمە.",
-      "title_ku": "تابلۆی ڕووناک — دوکانەکانی عەززاوی"
+      "desc_ar": "واجهة فلكس علوية بعرض الواجهة بهوية تمن الوليمة.",
+      "desc_en": "Full-width rooftop flex sign in the Alwalimah identity.",
+      "desc_ku": "ڕووکارێکی فلێکسی سەرەوە بە پانی ڕووکار بە ناسنامەی ئەلوەلیمە.",
+      "title_ku": "ڕووکاری فلێکس — دوکانەکانی عەززاوی"
     },
     {
       "id": "alwalimah-shumaisi",
       "client": "alwalimah",
       "kind": "build",
       "cats": [
-        "lightbox"
+        "flex"
       ],
-      "cat": "lightbox",
+      "cat": "flex",
       "img": "works/alwalimah/04-shumaisi.jpg",
-      "title_ar": "لوحة ضوئية — محلات عبد الرحمن الشميسي",
-      "title_en": "Backlit sign — Abdulrahman Al-Shumaisi Stores",
+      "title_ar": "واجهة فلكس — محلات عبد الرحمن الشميسي",
+      "title_en": "Flex storefront — Abdulrahman Al-Shumaisi Stores",
       "area_ar": "الموصل",
       "area_en": "Mosul",
       "area_ku": "موسڵ",
-      "desc_ar": "لوحة ضوئية للواجهة بهوية تمن الوليمة مع إنارة أمامية.",
-      "desc_en": "Backlit storefront sign in the Alwalimah identity with front lighting.",
-      "desc_ku": "تابلۆیەکی ڕووناک بۆ ڕووکار بە ناسنامەی ئەلوەلیمە لەگەڵ ڕووناکی پێشەوە.",
-      "title_ku": "تابلۆی ڕووناک — دوکانەکانی عەبدولڕەحمان شومەیسی"
+      "desc_ar": "واجهة فلكس مطبوعة بهوية تمن الوليمة.",
+      "desc_en": "Flex storefront sign in the Alwalimah identity.",
+      "desc_ku": "ڕووکارێکی فلێکس بۆ ڕووکار بە ناسنامەی ئەلوەلیمە.",
+      "title_ku": "ڕووکاری فلێکس — دوکانەکانی عەبدولڕەحمان شومەیسی"
     },
     {
       "id": "alwalimah-alaa-alabadi",
       "client": "alwalimah",
       "kind": "build",
       "cats": [
-        "lightbox"
+        "flex"
       ],
-      "cat": "lightbox",
+      "cat": "flex",
       "img": "works/alwalimah/05-alaa-alabadi.jpg",
-      "title_ar": "لوحة ضوئية — محلات علاء العبادي",
-      "title_en": "Backlit sign — Alaa Al-Abadi Stores",
+      "title_ar": "واجهة فلكس — محلات علاء العبادي",
+      "title_en": "Flex storefront — Alaa Al-Abadi Stores",
       "area_ar": "الموصل",
       "area_en": "Mosul",
       "area_ku": "موسڵ",
-      "desc_ar": "لوحة ضوئية علوية بهوية تمن الوليمة فوق واجهة المحل.",
-      "desc_en": "Rooftop backlit sign in the Alwalimah identity above the storefront.",
-      "desc_ku": "تابلۆیەکی ڕووناکی سەرەوە بە ناسنامەی ئەلوەلیمە لەسەر ڕووکاری دوکانەکە.",
-      "title_ku": "تابلۆی ڕووناک — دوکانەکانی عەلا عەبادی"
+      "desc_ar": "واجهة فلكس علوية بهوية تمن الوليمة فوق واجهة المحل.",
+      "desc_en": "Printed flex fascia in the Alwalimah identity above the storefront.",
+      "desc_ku": "ڕووکارێکی فلێکسی سەرەوە بە ناسنامەی ئەلوەلیمە لەسەر ڕووکاری دوکانەکە.",
+      "title_ku": "ڕووکاری فلێکس — دوکانەکانی عەلا عەبادی"
     },
     {
       "id": "no1-1ar-market",
